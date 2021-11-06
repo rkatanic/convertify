@@ -1,0 +1,20 @@
+.image-wrapper {
+  display: flex;
+  width: 500px;
+  height: 500px;
+  border: 3px dashed gray;
+  align-items: center;
+
+  &-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 2rem;
+  }
+
+  img {
+    width: 500px;
+    height: 500px;
+    position: relative;
+  }
+}
