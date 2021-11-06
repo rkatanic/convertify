@@ -1,0 +1,22 @@
+.button {
+  font-weight: 700;
+  font-size: 1em;
+  text-transform: uppercase;
+  border-radius: 5px;
+  border: none;
+  padding: 0.75em 3em;
+  background-size: 300% 300%;
+  color: white;
+  background-image: linear-gradient(to right, #665cf2 0%, #9bffc8 50%);
+  box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
+  -webkit-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
+  -moz-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+}

@@ -11,14 +11,14 @@ const ImageWrapper = ({ imageUrl = "" }: Props): JSX.Element => {
         <img src={imageUrl} alt="can not load image" className="image" />
       ) : (
         <div className="image-wrapper-text">
-          <span>
+          <div>
             Supported image formats: <b> jpg, png, bmp, pbm</b>.
-          </span>
-          <span> You should see your image here.</span>
-          <span>
+          </div>
+          <div> You should see your image here.</div>
+          <div>
             If image can not be displayed, there might be an issue with image
             URL.
-          </span>
+          </div>
         </div>
       )}
     </div>

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Tesseract, { RecognizeResult } from "tesseract.js";
+import Button from "./Button";
 import ImageWrapper from "./ImageWrapper";
+import Navigation from "./Navigation";
 import ProgressBar from "./ProgressBar";
 import TextWrapper from "./TextWrapper";
 
@@ -30,16 +32,24 @@ const URLInput = () => {
   };
 
   return (
-    <div>
-      <h2>Paste your image URL here</h2>
-      <div> https://tesseract.projectnaptha.com/img/eng_bw.png</div>
-      <input value={imageUrl} onChange={(e) => setImageUrl(e.target.value)} />
-      <button disabled={!imageUrl} type="button" onClick={convertImageToText}>
-        convert
-      </button>
+    <div className="main-content">
+      <Navigation />
+      <div>https://tesseract.projectnaptha.com/img/eng_bw.png</div>
+
       <div className="content">
-        <ImageWrapper imageUrl={imageUrl} />
-        <div>
+        <div className="content-item">
+          <div className="imgurl-container">
+            <input
+              placeholder="Enter image URL ..."
+              className="imgurl-input"
+              value={imageUrl}
+              onChange={(e) => setImageUrl(e.target.value)}
+            />
+            <Button text="convert" onClick={convertImageToText} />
+          </div>
+          <ImageWrapper imageUrl={imageUrl} />
+        </div>
+        <div className="content-item">
           {isLoading && <ProgressBar progress={progress} />}
           <TextWrapper text={text} />
         </div>

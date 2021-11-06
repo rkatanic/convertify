@@ -1,18 +1,27 @@
 .image-wrapper {
-  display: flex;
+  margin: 1rem 0;
+  height: 100%;
+  background-color: white;
+  border-radius: 5px;
+  align-items: center;
+  box-shadow: 1px 2px 24px -3px rgba(0, 0, 0, 0.4);
+  -webkit-box-shadow: 1px 2px 24px -3px rgba(0, 0, 0, 0.4);
+  -moz-box-shadow: 1px 2px 24px -3px rgba(0, 0, 0, 0.4);
   width: 500px;
   height: 500px;
-  border: 3px dashed gray;
-  align-items: center;
 
   &-text {
+    height: 100%;
     display: flex;
     flex-direction: column;
-    text-align: center;
-    margin: 0 2rem;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    font-style: italic;
   }
 
   img {
+    border-radius: 5px;
     width: 500px;
     height: 500px;
     position: relative;

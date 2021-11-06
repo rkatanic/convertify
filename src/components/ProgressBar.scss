@@ -1,15 +1,15 @@
 .progress-bar {
   height: 100%;
-  background-color: rgb(93, 165, 189);
+  background-color: #665cf2;
   position: absolute;
   transition: all 0.15s ease;
+  width: 100%;
 
   &-container {
     position: relative;
     width: 100%;
     height: 10px;
-    margin-top: -10px;
     background-color: lightgray;
-    border-radius: 4px;
+    margin-bottom: -10px;
   }
 }
