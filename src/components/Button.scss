@@ -12,6 +12,12 @@
   -webkit-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
   -moz-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
 
+  &:disabled {
+    background-image: linear-gradient(to right, #b0aecc 0%, #d7eee2 50%);
+    &:hover {
+      cursor: not-allowed;
+    }
+  }
   &:focus {
     outline: none;
   }

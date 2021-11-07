@@ -45,7 +45,11 @@ const URLInput = () => {
               value={imageUrl}
               onChange={(e) => setImageUrl(e.target.value)}
             />
-            <Button text="convert" onClick={convertImageToText} />
+            <Button
+              {...(!imageUrl && { disabled: true })}
+              text="convert"
+              onClick={convertImageToText}
+            />
           </div>
           <ImageWrapper imageUrl={imageUrl} />
         </div>

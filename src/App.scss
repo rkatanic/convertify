@@ -1,3 +1,16 @@
-#tsparticles {
-  z-index: -1 !important;
+@media only screen and (max-width: 600px) {
+  textarea,
+  img,
+  .text-wrapper,
+  .image-wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .imgurl-container {
+    flex-direction: column;
+  }
+  .imgurl-input {
+    margin: 1rem 0;
+  }
 }

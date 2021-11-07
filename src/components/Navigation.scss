@@ -1,9 +1,31 @@
 .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: white;
-  height: 70px;
+  height: 4rem;
   width: 100%;
   box-shadow: -1px 2px 14px 0px rgba(153, 110, 110, 0.2);
   -webkit-box-shadow: -1px 2px 14px 0px rgba(0, 0, 0, 0.2);
   -moz-box-shadow: -1px 2px 14px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
+
+  &-links {
+    display: flex;
+    height: 100%;
+    font-weight: 600;
+    border-bottom: 4px solid transparent;
+  }
+
+  &-link {
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    &:hover {
+      cursor: pointer;
+      border-bottom: 4px solid #665cf2;
+    }
+  }
 }
