@@ -1,13 +1,13 @@
+import { useContext } from "react";
 import URLInput from "./components/URLInput";
-import Particles from "react-tsparticles";
-import { particlesConfig } from "./config/particlesConfig";
+import ThemeContext from "./context/ThemeContext";
 
 import "./App.scss";
 
 const App = () => {
+  const { isDarkTheme } = useContext(ThemeContext);
   return (
-    <div className="App">
-      <Particles params={particlesConfig} />
+    <div className={isDarkTheme ? `App-dark` : `App-light`}>
       <URLInput />
     </div>
   );

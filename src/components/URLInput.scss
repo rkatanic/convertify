@@ -1,14 +1,18 @@
+@import "../scss/colors.scss";
 .content {
+  margin-top: 4rem;
   z-index: 1;
   width: 100%;
   display: flex;
-  align-items: center;
   flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $background-light;
 
   &-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    padding: 1rem 2rem;
+    background-color: $white;
+    width: 50%;
   }
 }
 
@@ -24,30 +28,60 @@
     display: flex;
     justify-content: space-between;
     width: 100%;
-    padding: 1rem;
+    margin: 1rem 0 1rem;
   }
 
   &-input {
+    background-color: $background-light;
+    border: 1px solid $background-light-two;
+    border-radius: 5px;
     font-style: italic;
     font-size: 1rem;
-    color: gray;
-    box-sizing: border-box;
-    border-radius: 5px;
-    border: none;
-    padding: 1rem;
-    width: 100%;
+    color: $gray-two;
     margin-right: 1rem;
-    box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
-    -webkit-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
-    -moz-box-shadow: 3px 3px 13px 0px rgba(0, 0, 0, 0.58);
-    z-index: 1;
+    width: 100%;
+    padding: 0 1rem;
+
+    &::-webkit-search-cancel-button {
+      &:hover {
+        cursor: pointer;
+      }
+      // Using the two lines below will allow you to insert a image
+      -webkit-appearance: none;
+      -webkit-user-modify: read-write !important;
+      height: 1rem;
+      content: url("../icons/delete.svg");
+    }
 
     &::placeholder {
-      color: gra;
+      color: $gray-two;
     }
 
     &:focus {
       outline: none;
+      border: 1px dashed $primary;
     }
+  }
+}
+.loading-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.icon-loading {
+  margin-right: 0.5rem;
+  height: 1rem;
+  fill: white;
+  transform: rotate(45deg);
+  animation: rotating 1.5s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
