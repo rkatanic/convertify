@@ -1,20 +1,38 @@
-import { useContext } from "react";
-import ThemeContext from "../context/ThemeContext";
-
 import "./IconButton.scss";
 
 interface Props {
   icon: JSX.Element;
   onClick: () => void;
   props?: any;
+  label?: string;
+  labelPosition?: "left" | "right";
 }
 
-const IconButton = ({ icon, onClick, ...props }: Props): JSX.Element => {
-  const { isDarkTheme } = useContext(ThemeContext);
+const IconButton = ({
+  icon,
+  onClick,
+  label,
+  labelPosition = "right",
+  ...props
+}: Props): JSX.Element => {
   return (
-    <button {...props} className="icon-button" type="button" onClick={onClick}>
-      {icon}
-    </button>
+    <div className="icon-button-container">
+      {label && (
+        <span
+          className={`icon-button-tooltip icon-button-tooltip-${labelPosition}`}
+        >
+          {label}
+        </span>
+      )}
+      <button
+        {...props}
+        className="icon-button"
+        type="button"
+        onClick={onClick}
+      >
+        {icon}
+      </button>
+    </div>
   );
 };
 

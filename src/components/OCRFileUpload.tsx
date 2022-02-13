@@ -21,7 +21,7 @@ const OCRFileUpload = ({ setImage }: Props): JSX.Element => {
       }
       setFile({
         name: shortName ? shortName : name,
-        size: (size / 1000).toFixed(2),
+        size: `${(size / 1000).toFixed(2)} KB`,
       });
       setImage(URL.createObjectURL(e.target?.files![0]));
     }
@@ -50,7 +50,7 @@ const OCRFileUpload = ({ setImage }: Props): JSX.Element => {
                 Supported formats are: <br /> jpg, png, bmp, pbm.
               </span>
             ) : (
-              file.size + " KB"
+              file.size
             )}
           </p>
         </div>

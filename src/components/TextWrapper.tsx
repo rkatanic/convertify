@@ -28,11 +28,14 @@ const TextWrapper = ({ text = "" }: Props) => {
     <div className="text-wrapper">
       <div className="text-wrapper-icons">
         <IconButton
+          labelPosition="left"
+          label="Copy to clipboard"
           icon={<CopyIcon />}
           onClick={copyText}
           {...(!text && { disabled: true })}
         />
         <IconButton
+          label="Download .txt file"
           icon={<DownloadFileIcon />}
           onClick={downloadTextToFile}
           {...(!text && { disabled: true })}
