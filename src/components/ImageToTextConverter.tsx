@@ -1,7 +1,6 @@
-import { useContext, useRef, useState } from "react";
+import { useState } from "react";
 import Tesseract, { RecognizeResult } from "tesseract.js";
 import ProgressBar from "./ProgressBar";
-import ThemeContext from "../context/ThemeContext";
 import OCRFileUpload from "./OCRFileUpload";
 import OCRByLink from "./OCRByLink";
 import TextWrapper from "./TextWrapper";
