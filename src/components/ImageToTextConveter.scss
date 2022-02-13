@@ -15,16 +15,16 @@
   margin: 0 0 1rem;
   position: relative;
   width: 100%;
-}
 
-.convert-options::before {
-  position: absolute;
-  content: "";
-  bottom: 0;
-  width: 100%;
-  height: 2px;
-  z-index: -1;
-  background-color: var(--color-gray-02);
+  &::before {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    z-index: -1;
+    background-color: var(--color-gray-02);
+  }
 }
 
 .convert-option {

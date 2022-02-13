@@ -22,10 +22,10 @@ body {
   color: var(--color-text);
   font-family: var(--font);
   background-image: radial-gradient(
-    rgba(123, 123, 123, 0.075) 1px,
+    hsla(0, 0%, 48%, 0.075) 1px,
     transparent 1px
   );
-  background-size: 14px 14px;
+  background-size: 0.825rem 0.825rem;
 }
 
 * {

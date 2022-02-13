@@ -6,10 +6,10 @@ import OCRByLink from "./OCRByLink";
 import TextWrapper from "./TextWrapper";
 import Button from "./Button";
 import Languages from "./Languages";
-import { Language } from "../types/Language";
+import Error from "./Error";
 import { DEFAULT_LANGUAGE } from "../constants/languages";
-import { ReactComponent as WarningTriangleIcon } from "../icons/warning-triangle.svg";
-import { ReactComponent as CloseIcon } from "../icons/close.svg";
+import { Language } from "../types/Language";
+import { ErrorType } from "../types/ErrorType";
 
 import "./ImageToTextConveter.scss";
 
@@ -20,7 +20,7 @@ interface State {
   text: string;
   progress: number;
   isLoading: boolean;
-  hasError: boolean;
+  error: ErrorType;
 }
 
 interface Action {
@@ -32,7 +32,7 @@ enum ActionType {
   SET_IMAGE,
   SET_LANGUAGE,
   SET_PROGRESS,
-  SET_HAS_ERROR,
+  SET_ERROR,
   CHANGE_CONVERSION_OPTION,
   CONVERT_NEW_IMAGE,
   CONVERT_IMAGE_INIT,
@@ -52,25 +52,25 @@ const initialState = {
   text: "",
   progress: 0,
   isLoading: false,
-  hasError: false,
+  error: ErrorType.NO_ERROR,
 };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
     case ActionType.SET_IMAGE:
-      return { ...state, image: action.payload };
+      return { ...state, image: action.payload, error: ErrorType.NO_ERROR };
     case ActionType.SET_LANGUAGE:
       return { ...state, language: action.payload };
     case ActionType.SET_PROGRESS:
       return { ...state, progress: action.payload };
-    case ActionType.SET_HAS_ERROR:
-      return { ...state, hasError: action.payload };
+    case ActionType.SET_ERROR:
+      return { ...state, error: action.payload };
     case ActionType.CHANGE_CONVERSION_OPTION:
       return {
         ...state,
         image: "",
         text: "",
-        hasError: false,
+        error: ErrorType.NO_ERROR,
         isLoading: false,
         conversionOption: action.payload,
       };
@@ -79,21 +79,31 @@ const reducer = (state: State, action: Action): State => {
         ...state,
         image: "",
         text: "",
-        hasError: false,
+        error: ErrorType.NO_ERROR,
         isLoading: false,
         progress: 0,
       };
     case ActionType.CONVERT_IMAGE_INIT:
-      return { ...state, isLoading: true, progress: 0, hasError: false };
+      return {
+        ...state,
+        isLoading: true,
+        progress: 0,
+        error: ErrorType.NO_ERROR,
+      };
     case ActionType.CONVERT_IMAGE_SUCCESS:
       return {
         ...state,
         text: action.payload,
         isLoading: false,
-        hasError: false,
+        error: ErrorType.NO_ERROR,
       };
     case ActionType.CONVERT_IMAGE_ERROR:
-      return { ...state, hasError: true, isLoading: false, image: "" };
+      return {
+        ...state,
+        error: ErrorType.CONVERSION_FAILED,
+        isLoading: false,
+        image: "",
+      };
     default:
       return state;
   }
@@ -108,7 +118,7 @@ const ImageToTextConverter = (): JSX.Element => {
     text,
     progress,
     isLoading,
-    hasError,
+    error,
   } = state;
 
   const convertImageToText = async (): Promise<void> => {
@@ -121,10 +131,14 @@ const ImageToTextConverter = (): JSX.Element => {
             dispatch({ type: ActionType.SET_PROGRESS, payload: m.progress });
         },
       });
-      dispatch({
-        type: ActionType.CONVERT_IMAGE_SUCCESS,
-        payload: result.data.text,
-      });
+      if (result.data.text) {
+        dispatch({
+          type: ActionType.CONVERT_IMAGE_SUCCESS,
+          payload: result.data.text,
+        });
+      } else {
+        dispatch({ type: ActionType.CONVERT_IMAGE_ERROR });
+      }
     } catch (err) {
       dispatch({ type: ActionType.CONVERT_IMAGE_ERROR });
     }
@@ -136,6 +150,10 @@ const ImageToTextConverter = (): JSX.Element => {
 
   const handleLanguageSet = (language: Language): void => {
     dispatch({ type: ActionType.SET_LANGUAGE, payload: language });
+  };
+
+  const handleErrorSet = (error: ErrorType): void => {
+    dispatch({ type: ActionType.SET_ERROR, payload: error });
   };
 
   const handleConvertOptionChange = (value: ConversionOption): void => {
@@ -170,18 +188,16 @@ const ImageToTextConverter = (): JSX.Element => {
           By Link
         </button>
       </div>
-      {hasError && (
-        <div className="error">
-          <div className="error-message">
-            <WarningTriangleIcon />
-            <span> Whoops! Image conversion failed. Please try again.</span>
-          </div>
-          <CloseIcon
-            onClick={() =>
-              dispatch({ type: ActionType.SET_HAS_ERROR, payload: false })
-            }
-          />
-        </div>
+      {error !== ErrorType.NO_ERROR && (
+        <Error
+          error={error}
+          onClose={() =>
+            dispatch({
+              type: ActionType.SET_ERROR,
+              payload: ErrorType.NO_ERROR,
+            })
+          }
+        />
       )}
       {!isLoading && !text && (
         <Languages
@@ -191,7 +207,10 @@ const ImageToTextConverter = (): JSX.Element => {
       )}
       {!isLoading && !text ? (
         conversionOption === ConversionOption.FILE_UPLOAD ? (
-          <OCRFileUpload setImage={handleImageSet} />
+          <OCRFileUpload
+            handleError={handleErrorSet}
+            setImage={handleImageSet}
+          />
         ) : (
           <OCRByLink setImage={handleImageSet} image={image} />
         )
