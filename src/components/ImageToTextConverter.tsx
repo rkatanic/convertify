@@ -5,13 +5,12 @@ import OCRFileUpload from "./OCRFileUpload";
 import OCRByLink from "./OCRByLink";
 import TextWrapper from "./TextWrapper";
 import Button from "./Button";
-import { DEFAULT_LANGUAGE } from "../constants/LANGUAGES";
 import Languages from "./Languages";
 import { Language } from "../types/Language";
+import { DEFAULT_LANGUAGE } from "../constants/LANGUAGES";
 import { ReactComponent as WarningTriangleIcon } from "../icons/warning-triangle.svg";
 import { ReactComponent as CloseIcon } from "../icons/close.svg";
 
-import "react-toastify/dist/ReactToastify.css";
 import "./ImageToTextConveter.scss";
 
 const URLInput = (): JSX.Element => {
