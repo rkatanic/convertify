@@ -1,0 +1,46 @@
+.ocr-file-upload {
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  border: 2px solid var(--color-gray-02);
+  background-color: var(--color-gray-01);
+  padding: 4rem 1rem;
+  border-radius: 8px;
+  position: relative;
+
+  &-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    &-txt {
+      width: 11rem;
+      &-title {
+        margin: 0.25rem 0;
+      }
+      &-desc {
+        color: var(--color-gray-03);
+        font-size: 0.825rem;
+        margin: 0;
+      }
+    }
+  }
+
+  .icon-file-upload,
+  .icon-file-upload-success {
+    width: 4rem;
+    height: 4rem;
+    fill: var(--color-white);
+  }
+
+  &-input {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}

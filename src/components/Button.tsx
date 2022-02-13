@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import ThemeContext from "../context/ThemeContext";
 import "./Button.scss";
 
 interface Props {
@@ -9,14 +7,8 @@ interface Props {
 }
 
 const Button = ({ text, onClick, ...props }: Props): JSX.Element => {
-  const { isDarkTheme } = useContext(ThemeContext);
   return (
-    <button
-      {...props}
-      className={isDarkTheme ? `button-outline` : "button"}
-      type="button"
-      onClick={onClick}
-    >
+    <button {...props} className="btn-outline" type="button" onClick={onClick}>
       {text}
     </button>
   );

@@ -1,0 +1,25 @@
+.icon-button {
+  outline: none;
+  padding: 0.625rem;
+  border-radius: 8px;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gray-02);
+  background-color: var(--color-gray-01);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-primary);
+
+    svg {
+      fill: var(--color-primary);
+    }
+  }
+
+  svg {
+    fill: var(--color-gray-03);
+    width: 0.825rem;
+    height: 0.825rem;
+  }
+}
