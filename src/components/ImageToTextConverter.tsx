@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useReducer } from "react";
 import Tesseract, { RecognizeResult } from "tesseract.js";
 import ProgressBar from "./ProgressBar";
 import OCRFileUpload from "./OCRFileUpload";
@@ -7,84 +7,168 @@ import TextWrapper from "./TextWrapper";
 import Button from "./Button";
 import Languages from "./Languages";
 import { Language } from "../types/Language";
-import { DEFAULT_LANGUAGE } from "../constants/LANGUAGES";
+import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { ReactComponent as WarningTriangleIcon } from "../icons/warning-triangle.svg";
 import { ReactComponent as CloseIcon } from "../icons/close.svg";
 
 import "./ImageToTextConveter.scss";
 
-const URLInput = (): JSX.Element => {
-  const [convertOption, setConvertOption] = useState("file-upload");
-  const [image, setImage] = useState("");
-  const [language, setLanguage] = useState<Language>(DEFAULT_LANGUAGE);
-  const [text, setText] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
-  const [progress, setProgress] = useState(0);
-  const [hasError, setHasError] = useState(false);
+interface State {
+  conversionOption: ConversionOption;
+  language: Language;
+  image: string;
+  text: string;
+  progress: number;
+  isLoading: boolean;
+  hasError: boolean;
+}
 
-  const convertImageToText = (): void => {
-    setProgress(0);
-    loadData();
-  };
+interface Action {
+  type: ActionType;
+  payload?: any;
+}
 
-  const loadData = async (): Promise<void> => {
-    setIsLoading(true);
+enum ActionType {
+  SET_IMAGE,
+  SET_LANGUAGE,
+  SET_PROGRESS,
+  SET_HAS_ERROR,
+  CHANGE_CONVERSION_OPTION,
+  CONVERT_NEW_IMAGE,
+  CONVERT_IMAGE_INIT,
+  CONVERT_IMAGE_SUCCESS,
+  CONVERT_IMAGE_ERROR,
+}
+
+enum ConversionOption {
+  FILE_UPLOAD,
+  BY_LINK,
+}
+
+const initialState = {
+  conversionOption: ConversionOption.FILE_UPLOAD,
+  language: DEFAULT_LANGUAGE,
+  image: "",
+  text: "",
+  progress: 0,
+  isLoading: false,
+  hasError: false,
+};
+
+const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case ActionType.SET_IMAGE:
+      return { ...state, image: action.payload };
+    case ActionType.SET_LANGUAGE:
+      return { ...state, language: action.payload };
+    case ActionType.SET_PROGRESS:
+      return { ...state, progress: action.payload };
+    case ActionType.SET_HAS_ERROR:
+      return { ...state, hasError: action.payload };
+    case ActionType.CHANGE_CONVERSION_OPTION:
+      return {
+        ...state,
+        image: "",
+        text: "",
+        hasError: false,
+        isLoading: false,
+        conversionOption: action.payload,
+      };
+    case ActionType.CONVERT_NEW_IMAGE:
+      return {
+        ...state,
+        image: "",
+        text: "",
+        hasError: false,
+        isLoading: false,
+        progress: 0,
+      };
+    case ActionType.CONVERT_IMAGE_INIT:
+      return { ...state, isLoading: true, progress: 0, hasError: false };
+    case ActionType.CONVERT_IMAGE_SUCCESS:
+      return {
+        ...state,
+        text: action.payload,
+        isLoading: false,
+        hasError: false,
+      };
+    case ActionType.CONVERT_IMAGE_ERROR:
+      return { ...state, hasError: true, isLoading: false, image: "" };
+    default:
+      return state;
+  }
+};
+
+const ImageToTextConverter = (): JSX.Element => {
+  const [state, dispatch] = useReducer(reducer, initialState);
+  const {
+    conversionOption,
+    language,
+    image,
+    text,
+    progress,
+    isLoading,
+    hasError,
+  } = state;
+
+  const convertImageToText = async (): Promise<void> => {
+    dispatch({ type: ActionType.CONVERT_IMAGE_INIT });
     let result: RecognizeResult;
     try {
       result = await Tesseract.recognize(image, language.key, {
         logger: (m) => {
-          m.status === "recognizing text" && setProgress(m.progress);
+          m.status === "recognizing text" &&
+            dispatch({ type: ActionType.SET_PROGRESS, payload: m.progress });
         },
       });
-      setText(result.data.text);
-      setIsLoading(false);
-      setHasError(false);
+      dispatch({
+        type: ActionType.CONVERT_IMAGE_SUCCESS,
+        payload: result.data.text,
+      });
     } catch (err) {
-      setImage("");
-      setIsLoading(false);
-      setHasError(true);
+      dispatch({ type: ActionType.CONVERT_IMAGE_ERROR });
     }
   };
 
   const handleImageSet = (value: string): void => {
-    setImage(value);
+    dispatch({ type: ActionType.SET_IMAGE, payload: value });
   };
 
   const handleLanguageSet = (language: Language): void => {
-    setLanguage(language);
+    dispatch({ type: ActionType.SET_LANGUAGE, payload: language });
   };
 
-  const handleConvertOptionChange = (value: string): void => {
-    setImage("");
-    setText("");
-    setHasError(false);
-    setConvertOption(value);
+  const handleConvertOptionChange = (value: ConversionOption): void => {
+    dispatch({ type: ActionType.CHANGE_CONVERSION_OPTION, payload: value });
   };
 
   const handleImageAndTextReset = (): void => {
-    setImage("");
-    setText("");
+    dispatch({ type: ActionType.CONVERT_NEW_IMAGE });
   };
 
   return (
     <div className="main-content">
       <div className="convert-options">
-        <h3
+        <button
+          disabled={isLoading}
           className={`convert-option ${
-            convertOption === "file-upload" ? "active" : ""
+            conversionOption === ConversionOption.FILE_UPLOAD ? "active" : ""
           }`}
-          onClick={() => handleConvertOptionChange("file-upload")}
+          onClick={() =>
+            handleConvertOptionChange(ConversionOption.FILE_UPLOAD)
+          }
         >
           File Upload
-        </h3>
-        <h3
+        </button>
+        <button
+          disabled={isLoading}
           className={`convert-option ${
-            convertOption === "by-link" ? "active" : ""
+            conversionOption === ConversionOption.BY_LINK ? "active" : ""
           }`}
-          onClick={() => handleConvertOptionChange("by-link")}
+          onClick={() => handleConvertOptionChange(ConversionOption.BY_LINK)}
         >
           By Link
-        </h3>
+        </button>
       </div>
       {hasError && (
         <div className="error">
@@ -92,7 +176,11 @@ const URLInput = (): JSX.Element => {
             <WarningTriangleIcon />
             <span> Whoops! Image conversion failed. Please try again.</span>
           </div>
-          <CloseIcon onClick={() => setHasError(false)} />
+          <CloseIcon
+            onClick={() =>
+              dispatch({ type: ActionType.SET_HAS_ERROR, payload: false })
+            }
+          />
         </div>
       )}
       {!isLoading && !text && (
@@ -102,7 +190,7 @@ const URLInput = (): JSX.Element => {
         />
       )}
       {!isLoading && !text ? (
-        convertOption === "file-upload" ? (
+        conversionOption === ConversionOption.FILE_UPLOAD ? (
           <OCRFileUpload setImage={handleImageSet} />
         ) : (
           <OCRByLink setImage={handleImageSet} image={image} />
@@ -127,4 +215,4 @@ const URLInput = (): JSX.Element => {
   );
 };
 
-export default URLInput;
+export default ImageToTextConverter;

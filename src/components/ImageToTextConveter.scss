@@ -28,12 +28,23 @@
 }
 
 .convert-option {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  font-size: 1.25rem;
+  font-family: var(--font);
+  font-weight: 500;
+  color: var(--clor-white);
   margin: 0;
   padding: 0.5rem 0;
   border-bottom: 2px solid transparent;
   width: 8rem;
   text-align: center;
   cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
 }
 
 .active.convert-option {

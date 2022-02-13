@@ -17,7 +17,6 @@ const OCRFileUpload = ({ setImage }: Props): JSX.Element => {
       let shortName = "";
       if (name.length > 16) {
         shortName = `${name.slice(0, 8)}...${name.slice(-8)}`;
-        console.log(shortName);
       }
       setFile({
         name: shortName ? shortName : name,

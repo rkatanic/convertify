@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Language } from "../types/Language";
-import { LANGUAGES } from "../constants/LANGUAGES";
 import { ReactComponent as ChevronDownIcon } from "../icons/chevron-down.svg";
+import { LANGUAGES } from "../constants/languages";
 
 import "./Languages.scss";
 
