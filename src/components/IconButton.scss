@@ -1,0 +1,77 @@
+.icon-button {
+  outline: none;
+  padding: 0.625rem;
+  border-radius: 8px;
+  transition: 0.25s;
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--color-gray-02);
+  background-color: var(--color-gray-01);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-primary);
+
+    svg {
+      fill: var(--color-primary);
+    }
+  }
+
+  svg {
+    fill: var(--color-gray-03);
+    width: 0.825rem;
+    height: 0.825rem;
+  }
+
+  &-container {
+    position: relative;
+    &:hover .icon-button-tooltip {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &-tooltip {
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0.25rem;
+    left: 3rem;
+    border-radius: 4px;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.825rem;
+    color: var(--color-gray-03);
+    border: 1px solid var(--color-gray-02);
+    background-color: var(--color-gray-01);
+    white-space: nowrap;
+
+    &-left {
+      left: unset;
+      right: calc(100% + 0.75rem);
+      &::before {
+        top: 0.5rem;
+        right: -0.5rem;
+        position: absolute;
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: var(--color-gray-02);
+        clip-path: polygon(0 0, 0% 100%, 100% 50%);
+      }
+    }
+
+    &-right {
+      &::before {
+        top: 0.5rem;
+        left: -0.5rem;
+        position: absolute;
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        background-color: var(--color-gray-02);
+        clip-path: polygon(0 50%, 100% 100%, 100% 0);
+      }
+    }
+  }
+}

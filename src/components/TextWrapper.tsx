@@ -1,18 +1,16 @@
 import { ReactComponent as CopyIcon } from "../icons/copy.svg";
-import { ReactComponent as ReloadIcon } from "../icons/reload.svg";
 import { ReactComponent as DownloadFileIcon } from "../icons/download-file.svg";
+import IconButton from "./IconButton";
 
 import "./TextWrapper.scss";
 
 interface Props {
   text?: string;
-  clearText: () => void;
 }
 
-const TextWrapper = ({ text = "", clearText }: Props) => {
+const TextWrapper = ({ text = "" }: Props) => {
   const copyText = (): void => {
     navigator.clipboard.writeText(text);
-    alert("Text copied successfully!");
   };
 
   const downloadTextToFile = (): void => {
@@ -29,13 +27,24 @@ const TextWrapper = ({ text = "", clearText }: Props) => {
   return (
     <div className="text-wrapper">
       <div className="text-wrapper-icons">
-        <ReloadIcon className="icon icon-reload" onClick={clearText} />
-        <CopyIcon className="icon icon-copy" onClick={copyText} />
-        <DownloadFileIcon className="icon" onClick={downloadTextToFile} />
+        <IconButton
+          labelPosition="left"
+          label="Copy to clipboard"
+          icon={<CopyIcon />}
+          onClick={copyText}
+          {...(!text && { disabled: true })}
+        />
+        <IconButton
+          label="Download .txt file"
+          icon={<DownloadFileIcon />}
+          onClick={downloadTextToFile}
+          {...(!text && { disabled: true })}
+        />
       </div>
       <textarea
         readOnly={true}
         value={text}
+        rows={24}
         placeholder="Your converted text will appear here..."
       />
     </div>

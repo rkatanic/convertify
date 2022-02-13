@@ -1,0 +1,28 @@
+export const DEFAULT_LANGUAGE = { key: "eng", value: "English" };
+
+export const LANGUAGES = [
+  { key: "afr", value: "Afrikaans" },
+  { key: "amh", value: "Amharic" },
+  { key: "ara", value: "Arabic" },
+  { key: "asm", value: "Assamese" },
+  { key: "aze", value: "Azerbaijani" },
+  { key: "aze_cyrl", value: "Azerbaijani - Cyrillic" },
+  { key: "bel", value: "Belarusian" },
+  { key: "ben", value: "Bengali" },
+  { key: "bod", value: "Tibetan" },
+  { key: "bos", value: "Bosnian" },
+  { key: "bul", value: "Bulgarian" },
+  { key: "cat", value: "Catalan; Valencian" },
+  { key: "ceb", value: "Cebuano" },
+  { key: "ces", value: "Czech" },
+  { key: "chi_sim", value: "Chinese - Simplified" },
+  { key: "chi_tra", value: "Chinese - Traditional" },
+  { key: "chr", value: "Cherokee" },
+  { key: "cym", value: "Welsh" },
+  { key: "dan", value: "Danish" },
+  { key: "deu", value: "German" },
+  { key: "dzo", value: "Dzongkha" },
+  { key: "ell", value: "Greek, Modern (1453-)" },
+  { key: "eng", value: "English" },
+  { key: "epo", value: "Esperanto" },
+];
