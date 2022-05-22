@@ -3,44 +3,34 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-width: 32rem;
-  padding: 0 1rem;
+  max-width: 40rem;
+  padding: 0 2rem;
   margin: 1rem auto;
+  gap: 1rem;
 }
 
 .convert-options {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 0 1rem;
   position: relative;
+  align-self: flex-start;
+  overflow: hidden;
   width: 100%;
-
-  &::before {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    width: 100%;
-    height: 2px;
-    z-index: -1;
-    background-color: var(--color-gray-02);
-  }
+  border-bottom: 1px solid var(--color-gray-600);
 }
 
 .convert-option {
   border: none;
   outline: none;
   background-color: transparent;
-  font-size: 1.25rem;
   font-family: var(--font);
+  font-size: 1rem;
   font-weight: 500;
-  color: var(--clor-white);
-  margin: 0;
-  padding: 0.5rem 0;
-  border-bottom: 2px solid transparent;
+  color: var(--color-gray-100);
+  padding: 1rem 0;
   width: 8rem;
   text-align: center;
   cursor: pointer;
+  position: relative;
+  border-bottom: 2px solid transparent;
 
   &:disabled {
     cursor: not-allowed;
@@ -48,45 +38,14 @@
 }
 
 .active.convert-option {
-  border-bottom: 2px solid var(--color-primary);
+  color: var(--color-white);
+  border-bottom: 2px solid var(--color-primary-600);
 }
 
-.languages {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-
-  select {
-    border: 2px solid var(--color-gray-02);
-    background-color: var(--color-gray-01);
-    padding: 0.5rem;
-    border-radius: 4px;
-    outline: none;
-    color: var(--color-white);
-  }
-}
-
-.error {
-  margin: 0 0 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 0.925rem;
+.convert-actions {
   width: 100%;
-  border: 1px solid var(--color-primary-two);
-  background-color: var(--color-primary-three);
-  border-radius: 4px;
-  padding: 0.5rem;
-
-  &-message {
-    color: var(--color-primary-two);
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  .icon-close {
-    cursor: pointer;
-  }
+  align-items: center;
+  justify-content: space-between;
+  display: flex;
+  gap: 1rem;
 }

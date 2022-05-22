@@ -4,15 +4,17 @@ interface Props {
 }
 const ProgressBar = ({ progress = 0 }: Props): JSX.Element => (
   <div className="progress-bar-container">
-    <p className="progress-bar-txt">
-      Converting: {Math.round(progress * 100)}%
-    </p>
     <div className="progress-bar">
       <div
         style={{ width: `${progress * 100}%` }}
         className="progress-bar-line"
-      ></div>
+      >
+        <div className="progress-bar-line-progress">
+          {Math.round(progress * 100)}%
+        </div>
+      </div>
     </div>
+    <p className="progress-bar-txt">Converting...</p>
   </div>
 );
 

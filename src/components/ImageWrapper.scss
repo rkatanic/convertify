@@ -1,29 +1,33 @@
 .image-wrapper {
   height: 100%;
-  border-radius: 5px;
-  background-color: var(--color-gray-01);
-  border: 2px solid var(--color-gray-02);
+  border-radius: 8px;
+  background-color: var(--color-gray-800);
+  border: 1px solid var(--color-gray-500);
   width: 100%;
   height: 400px;
 
   &-text {
     height: 100%;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 1rem;
+    text-align: center;
     padding: 0 2rem;
+
     h3 {
-      margin: 0;
+      margin: 0.5rem 0;
+      font-size: 1.5rem;
+      color: var(--color-white);
     }
+
     &-desc {
-      color: var(--color-gray-03);
-      font-size: 0.825rem;
+      color: var(--color-gray-100);
     }
 
     .icon-image-preview {
-      width: 4.5rem;
-      height: 4.5rem;
+      width: 3rem;
+      height: 3rem;
       fill: var(--color-white);
     }
   }

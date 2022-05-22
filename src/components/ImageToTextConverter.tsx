@@ -12,6 +12,7 @@ import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
 
 import "./ImageToTextConveter.scss";
+import Footer from "./Footer";
 
 interface State {
   conversionOption: ConversionOption;
@@ -199,37 +200,26 @@ const ImageToTextConverter = (): JSX.Element => {
           }
         />
       )}
-      {!isLoading && !text && (
+      {conversionOption === ConversionOption.FILE_UPLOAD ? (
+        <OCRFileUpload handleError={handleErrorSet} setImage={handleImageSet} />
+      ) : (
+        <OCRByLink setImage={handleImageSet} image={image} />
+      )}
+      <div className="convert-actions">
         <Languages
           setLanguage={handleLanguageSet}
           selectedLanguage={language}
         />
-      )}
-      {!isLoading && !text ? (
-        conversionOption === ConversionOption.FILE_UPLOAD ? (
-          <OCRFileUpload
-            handleError={handleErrorSet}
-            setImage={handleImageSet}
-          />
-        ) : (
-          <OCRByLink setImage={handleImageSet} image={image} />
-        )
-      ) : null}
+        <Button
+          {...{ disabled: !image }}
+          text="Convert file"
+          onClick={convertImageToText}
+        />
+      </div>
       {isLoading && <ProgressBar progress={progress} />}
-      {text ? (
-        <>
-          <TextWrapper text={text} />
-          <Button text="Convert New Image" onClick={handleImageAndTextReset} />
-        </>
-      ) : (
-        !isLoading && (
-          <Button
-            {...{ disabled: !image }}
-            text="Convert"
-            onClick={convertImageToText}
-          />
-        )
-      )}
+
+      {text && <TextWrapper text={text} />}
+      {/* <Footer /> */}
     </div>
   );
 };

@@ -26,27 +26,26 @@ const TextWrapper = ({ text = "" }: Props) => {
 
   return (
     <div className="text-wrapper">
-      <div className="text-wrapper-icons">
-        <IconButton
-          labelPosition="left"
-          label="Copy to clipboard"
-          icon={<CopyIcon />}
-          onClick={copyText}
-          {...(!text && { disabled: true })}
-        />
-        <IconButton
-          label="Download .txt file"
-          icon={<DownloadFileIcon />}
-          onClick={downloadTextToFile}
-          {...(!text && { disabled: true })}
-        />
+      <div className="text-wrapper-left">
+        <span>output</span>
       </div>
-      <textarea
-        readOnly={true}
-        value={text}
-        rows={24}
-        placeholder="Your converted text will appear here..."
-      />
+      <div className="text-wrapper-actions">
+        <div className="text-wrapper-icons">
+          <IconButton
+            label="Copy text"
+            icon={<CopyIcon />}
+            onClick={copyText}
+            {...(!text && { disabled: true })}
+          />
+          <IconButton
+            label="Download"
+            icon={<DownloadFileIcon />}
+            onClick={downloadTextToFile}
+            {...(!text && { disabled: true })}
+          />
+        </div>
+      </div>
+      <div className="text">{text}</div>
     </div>
   );
 };

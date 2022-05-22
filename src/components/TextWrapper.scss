@@ -3,25 +3,72 @@
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
-  margin: 0 0 1rem;
+  margin: 1rem 0;
+  position: relative;
+  min-height: 11rem;
+
+  &-left {
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    position: absolute;
+    left: -0.25rem;
+    height: 100%;
+    color: var(--color-gray-200);
+
+    span {
+      letter-spacing: -1px;
+      padding: 0.5rem 0;
+      background-color: var(--color-gray-900);
+      margin-top: 2rem;
+    }
+
+    &::before {
+      z-index: -1;
+      left: 7px;
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-gray-600);
+    }
+  }
+
+  &-actions {
+    right: -1.25rem;
+    position: absolute;
+    height: 100%;
+
+    &::before {
+      z-index: -1;
+      right: 50%;
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 100%;
+      background-color: var(--color-gray-600);
+    }
+  }
 
   &-icons {
     display: flex;
-    gap: 0.75rem;
-    margin-bottom: 0.75rem;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
   }
 }
 
-textarea {
+.text {
+  height: 100%;
   width: 100%;
-  border: 2px solid var(--color-gray-02);
-  color: var(--color-white);
-  background-color: var(--color-gray-01);
-  border-radius: 5px;
-  padding: 1rem;
+  border-radius: 1px;
   box-sizing: border-box;
   resize: none;
   font-family: var(--font);
+  font-size: 1.25rem;
+  padding: 0 3rem;
 
   &:focus {
     outline: none;

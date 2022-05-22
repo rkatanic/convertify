@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--color-white-three);
+    font-family: var(--font);
+    background:
+        radial-gradient(var(--color-gray-800) 1%, transparent 0%) 0 0;
+    background-color: var(--color-gray-900);
+    background-size: 5px 5px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-gray-700);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-gray-500);
+}
+
+b {
+    color: var(--color-white);
+}
+
+hr {
+    border-color: var(--color-gray-600);
+    border-top: 0;
+    margin: 0;
+    padding: 0;
+}

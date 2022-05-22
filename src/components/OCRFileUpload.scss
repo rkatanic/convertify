@@ -5,25 +5,29 @@
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  border: 2px solid var(--color-gray-02);
-  background-color: var(--color-gray-01);
-  padding: 4rem 1rem;
+  background-color: var(--color-gray-800);
+  border: 1px dashed var(--color-gray-500);
+  padding: 0 1rem;
+  height: 16rem;
   border-radius: 8px;
   position: relative;
 
   &-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    text-align: center;
 
     &-txt {
-      width: 11rem;
+
       &-title {
-        margin: 0.25rem 0;
+        font-size: 1.5rem;
+        color: var(--color-white);
+        margin: 0.5rem 0;
       }
+
       &-desc {
-        color: var(--color-gray-03);
-        font-size: 0.825rem;
+        color: var(--color-gray-100);
         margin: 0;
       }
     }
@@ -31,13 +35,9 @@
 
   .icon-file-upload,
   .icon-file-upload-success {
-    width: 4rem;
-    height: 4rem;
+    width: 3rem;
+    height: 3rem;
     fill: var(--color-white);
-  }
-
-  .icon-file-upload {
-    margin: 0.75rem 0 0;
   }
 
   &-input {

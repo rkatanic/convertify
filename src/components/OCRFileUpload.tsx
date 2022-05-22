@@ -61,14 +61,14 @@ const OCRFileUpload = ({ setImage, handleError }: Props): JSX.Element => {
         )}
         <div className="ocr-file-upload-container-txt">
           <h3 className="ocr-file-upload-container-txt-title">
-            {file.name === "" ? "Upload an image" : file.name}
+            {file.name === "" ? "Select file to upload" : file.name}
           </h3>
           <p className="ocr-file-upload-container-txt-desc">
             {file.size === "" ? (
-              <span>
+              <>
                 Supported formats are: <br /> jpg, jpeg, png, bmp, pbm. <br />
-                Max file upload size is 5 MB.
-              </span>
+                Max file upload size is <b>5 MB</b>.
+              </>
             ) : (
               file.size
             )}

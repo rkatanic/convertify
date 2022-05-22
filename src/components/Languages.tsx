@@ -35,25 +35,28 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
 
   return (
     <div className="languages">
-      <span>Choose a language:</span>
+      <span>Language:</span>
       <div className="languages-select" ref={ref}>
         <div className="selected-language" onClick={handleDropdownToggle}>
           {selectedLanguage.value}
-          <ChevronDownIcon />
+          <div className="caret-down"></div>
         </div>
         {showDropdown && (
           <ul>
             {LANGUAGES.map((language: Language) => (
-              <li
-                className={`option ${
-                  selectedLanguage.key === language.key ? "option-active" : ""
-                }`}
-                onClick={() => handleLanguageSelect(language)}
-                key={language.key}
-                value={language.key}
-              >
-                {language.value}
-              </li>
+              <>
+                <li
+                  className={`option ${
+                    selectedLanguage.key === language.key ? "option-active" : ""
+                  }`}
+                  onClick={() => handleLanguageSelect(language)}
+                  key={language.key}
+                  value={language.key}
+                >
+                  {language.value}
+                </li>
+                <hr />
+              </>
             ))}
           </ul>
         )}
