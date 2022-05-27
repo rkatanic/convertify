@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TestWrapper should render 1`] = `
+<body>
+  <div>
+    <div
+      class="text-wrapper"
+    >
+      <div
+        class="text-wrapper-left"
+      >
+        <span>
+          output
+        </span>
+      </div>
+      <div
+        class="text-wrapper-actions"
+      >
+        <div
+          class="text-wrapper-icons"
+        >
+          <div
+            class="icon-button-container"
+          >
+            <span
+              class="icon-button-tooltip"
+            >
+              Copy text
+            </span>
+            <button
+              class="icon-button"
+              type="button"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </button>
+          </div>
+          <div
+            class="icon-button-container"
+          >
+            <span
+              class="icon-button-tooltip"
+            >
+              Download
+            </span>
+            <button
+              class="icon-button"
+              type="button"
+            >
+              <svg>
+                download-file.svg
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="text"
+      >
+        text
+      </div>
+    </div>
+  </div>
+</body>
+`;

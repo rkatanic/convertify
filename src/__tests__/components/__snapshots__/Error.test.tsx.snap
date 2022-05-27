@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Error should initially be without error message 1`] = `
+<body>
+  <div>
+    <div
+      class="error"
+    >
+      <div
+        class="error-message"
+      >
+        <svg>
+          warning-triangle.svg
+        </svg>
+        <span />
+      </div>
+      <svg
+        data-testid="error-icon-close"
+      >
+        close.svg
+      </svg>
+    </div>
+  </div>
+</body>
+`;

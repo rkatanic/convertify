@@ -17,7 +17,7 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
       case ErrorType.UNSUPPORTED_FILE_FORMAT:
         return "Unsupported file format.";
       case ErrorType.MAX_FILE_SIZE_EXCEEDED:
-        return "Maximum file size exceeded! Please use file up to 10 MB.";
+        return "Maximum file size exceeded! Please use file up to 5 MB.";
       default:
         return "";
     }
@@ -29,7 +29,7 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
         <WarningTriangleIcon />
         <span>{showErrorMessage()}</span>
       </div>
-      <CloseIcon onClick={onClose} />
+      <CloseIcon data-testid="error-icon-close" onClick={onClose} />
     </div>
   );
 };

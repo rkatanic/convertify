@@ -12,7 +12,6 @@ import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
 
 import "./ImageToTextConveter.scss";
-import Footer from "./Footer";
 
 interface State {
   conversionOption: ConversionOption;

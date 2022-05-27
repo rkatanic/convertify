@@ -1,0 +1,526 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Languages should display languages list 1`] = `
+<body>
+  <div>
+    <div
+      class="languages"
+    >
+      <span>
+        Language:
+      </span>
+      <div
+        class="languages-select"
+      >
+        <div
+          class="selected-language"
+        >
+          English
+          <div
+            class="caret-down"
+          />
+        </div>
+        <ul
+          data-testid="languages-list"
+        >
+          <li
+            class="option "
+            value="afr"
+          >
+            Afrikaans
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="amh"
+          >
+            Amharic
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ara"
+          >
+            Arabic
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="asm"
+          >
+            Assamese
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="aze"
+          >
+            Azerbaijani
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="aze_cyrl"
+          >
+            Azerbaijani - Cyrillic
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="bel"
+          >
+            Belarusian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ben"
+          >
+            Bengali
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="bod"
+          >
+            Tibetan
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="bos"
+          >
+            Bosnian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="bul"
+          >
+            Bulgarian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="cat"
+          >
+            Catalan; Valencian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ceb"
+          >
+            Cebuano
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ces"
+          >
+            Czech
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="chi_sim"
+          >
+            Chinese - Simplified
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="chi_tra"
+          >
+            Chinese - Traditional
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="chr"
+          >
+            Cherokee
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="cym"
+          >
+            Welsh
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="dan"
+          >
+            Danish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="deu"
+          >
+            German
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="dzo"
+          >
+            Dzongkha
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ell"
+          >
+            Greek, Modern (1453-)
+          </li>
+          <hr />
+          <li
+            class="option option-active"
+            value="eng"
+          >
+            English
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="epo"
+          >
+            Esperanto
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="est"
+          >
+            Estonian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="fin"
+          >
+            Finnish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="fra"
+          >
+            French
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="gle"
+          >
+            Irish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="hat"
+          >
+            Haitian; Haitian Creole
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="heb"
+          >
+            Hebrew
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="hin"
+          >
+            Hindi
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="hun"
+          >
+            Hungarian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ind"
+          >
+            Indonesian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="isl"
+          >
+            Italian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="jpn"
+          >
+            Japanese
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="kat"
+          >
+            Georgian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="kor"
+          >
+            Korean
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="kur"
+          >
+            Kurdish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="lao"
+          >
+            Lao
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="lat"
+          >
+            Latvian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="lit"
+          >
+            Lithuanian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="mal"
+          >
+            Malayalam
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="mkd"
+          >
+            Macedonian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="mlt"
+          >
+            Maltese
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="mya"
+          >
+            Burmese
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="nep"
+          >
+            Nepali
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="nor"
+          >
+            Norwegian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="pol"
+          >
+            Polish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="por"
+          >
+            Portuguese
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ron"
+          >
+            Romanian; Moldavian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="rus"
+          >
+            Russian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="san"
+          >
+            Sanskrit
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="slk"
+          >
+            Slovak
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="slv"
+          >
+            Slovenian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="spa"
+          >
+            Spanish; Castilian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="srp"
+          >
+            Serbian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="srp_latn"
+          >
+            Serbian - Latin
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="swa"
+          >
+            Swahili
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="swe"
+          >
+            Swedish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="syr"
+          >
+            Syriac
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="tur"
+          >
+            Turkish
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="tha"
+          >
+            Thai
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="ukr"
+          >
+            Ukrainian
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="uzb"
+          >
+            Uzbek
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="uzb_cyrl"
+          >
+            Uzbek - Cyrillic
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="vie"
+          >
+            Vietnamese
+          </li>
+          <hr />
+          <li
+            class="option "
+            value="yid"
+          >
+            Yiddish
+          </li>
+          <hr />
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Languages should render 1`] = `
+<body>
+  <div>
+    <div
+      class="languages"
+    >
+      <span>
+        Language:
+      </span>
+      <div
+        class="languages-select"
+      >
+        <div
+          class="selected-language"
+        >
+          English
+          <div
+            class="caret-down"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -42,15 +42,15 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
           <div className="caret-down"></div>
         </div>
         {showDropdown && (
-          <ul>
-            {LANGUAGES.map((language: Language) => (
+          <ul data-testid="languages-list">
+            {LANGUAGES.map((language: Language, i) => (
               <>
                 <li
                   className={`option ${
                     selectedLanguage.key === language.key ? "option-active" : ""
                   }`}
                   onClick={() => handleLanguageSelect(language)}
-                  key={language.key}
+                  key={i}
                   value={language.key}
                 >
                   {language.value}

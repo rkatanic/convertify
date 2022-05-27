@@ -11,6 +11,7 @@ const OCRByLink = ({ setImage, image }: Props): JSX.Element => {
   return (
     <div className="ocr-by-link">
       <input
+        data-testid="ocr-image-link"
         type="text"
         placeholder="Enter image URL ..."
         className="ocr-by-link-input"

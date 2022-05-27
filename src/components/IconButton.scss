@@ -35,30 +35,30 @@
     padding: 0.325rem 0.75rem;
     font-size: 0.825rem;
     color: var(--color-white-two);
-    border: 2px solid var(--color-gray-600);
+    border: 1px solid var(--color-gray-500);
     background-color: var(--color-gray-800);
     border-radius: 4px;
     white-space: nowrap;
     box-shadow: 0 4px 8px var(--color-black-three);
 
     &::before {
-      top: 5px;
-      left: -9px;
+      top: 6px;
+      left: -7px;
       position: absolute;
       content: "";
-      width: 10px;
-      height: 16px;
-      background-color: var(--color-gray-600);
+      width: 7px;
+      height: 14px;
+      background-color: var(--color-gray-500);
       clip-path: polygon(0 50%, 100% 100%, 100% 0);
     }
 
     &::after {
-      top: 7px;
+      top: 8px;
       left: -5px;
       position: absolute;
       content: "";
-      width: 6px;
-      height: 12px;
+      width: 5px;
+      height: 10px;
       background-color: var(--color-gray-800);
       clip-path: polygon(0 50%, 100% 100%, 100% 0);
     }

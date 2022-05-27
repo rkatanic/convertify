@@ -8,7 +8,7 @@ interface Props {
 
 const Button = ({ text, onClick, ...props }: Props): JSX.Element => {
   return (
-    <button {...props} className="btn-outline" type="button" onClick={onClick}>
+    <button {...props} className="btn" type="button" onClick={onClick}>
       {text}
     </button>
   );
