@@ -10,40 +10,23 @@ import Error from "./Error";
 import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
+import { conversionReducer } from "../reducer/conversionReducer";
+import { ConversionOption } from "../types/ConversionOption";
+import { ActionType } from "../types/Action";
+import {
+  changeConvertOption,
+  convertImageError,
+  convertImageInit,
+  convertImageSuccess,
+  setError,
+  setImage,
+  setLanguage,
+  setProgress,
+} from "../actions/conversionActions";
+import { ReactComponent as FileTextIcon } from "../icons/file-text.svg";
+import { ReactComponent as LinkIcon } from "../icons/link.svg";
 
 import "./ImageToTextConveter.scss";
-
-interface State {
-  conversionOption: ConversionOption;
-  language: Language;
-  image: string;
-  text: string;
-  progress: number;
-  isLoading: boolean;
-  error: ErrorType;
-}
-
-interface Action {
-  type: ActionType;
-  payload?: any;
-}
-
-enum ActionType {
-  SET_IMAGE,
-  SET_LANGUAGE,
-  SET_PROGRESS,
-  SET_ERROR,
-  CHANGE_CONVERSION_OPTION,
-  CONVERT_NEW_IMAGE,
-  CONVERT_IMAGE_INIT,
-  CONVERT_IMAGE_SUCCESS,
-  CONVERT_IMAGE_ERROR,
-}
-
-enum ConversionOption {
-  FILE_UPLOAD,
-  BY_LINK,
-}
 
 const initialState = {
   conversionOption: ConversionOption.FILE_UPLOAD,
@@ -55,62 +38,8 @@ const initialState = {
   error: ErrorType.NO_ERROR,
 };
 
-const reducer = (state: State, action: Action): State => {
-  switch (action.type) {
-    case ActionType.SET_IMAGE:
-      return { ...state, image: action.payload, error: ErrorType.NO_ERROR };
-    case ActionType.SET_LANGUAGE:
-      return { ...state, language: action.payload };
-    case ActionType.SET_PROGRESS:
-      return { ...state, progress: action.payload };
-    case ActionType.SET_ERROR:
-      return { ...state, error: action.payload };
-    case ActionType.CHANGE_CONVERSION_OPTION:
-      return {
-        ...state,
-        image: "",
-        text: "",
-        error: ErrorType.NO_ERROR,
-        isLoading: false,
-        conversionOption: action.payload,
-      };
-    case ActionType.CONVERT_NEW_IMAGE:
-      return {
-        ...state,
-        image: "",
-        text: "",
-        error: ErrorType.NO_ERROR,
-        isLoading: false,
-        progress: 0,
-      };
-    case ActionType.CONVERT_IMAGE_INIT:
-      return {
-        ...state,
-        isLoading: true,
-        progress: 0,
-        error: ErrorType.NO_ERROR,
-      };
-    case ActionType.CONVERT_IMAGE_SUCCESS:
-      return {
-        ...state,
-        text: action.payload,
-        isLoading: false,
-        error: ErrorType.NO_ERROR,
-      };
-    case ActionType.CONVERT_IMAGE_ERROR:
-      return {
-        ...state,
-        error: ErrorType.CONVERSION_FAILED,
-        isLoading: false,
-        image: "",
-      };
-    default:
-      return state;
-  }
-};
-
 const ImageToTextConverter = (): JSX.Element => {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(conversionReducer, initialState);
   const {
     conversionOption,
     language,
@@ -122,46 +51,38 @@ const ImageToTextConverter = (): JSX.Element => {
   } = state;
 
   const convertImageToText = async (): Promise<void> => {
-    dispatch({ type: ActionType.CONVERT_IMAGE_INIT });
+    dispatch(convertImageInit());
     let result: RecognizeResult;
     try {
       result = await Tesseract.recognize(image, language.key, {
         logger: (m) => {
-          m.status === "recognizing text" &&
-            dispatch({ type: ActionType.SET_PROGRESS, payload: m.progress });
+          m.status === "recognizing text" && dispatch(setProgress(m.progress));
         },
       });
       if (result.data.text) {
-        dispatch({
-          type: ActionType.CONVERT_IMAGE_SUCCESS,
-          payload: result.data.text,
-        });
+        dispatch(convertImageSuccess(result.data.text));
       } else {
-        dispatch({ type: ActionType.CONVERT_IMAGE_ERROR });
+        dispatch(convertImageError());
       }
     } catch (err) {
-      dispatch({ type: ActionType.CONVERT_IMAGE_ERROR });
+      dispatch(convertImageError());
     }
   };
 
   const handleImageSet = (value: string): void => {
-    dispatch({ type: ActionType.SET_IMAGE, payload: value });
+    dispatch(setImage(value));
   };
 
   const handleLanguageSet = (language: Language): void => {
-    dispatch({ type: ActionType.SET_LANGUAGE, payload: language });
+    dispatch(setLanguage(language));
   };
 
   const handleErrorSet = (error: ErrorType): void => {
-    dispatch({ type: ActionType.SET_ERROR, payload: error });
+    dispatch(setError(error));
   };
 
   const handleConvertOptionChange = (value: ConversionOption): void => {
-    dispatch({ type: ActionType.CHANGE_CONVERSION_OPTION, payload: value });
-  };
-
-  const handleImageAndTextReset = (): void => {
-    dispatch({ type: ActionType.CONVERT_NEW_IMAGE });
+    dispatch(changeConvertOption(value));
   };
 
   return (
@@ -176,6 +97,7 @@ const ImageToTextConverter = (): JSX.Element => {
             handleConvertOptionChange(ConversionOption.FILE_UPLOAD)
           }
         >
+          <FileTextIcon />
           File Upload
         </button>
         <button
@@ -185,6 +107,7 @@ const ImageToTextConverter = (): JSX.Element => {
           }`}
           onClick={() => handleConvertOptionChange(ConversionOption.BY_LINK)}
         >
+          <LinkIcon />
           By Link
         </button>
       </div>
@@ -210,7 +133,7 @@ const ImageToTextConverter = (): JSX.Element => {
           selectedLanguage={language}
         />
         <Button
-          {...{ disabled: !image }}
+          {...{ disabled: !image || isLoading }}
           text="Convert file"
           onClick={convertImageToText}
         />
@@ -218,7 +141,6 @@ const ImageToTextConverter = (): JSX.Element => {
       {isLoading && <ProgressBar progress={progress} />}
 
       {text && <TextWrapper text={text} />}
-      {/* <Footer /> */}
     </div>
   );
 };

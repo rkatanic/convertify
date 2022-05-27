@@ -21,7 +21,7 @@
     &-txt {
 
       &-title {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
         color: var(--color-white);
         margin: 0.5rem 0;
       }
@@ -29,6 +29,7 @@
       &-desc {
         color: var(--color-gray-100);
         margin: 0;
+        font-size: 0.875rem;
       }
     }
   }

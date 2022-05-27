@@ -7,8 +7,8 @@
   flex-wrap: wrap;
 
   span {
-    color: var(--color-white);
-    font-size: 1rem;
+    color: var(--color-gray-100);
+    font-size: 0.875rem;
   }
 }
 
@@ -24,7 +24,7 @@
 
   .selected-language {
     width: 14rem;
-    padding: 0.625rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     border-radius: 6px;
     background-color: var(--color-gray-800);
     border: 1px solid var(--color-gray-500);
@@ -69,7 +69,7 @@
   }
 
   li {
-    padding: 0.75rem;
+    padding: 0.5rem 0.75rem;
   }
 }
 
