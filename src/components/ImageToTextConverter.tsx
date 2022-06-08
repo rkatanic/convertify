@@ -15,17 +15,14 @@ import { ConversionOption } from "../types/ConversionOption";
 import { ActionType } from "../types/Action";
 import {
   changeConvertOption,
-  convertImageError,
-  convertImageInit,
-  convertImageSuccess,
   setError,
   setImage,
   setLanguage,
-  setProgress,
 } from "../actions/conversionActions";
 
 import "./ImageToTextConveter.scss";
 import Navigation from "./Navigation";
+import { convertImageToText } from "../util/OCRConverterUtils";
 
 const initialState = {
   conversionOption: ConversionOption.FILE_UPLOAD,
@@ -42,25 +39,6 @@ const ImageToTextConverter = (): JSX.Element => {
     { conversionOption, language, image, text, progress, isLoading, error },
     dispatch,
   ] = useReducer(conversionReducer, initialState);
-
-  const convertImageToText = async (): Promise<void> => {
-    dispatch(convertImageInit());
-    let result: RecognizeResult;
-    try {
-      result = await Tesseract.recognize(image, language.key, {
-        logger: (m) => {
-          m.status === "recognizing text" && dispatch(setProgress(m.progress));
-        },
-      });
-      if (result.data.text) {
-        dispatch(convertImageSuccess(result.data.text));
-      } else {
-        dispatch(convertImageError());
-      }
-    } catch (err) {
-      dispatch(convertImageError());
-    }
-  };
 
   const handleImageSet = (value: string): void => {
     dispatch(setImage(value));
@@ -109,7 +87,7 @@ const ImageToTextConverter = (): JSX.Element => {
         <Button
           {...{ disabled: !image || isLoading }}
           text="Convert file"
-          onClick={convertImageToText}
+          onClick={() => convertImageToText(dispatch, image, language)}
         />
       </div>
       {isLoading && <ProgressBar progress={progress} />}
