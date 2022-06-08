@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation should render 1`] = `
+<body>
+  <div>
+    <div
+      class="convert-options"
+    >
+      <button
+        class="convert-option active"
+      >
+        <svg>
+          file-text.svg
+        </svg>
+        File Upload
+      </button>
+      <button
+        class="convert-option "
+      >
+        <svg>
+          link.svg
+        </svg>
+        By Link
+      </button>
+    </div>
+  </div>
+</body>
+`;

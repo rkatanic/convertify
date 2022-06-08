@@ -23,10 +23,9 @@ import {
   setLanguage,
   setProgress,
 } from "../actions/conversionActions";
-import { ReactComponent as FileTextIcon } from "../icons/file-text.svg";
-import { ReactComponent as LinkIcon } from "../icons/link.svg";
 
 import "./ImageToTextConveter.scss";
+import Navigation from "./Navigation";
 
 const initialState = {
   conversionOption: ConversionOption.FILE_UPLOAD,
@@ -87,30 +86,11 @@ const ImageToTextConverter = (): JSX.Element => {
 
   return (
     <div className="main-content">
-      <div className="convert-options">
-        <button
-          disabled={isLoading}
-          className={`convert-option ${
-            conversionOption === ConversionOption.FILE_UPLOAD ? "active" : ""
-          }`}
-          onClick={() =>
-            handleConvertOptionChange(ConversionOption.FILE_UPLOAD)
-          }
-        >
-          <FileTextIcon />
-          File Upload
-        </button>
-        <button
-          disabled={isLoading}
-          className={`convert-option ${
-            conversionOption === ConversionOption.BY_LINK ? "active" : ""
-          }`}
-          onClick={() => handleConvertOptionChange(ConversionOption.BY_LINK)}
-        >
-          <LinkIcon />
-          By Link
-        </button>
-      </div>
+      <Navigation
+        isLoading={isLoading}
+        conversionOption={conversionOption}
+        changeConversionOption={handleConvertOptionChange}
+      />
       {error !== ErrorType.NO_ERROR && (
         <Error
           error={error}
