@@ -38,16 +38,10 @@ const initialState = {
 };
 
 const ImageToTextConverter = (): JSX.Element => {
-  const [state, dispatch] = useReducer(conversionReducer, initialState);
-  const {
-    conversionOption,
-    language,
-    image,
-    text,
-    progress,
-    isLoading,
-    error,
-  } = state;
+  const [
+    { conversionOption, language, image, text, progress, isLoading, error },
+    dispatch,
+  ] = useReducer(conversionReducer, initialState);
 
   const convertImageToText = async (): Promise<void> => {
     dispatch(convertImageInit());

@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`OCRFileUpload should render 1`] = `
+<body>
+  <div>
+    <div
+      class="ocr-file-upload"
+    >
+      <input
+        class="ocr-file-upload-input"
+        data-testid="ocr-file-upload-input"
+        title=""
+        type="file"
+      />
+      <div
+        class="ocr-file-upload-container"
+      >
+        <svg>
+          file-upload.svg
+        </svg>
+        <div
+          class="ocr-file-upload-container-txt"
+        >
+          <h3
+            class="ocr-file-upload-container-txt-title"
+          >
+            Select file to upload
+          </h3>
+          <p
+            class="ocr-file-upload-container-txt-desc"
+          >
+            Supported formats are: 
+            <br />
+             jpg, jpeg, png, bmp, pbm. 
+            <br />
+            Max file upload size is 
+            <b>
+              5 MB
+            </b>
+            .
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;
