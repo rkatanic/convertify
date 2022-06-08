@@ -1,8 +1,10 @@
 import "./ProgressBar.scss";
+
 interface Props {
-  progress?: number;
+  progress: number;
 }
-const ProgressBar = ({ progress = 0 }: Props): JSX.Element => (
+
+const ProgressBar = ({ progress }: Props): JSX.Element => (
   <div className="progress-bar-container">
     <div className="progress-bar">
       <div

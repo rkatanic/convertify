@@ -1,5 +1,6 @@
 import { ReactComponent as CopyIcon } from "../icons/copy.svg";
 import { ReactComponent as DownloadFileIcon } from "../icons/download-file.svg";
+import { copyText, downloadTextFile } from "../util/OCRConverterUtils";
 import IconButton from "./IconButton";
 
 import "./TextWrapper.scss";
@@ -9,21 +10,6 @@ interface Props {
 }
 
 const TextWrapper = ({ text = "" }: Props) => {
-  const copyText = (): void => {
-    navigator.clipboard.writeText(text);
-  };
-
-  const downloadTextToFile = (): void => {
-    const element = document.createElement("a");
-    const file = new Blob([text], {
-      type: "text/plain",
-    });
-    element.href = URL.createObjectURL(file);
-    element.download = "myFile.txt";
-    document.body.appendChild(element); // Required for this to work in FireFox
-    element.click();
-  };
-
   return (
     <div className="text-wrapper">
       <div className="text-wrapper-left">
@@ -34,13 +20,13 @@ const TextWrapper = ({ text = "" }: Props) => {
           <IconButton
             label="Copy text"
             icon={<CopyIcon />}
-            onClick={copyText}
+            onClick={() => copyText(text)}
             {...(!text && { disabled: true })}
           />
           <IconButton
             label="Download"
             icon={<DownloadFileIcon />}
-            onClick={downloadTextToFile}
+            onClick={() => downloadTextFile(text)}
             {...(!text && { disabled: true })}
           />
         </div>
