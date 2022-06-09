@@ -9,7 +9,6 @@ exports[`OCRFileUpload should render 1`] = `
       <input
         class="ocr-file-upload-input"
         data-testid="ocr-file-upload-input"
-        title=""
         type="file"
       />
       <div

@@ -1,0 +1,199 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ImageToTextConverter should render 1`] = `
+<body>
+  <div>
+    <div
+      class="main-content"
+    >
+      <div
+        class="convert-options"
+      >
+        <button
+          class="convert-option active"
+        >
+          <svg>
+            file-text.svg
+          </svg>
+          File Upload
+        </button>
+        <button
+          class="convert-option "
+        >
+          <svg>
+            link.svg
+          </svg>
+          By Link
+        </button>
+      </div>
+      <div
+        class="ocr-file-upload"
+      >
+        <input
+          class="ocr-file-upload-input"
+          data-testid="ocr-file-upload-input"
+          type="file"
+        />
+        <div
+          class="ocr-file-upload-container"
+        >
+          <svg>
+            file-upload.svg
+          </svg>
+          <div
+            class="ocr-file-upload-container-txt"
+          >
+            <h3
+              class="ocr-file-upload-container-txt-title"
+            >
+              Select file to upload
+            </h3>
+            <p
+              class="ocr-file-upload-container-txt-desc"
+            >
+              Supported formats are: 
+              <br />
+               jpg, jpeg, png, bmp, pbm. 
+              <br />
+              Max file upload size is 
+              <b>
+                5 MB
+              </b>
+              .
+            </p>
+          </div>
+        </div>
+      </div>
+      <div
+        class="convert-actions"
+      >
+        <div
+          class="languages"
+        >
+          <span>
+            Language:
+          </span>
+          <div
+            class="languages-select"
+          >
+            <div
+              class="selected-language"
+            >
+              English
+              <div
+                class="caret-down"
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn"
+          disabled=""
+          type="button"
+        >
+          Convert file
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</body>
+`;
+
+exports[`ImageToTextConverter should render by link conversion 1`] = `
+<body>
+  <div>
+    <div
+      class="main-content"
+    >
+      <div
+        class="convert-options"
+      >
+        <button
+          class="convert-option "
+        >
+          <svg>
+            file-text.svg
+          </svg>
+          File Upload
+        </button>
+        <button
+          class="convert-option active"
+        >
+          <svg>
+            link.svg
+          </svg>
+          By Link
+        </button>
+      </div>
+      <div
+        class="ocr-by-link"
+      >
+        <input
+          class="ocr-by-link-input"
+          data-testid="ocr-image-link"
+          placeholder="Enter image URL ..."
+          type="text"
+          value=""
+        />
+        <div
+          class="image-wrapper"
+        >
+          <div
+            class="image-wrapper-text"
+          >
+            <svg>
+              image-preview.svg
+            </svg>
+            <div>
+              <h3>
+                Image preview
+              </h3>
+              <span
+                class="image-wrapper-text-desc"
+              >
+                You should see your image here. 
+                <br />
+                If image can not be displayed, 
+                <br />
+                 there might be an issue with image URL.
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="convert-actions"
+      >
+        <div
+          class="languages"
+        >
+          <span>
+            Language:
+          </span>
+          <div
+            class="languages-select"
+          >
+            <div
+              class="selected-language"
+            >
+              English
+              <div
+                class="caret-down"
+              />
+            </div>
+          </div>
+        </div>
+        <button
+          class="btn"
+          disabled=""
+          type="button"
+        >
+          Convert file
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</body>
+`;

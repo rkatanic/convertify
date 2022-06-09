@@ -24,7 +24,7 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
   };
 
   return (
-    <div className="error">
+    <div data-testid="error-banner" className="error">
       <div className="error-message">
         <WarningTriangleIcon />
         <span>{showErrorMessage()}</span>

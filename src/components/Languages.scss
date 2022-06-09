@@ -70,6 +70,10 @@
 
   li {
     padding: 0.5rem 0.75rem;
+
+    &:not(:first-child) {
+      border-top: 1px solid var(--color-gray-600);
+    }
   }
 }
 

@@ -1,5 +1,4 @@
 import { useReducer } from "react";
-import Tesseract, { RecognizeResult } from "tesseract.js";
 import ProgressBar from "./ProgressBar";
 import OCRFileUpload from "./OCRFileUpload";
 import OCRByLink from "./OCRByLink";

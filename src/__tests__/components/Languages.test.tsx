@@ -55,6 +55,8 @@ describe("Languages", (): void => {
     );
 
     fireEvent.click(getByText("English"));
+    expect(queryByTestId("languages-list")).toBeInTheDocument();
+
     fireEvent.mouseDown(document);
 
     expect(queryByTestId("languages-list")).not.toBeInTheDocument();

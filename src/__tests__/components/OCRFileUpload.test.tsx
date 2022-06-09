@@ -1,4 +1,4 @@
-import { act, render, waitFor } from "@testing-library/react";
+import { render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import OCRFileUpload from "../../components/OCRFileUpload";
 import { ErrorType } from "../../types/ErrorType";
@@ -18,7 +18,7 @@ describe("OCRFileUpload", (): void => {
 
   it("should upload image", async (): Promise<void> => {
     const mockSetImage = jest.fn();
-    const { getByTestId } = render(
+    const { baseElement, getByTestId } = render(
       <OCRFileUpload setImage={mockSetImage} handleError={jest.fn} />
     );
 

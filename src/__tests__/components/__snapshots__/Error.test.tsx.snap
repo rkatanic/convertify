@@ -5,6 +5,7 @@ exports[`Error should initially be without error message 1`] = `
   <div>
     <div
       class="error"
+      data-testid="error-banner"
     >
       <div
         class="error-message"
