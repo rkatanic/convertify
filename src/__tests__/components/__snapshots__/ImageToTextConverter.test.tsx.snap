@@ -12,17 +12,11 @@ exports[`ImageToTextConverter should render 1`] = `
         <button
           class="convert-option active"
         >
-          <svg>
-            file-text.svg
-          </svg>
           File Upload
         </button>
         <button
           class="convert-option "
         >
-          <svg>
-            link.svg
-          </svg>
           By Link
         </button>
       </div>
@@ -55,11 +49,7 @@ exports[`ImageToTextConverter should render 1`] = `
               <br />
                jpg, jpeg, png, bmp, pbm. 
               <br />
-              Max file upload size is 
-              <b>
-                5 MB
-              </b>
-              .
+              Max file upload size is 5 MB.
             </p>
           </div>
         </div>
@@ -70,9 +60,6 @@ exports[`ImageToTextConverter should render 1`] = `
         <div
           class="languages"
         >
-          <span>
-            Language:
-          </span>
           <div
             class="languages-select"
           >
@@ -91,7 +78,7 @@ exports[`ImageToTextConverter should render 1`] = `
           disabled=""
           type="button"
         >
-          Convert file
+          Convert
         </button>
       </div>
       
@@ -112,17 +99,11 @@ exports[`ImageToTextConverter should render by link conversion 1`] = `
         <button
           class="convert-option "
         >
-          <svg>
-            file-text.svg
-          </svg>
           File Upload
         </button>
         <button
           class="convert-option active"
         >
-          <svg>
-            link.svg
-          </svg>
           By Link
         </button>
       </div>
@@ -168,9 +149,6 @@ exports[`ImageToTextConverter should render by link conversion 1`] = `
         <div
           class="languages"
         >
-          <span>
-            Language:
-          </span>
           <div
             class="languages-select"
           >
@@ -189,7 +167,7 @@ exports[`ImageToTextConverter should render by link conversion 1`] = `
           disabled=""
           type="button"
         >
-          Convert file
+          Convert
         </button>
       </div>
       

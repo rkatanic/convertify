@@ -17,7 +17,7 @@ exports[`OCRByLink should render 1`] = `
         class="image-wrapper"
       >
         <img
-          alt="can not load file"
+          alt="can not load image"
           src="image url"
         />
       </div>

@@ -6,9 +6,6 @@ exports[`Languages should display languages list 1`] = `
     <div
       class="languages"
     >
-      <span>
-        Language:
-      </span>
       <div
         class="languages-select"
       >
@@ -438,9 +435,6 @@ exports[`Languages should render 1`] = `
     <div
       class="languages"
     >
-      <span>
-        Language:
-      </span>
       <div
         class="languages-select"
       >

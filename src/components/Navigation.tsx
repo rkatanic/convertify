@@ -24,7 +24,6 @@ const Navigation = ({
         }`}
         onClick={() => changeConversionOption(ConversionOption.FILE_UPLOAD)}
       >
-        <FileTextIcon />
         File Upload
       </button>
       <button
@@ -34,7 +33,6 @@ const Navigation = ({
         }`}
         onClick={() => changeConversionOption(ConversionOption.BY_LINK)}
       >
-        <LinkIcon />
         By Link
       </button>
     </div>

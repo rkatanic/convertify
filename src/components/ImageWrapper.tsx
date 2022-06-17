@@ -10,7 +10,7 @@ const ImageWrapper = ({ imageUrl = "" }: Props): JSX.Element => {
   return (
     <div className="image-wrapper">
       {imageUrl ? (
-        <img src={imageUrl} alt="can not load file" />
+        <img src={imageUrl} alt="can not load image" />
       ) : (
         <div className="image-wrapper-text">
           <ImagePreviewIcon />

@@ -34,7 +34,6 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
 
   return (
     <div className="languages">
-      <span>Language:</span>
       <div className="languages-select" ref={ref}>
         <div className="selected-language" onClick={handleDropdownToggle}>
           {selectedLanguage.value}

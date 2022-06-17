@@ -5,10 +5,9 @@
     justify-content: space-between;
     font-size: 1rem;
     width: 100%;
-    border: 1px solid var(--color-primary-600);
     background-color: var(--color-primary-200);
-    border-radius: 6px;
-    padding: 0.625rem 0.75rem;
+    border-radius: 2px;
+    padding: 0.625rem 1rem;
 
     &-message {
         color: var(--color-primary-800);

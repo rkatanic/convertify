@@ -48,7 +48,7 @@ describe("ImageToTextConverter", (): void => {
     await waitFor(() => {
       userEvent.upload(fileInput, mockFile);
     });
-    fireEvent.click(getByText("Convert file"));
+    fireEvent.click(getByText("Convert"));
 
     expect(getByTestId("error-banner")).toBeInTheDocument();
 

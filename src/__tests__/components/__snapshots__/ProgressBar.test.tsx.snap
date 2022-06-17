@@ -6,25 +6,24 @@ exports[`ProgressBar should render 1`] = `
     <div
       class="progress-bar-container"
     >
+      <span
+        class="progress-bar-container-progress"
+      >
+        52
+        %
+      </span>
       <div
         class="progress-bar"
       >
         <div
           class="progress-bar-line"
           style="width: 52%;"
-        >
-          <div
-            class="progress-bar-line-progress"
-          >
-            52
-            %
-          </div>
-        </div>
+        />
       </div>
       <p
         class="progress-bar-txt"
       >
-        Converting...
+        Converting in progress...
       </p>
     </div>
   </div>

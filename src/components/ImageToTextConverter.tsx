@@ -6,6 +6,8 @@ import TextWrapper from "./TextWrapper";
 import Button from "./Button";
 import Languages from "./Languages";
 import Error from "./Error";
+import Navigation from "./Navigation";
+import { convertImageToText } from "../util/OCRConverterUtils";
 import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
@@ -20,8 +22,6 @@ import {
 } from "../actions/conversionActions";
 
 import "./ImageToTextConveter.scss";
-import Navigation from "./Navigation";
-import { convertImageToText } from "../util/OCRConverterUtils";
 
 const initialState = {
   conversionOption: ConversionOption.FILE_UPLOAD,
@@ -85,7 +85,7 @@ const ImageToTextConverter = (): JSX.Element => {
         />
         <Button
           {...{ disabled: !image || isLoading }}
-          text="Convert file"
+          text="Convert"
           onClick={() => convertImageToText(dispatch, image, language)}
         />
       </div>

@@ -32,11 +32,7 @@ exports[`OCRFileUpload should render 1`] = `
             <br />
              jpg, jpeg, png, bmp, pbm. 
             <br />
-            Max file upload size is 
-            <b>
-              5 MB
-            </b>
-            .
+            Max file upload size is 5 MB.
           </p>
         </div>
       </div>

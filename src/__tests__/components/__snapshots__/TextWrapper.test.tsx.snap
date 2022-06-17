@@ -7,59 +7,48 @@ exports[`TestWrapper should render 1`] = `
       class="text-wrapper"
     >
       <div
-        class="text-wrapper-left"
-      >
-        <span>
-          output
-        </span>
-      </div>
+        class="text-wrapper-output"
+      />
       <div
         class="text-wrapper-actions"
       >
         <div
-          class="text-wrapper-icons"
+          class="icon-button-container"
         >
-          <div
-            class="icon-button-container"
+          <span
+            class="icon-button-tooltip"
           >
-            <span
-              class="icon-button-tooltip"
-            >
-              Copy text
-            </span>
-            <button
-              class="icon-button"
-              disabled=""
-              type="button"
-            >
-              <svg>
-                copy.svg
-              </svg>
-            </button>
-          </div>
-          <div
-            class="icon-button-container"
+            Copy text
+          </span>
+          <button
+            class="icon-button"
+            disabled=""
+            type="button"
           >
-            <span
-              class="icon-button-tooltip"
-            >
-              Download
-            </span>
-            <button
-              class="icon-button"
-              disabled=""
-              type="button"
-            >
-              <svg>
-                download-file.svg
-              </svg>
-            </button>
-          </div>
+            <svg>
+              copy.svg
+            </svg>
+          </button>
+        </div>
+        <div
+          class="icon-button-container"
+        >
+          <span
+            class="icon-button-tooltip"
+          >
+            Download
+          </span>
+          <button
+            class="icon-button"
+            disabled=""
+            type="button"
+          >
+            <svg>
+              download-file.svg
+            </svg>
+          </button>
         </div>
       </div>
-      <div
-        class="text"
-      />
     </div>
   </div>
 </body>
