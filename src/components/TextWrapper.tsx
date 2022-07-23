@@ -12,6 +12,7 @@ interface Props {
 const TextWrapper = ({ text = "" }: Props) => {
   return (
     <div className="text-wrapper">
+      <div className="text-wrapper-heading">Output</div>
       <div className="text-wrapper-output">{text}</div>
       <div className="text-wrapper-actions">
         <IconButton

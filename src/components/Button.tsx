@@ -4,11 +4,17 @@ interface Props {
   text: string | JSX.Element;
   onClick: () => void;
   props?: any;
+  fullWidth?: boolean;
 }
 
-const Button = ({ text, onClick, ...props }: Props): JSX.Element => {
+const Button = ({ text, onClick, fullWidth, ...props }: Props): JSX.Element => {
   return (
-    <button {...props} className="btn" type="button" onClick={onClick}>
+    <button
+      {...props}
+      className={`btn ${fullWidth ? "btn-full-width" : ""}`}
+      type="button"
+      onClick={onClick}
+    >
       {text}
     </button>
   );

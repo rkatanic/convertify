@@ -3,17 +3,26 @@
   flex-direction: column;
   align-items: flex-end;
   width: 100%;
-  margin: 0.5rem 0;
   position: relative;
   min-height: 11rem;
 
+  &-heading {
+    align-self: flex-start;
+    margin-bottom: 0.5rem;
+    color: var(--color-gray-900);
+    font-weight: 500;
+  }
+
   &-actions {
     display: flex;
-    gap: 0.5rem;
+    gap: 1rem;
     margin-top: 1rem;
   }
 
   &-output {
+    background-color: var(--color-gray-200);
+    border: 2px solid var(--color-gray-600);
+    padding: 1.5rem;
     height: 100%;
     width: 100%;
     border-radius: 1px;

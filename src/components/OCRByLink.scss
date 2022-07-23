@@ -2,26 +2,26 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin: 1rem 0 0.5rem;
 
   &-input {
     font-family: var(--font);
-    color: var(--color-white);
-    background-color: var(--color-gray-800);
+    color: var(--color-white-one);
+    padding: 0 0 0.5rem;
     border: none;
-    border-radius: 2px;
-    padding: 0.625rem 1rem;
     outline: none;
+    border-bottom: 2px solid var(--color-gray-600);
     font-size: 0.875rem;
     caret-color: var(--color-primary-600);
-    margin: 0 0 1rem;
+    background-color: transparent;
+    transition: 0.25s;
+    margin-bottom: 1.5rem;
 
     &::placeholder {
-      color: var(--color-gray-200);
+      color: var(--color-gray-800);
     }
 
     &:focus {
-      box-shadow: 0 0 2px var(--color-gray-200) inset;
+      border-color: var(--color-gray-900);
     }
   }
 }

@@ -1,15 +1,14 @@
 .ocr-file-upload {
-  margin: 1rem 0 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  background-color: var(--color-gray-800);
   padding: 0 1rem;
   height: 16rem;
-  border-radius: 2px;
   position: relative;
+  border: 2px dashed var(--color-gray-600);
+  background-color: var(--color-gray-200);
 
   &-container {
     display: flex;
@@ -19,25 +18,25 @@
 
     &-txt {
       &-title {
-        font-size: 1.125rem;
-        color: var(--color-white);
+        font-size: 1.25rem;
+        color: var(--color-white-one);
         margin: 0.625rem 0;
       }
 
       &-desc {
-        color: var(--color-gray-100);
+        color: var(--color-gray-900);
         margin: 0;
         line-height: 1.35;
-        font-size: 0.75rem;
+        font-size: 0.875rem;
       }
     }
   }
 
   .icon-file-upload,
   .icon-file-upload-success {
-    width: 2rem;
-    height: 2rem;
-    fill: var(--color-white);
+    width: 3rem;
+    height: 3rem;
+    fill: var(--color-white-one);
   }
 
   &-input {

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Language } from "../types/Language";
 import { LANGUAGES } from "../constants/languages";
+import { ReactComponent as CaretDownIcon } from "../icons/caret-down.svg";
 
 import "./Languages.scss";
 
@@ -37,7 +38,7 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
       <div className="languages-select" ref={ref}>
         <div className="selected-language" onClick={handleDropdownToggle}>
           {selectedLanguage.value}
-          <div className="caret-down"></div>
+          <CaretDownIcon />
         </div>
         {showDropdown && (
           <ul data-testid="languages-list">

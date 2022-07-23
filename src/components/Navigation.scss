@@ -1,36 +1,78 @@
 .convert-options {
-    position: relative;
     display: flex;
-    align-self: flex-start;
-    overflow: hidden;
-    width: 100%;
-    border-bottom: 1px solid var(--color-gray-700);
+    gap: 1rem;
+    border-bottom: 2px solid var(--color-gray-500);
+    position: relative;
+    padding: 0 2rem 1rem;
+    margin-bottom: 0.5rem;
+
+    &::before {
+        position: absolute;
+        content: "";
+        top: 2.35rem;
+        left: 0;
+        width: 2px;
+        height: 12px;
+        background-color: var(--color-gray-600);
+    }
+
+    &::after {
+        position: absolute;
+        content: "";
+        top: 2.35rem;
+        right: 0;
+        width: 2px;
+        height: 12px;
+        background-color: var(--color-gray-600);
+    }
 }
 
+
 .convert-option {
+    white-space: nowrap;
     border: none;
     outline: none;
     background-color: transparent;
     font-family: var(--font);
-    font-size: 0.875rem;
-    font-weight: 600;
-    color: var(--color-gray-100);
-    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-gray-900);
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.75rem;
-    text-align: center;
     cursor: pointer;
     position: relative;
-    border-bottom: 2px solid transparent;
 
     &:disabled {
         cursor: not-allowed;
+    }
+
+    &::before {
+        top: 2.375rem;
+        left: calc(50% - 0.25rem);
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        width: 0.5rem;
+        height: 0.5rem;
+        border: 2px solid var(--color-gray-500);
+        background-color: var(--color-gray-300);
     }
 }
 
 .active.convert-option {
     color: var(--color-white);
-    border-bottom: 2px solid var(--color-primary-600);
+
+    &:before {
+        border-color: var(--color-gray-600);
+    }
+
+    &::after {
+        top: 2.65rem;
+        left: 50%;
+        position: absolute;
+        content: "";
+        border-radius: 50%;
+        width: 4px;
+        height: 4px;
+        background-color: var(--color-gray-600);
+    }
 }

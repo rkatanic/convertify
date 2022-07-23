@@ -10,12 +10,9 @@ const ProgressBar = ({ progress }: Props): JSX.Element => (
       {Math.round(progress * 100)}%
     </span>
     <div className="progress-bar">
-      <div
-        style={{ width: `${progress * 100}%` }}
-        className="progress-bar-line"
-      ></div>
+      <div className="progress-bar-line"></div>
     </div>
-    <p className="progress-bar-txt">Converting in progress...</p>
+    <p className="progress-bar-txt">Converting in progress</p>
   </div>
 );
 

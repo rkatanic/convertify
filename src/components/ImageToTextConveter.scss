@@ -1,20 +1,10 @@
 .main-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: space-between;
-  max-width: 40rem;
+  gap: 1.5rem;
+  max-width: 48rem;
   padding: 0 2rem;
-  margin: 1rem auto;
-  gap: 0.5rem;
-  height: 100%;
-}
-
-.convert-actions {
+  margin: 2rem auto;
   width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
 }

@@ -1,22 +1,28 @@
 .btn {
-  padding: 0.625rem 1.5rem;
+  border-radius: 10rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  padding: 0.5rem 2rem;
   outline: none;
   border: none;
   font-family: var(--font);
-  background: var(--color-primary-600);
-  font-weight: 600;
+  background: var(--color-primary-500);
+  font-weight: 500;
   font-size: 0.875rem;
-  border-radius: 2px;
   cursor: pointer;
   white-space: nowrap;
   color: var(--color-white);
+
+  &-full-width {
+    width: 100%;
+  }
 
   &:disabled {
     cursor: not-allowed;
   }
 
   &:hover:not(:disabled) {
-    background-color: var(--color-primary-500);
+    background-color: var(--color-primary-600);
   }
 }
 

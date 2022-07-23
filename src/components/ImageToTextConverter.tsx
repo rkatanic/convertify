@@ -73,22 +73,19 @@ const ImageToTextConverter = (): JSX.Element => {
           }
         />
       )}
+      <Languages setLanguage={handleLanguageSet} selectedLanguage={language} />
       {conversionOption === ConversionOption.FILE_UPLOAD ? (
         <OCRFileUpload handleError={handleErrorSet} setImage={handleImageSet} />
       ) : (
         <OCRByLink setImage={handleImageSet} image={image} />
       )}
-      <div className="convert-actions">
-        <Languages
-          setLanguage={handleLanguageSet}
-          selectedLanguage={language}
-        />
-        <Button
-          {...{ disabled: !image || isLoading }}
-          text="Convert"
-          onClick={() => convertImageToText(dispatch, image, language)}
-        />
-      </div>
+
+      <Button
+        {...{ disabled: !image || isLoading }}
+        text="Convert"
+        fullWidth
+        onClick={() => convertImageToText(dispatch, image, language)}
+      />
       {isLoading && <ProgressBar progress={progress} />}
 
       {text && <TextWrapper text={text} />}

@@ -5,20 +5,25 @@
     justify-content: space-between;
     font-size: 1rem;
     width: 100%;
-    background-color: var(--color-primary-200);
+    background-color: hsla(var(--color-hue), 36%, 54%, 0.25);
+    border: 1px solid var(--color-primary-500);
     border-radius: 2px;
-    padding: 0.625rem 1rem;
+    padding: 0.5rem 1rem;
 
     &-message {
-        color: var(--color-primary-800);
+        color: var(--color-primary-900);
         display: flex;
         align-items: center;
-        gap: 0.5rem;
+        gap: 1rem;
         font-size: 0.875rem;
     }
 
     .icon-close {
-        fill: var(--color-primary-800) !important;
+        fill: var(--color-primary-900) !important;
         cursor: pointer;
+    }
+
+    .icon-warning-triangle>path {
+        stroke: var(--color-primary-900);
     }
 }
