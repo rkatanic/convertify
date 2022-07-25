@@ -1,12 +1,11 @@
 import { Action, ActionType } from "../types/Action";
-import { ConversionOption } from "../types/ConversionOption";
 import { ErrorType } from "../types/ErrorType";
 import { Language } from "../types/Language";
 
 interface State {
-  conversionOption: ConversionOption;
   language: Language;
-  image: string;
+  imageFile: string;
+  imageUrl: string;
   text: string;
   progress: number;
   isLoading: boolean;
@@ -15,23 +14,16 @@ interface State {
 
 export const conversionReducer = (state: State, action: Action): State => {
   switch (action.type) {
-    case ActionType.SET_IMAGE:
-      return { ...state, image: action.payload, error: ErrorType.NO_ERROR };
+    case ActionType.SET_IMAGE_URL:
+      return { ...state, imageUrl: action.payload, error: ErrorType.NO_ERROR };
+    case ActionType.SET_IMAGE_FILE:
+      return { ...state, imageFile: action.payload, error: ErrorType.NO_ERROR };
     case ActionType.SET_LANGUAGE:
       return { ...state, language: action.payload };
     case ActionType.SET_PROGRESS:
       return { ...state, progress: action.payload };
     case ActionType.SET_ERROR:
       return { ...state, error: action.payload };
-    case ActionType.CHANGE_CONVERSION_OPTION:
-      return {
-        ...state,
-        image: "",
-        text: "",
-        error: ErrorType.NO_ERROR,
-        isLoading: false,
-        conversionOption: action.payload,
-      };
     case ActionType.CONVERT_IMAGE_INIT:
       return {
         ...state,
@@ -51,7 +43,7 @@ export const conversionReducer = (state: State, action: Action): State => {
         ...state,
         error: ErrorType.CONVERSION_FAILED,
         isLoading: false,
-        image: "",
+        imageFile: "",
       };
     default:
       return state;

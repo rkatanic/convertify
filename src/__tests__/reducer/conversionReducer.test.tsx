@@ -1,25 +1,24 @@
 import {
-  changeConvertOption,
   convertImageError,
   convertImageInit,
   convertImageSuccess,
   setError,
-  setImage,
+  setImageFile,
+  setImageUrl,
   setLanguage,
   setProgress,
 } from "../../actions/conversionActions";
 import { LANGUAGES } from "../../constants/languages";
 import { conversionReducer } from "../../reducer/conversionReducer";
-import { Action, ActionType } from "../../types/Action";
-import { ConversionOption } from "../../types/ConversionOption";
+import { Action } from "../../types/Action";
 import { ErrorType } from "../../types/ErrorType";
 
 describe("ConversionReducer", (): void => {
   it("should return initial state", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -27,25 +26,52 @@ describe("ConversionReducer", (): void => {
     };
 
     const nextState = conversionReducer(initialState, {} as Action);
+
     expect(nextState).toEqual(initialState);
   });
 
-  it("should set image", (): void => {
+  it("should set image file", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
       error: ErrorType.NO_ERROR,
     };
 
-    const nextState = conversionReducer(initialState, setImage("imageUrl"));
+    const nextState = conversionReducer(
+      initialState,
+      setImageFile("image file")
+    );
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "imageUrl",
+      imageFile: "image file",
+      imageUrl: "",
+      text: "",
+      progress: 0,
+      isLoading: false,
+      error: ErrorType.NO_ERROR,
+    });
+  });
+
+  it("should set image url", (): void => {
+    const initialState = {
+      language: LANGUAGES[0],
+      imageFile: "",
+      imageUrl: "",
+      text: "",
+      progress: 0,
+      isLoading: false,
+      error: ErrorType.NO_ERROR,
+    };
+
+    const nextState = conversionReducer(initialState, setImageUrl("image-url"));
+    expect(nextState).toEqual({
+      language: LANGUAGES[0],
+      imageFile: "",
+      imageUrl: "image-url",
       text: "",
       progress: 0,
       isLoading: false,
@@ -55,9 +81,9 @@ describe("ConversionReducer", (): void => {
 
   it("should set language", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -69,9 +95,9 @@ describe("ConversionReducer", (): void => {
       setLanguage({ key: "eng", value: "English" })
     );
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: { key: "eng", value: "English" },
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -81,9 +107,9 @@ describe("ConversionReducer", (): void => {
 
   it("should set error", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -95,9 +121,9 @@ describe("ConversionReducer", (): void => {
       setError(ErrorType.CONVERSION_FAILED)
     );
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -107,9 +133,9 @@ describe("ConversionReducer", (): void => {
 
   it("should set progress", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -118,9 +144,9 @@ describe("ConversionReducer", (): void => {
 
     const nextState = conversionReducer(initialState, setProgress(0.24));
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0.24,
       isLoading: false,
@@ -128,37 +154,11 @@ describe("ConversionReducer", (): void => {
     });
   });
 
-  it("should change conversion option", (): void => {
-    const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
-      language: LANGUAGES[0],
-      image: "",
-      text: "",
-      progress: 0,
-      isLoading: false,
-      error: ErrorType.NO_ERROR,
-    };
-
-    const nextState = conversionReducer(
-      initialState,
-      changeConvertOption(ConversionOption.BY_LINK)
-    );
-    expect(nextState).toEqual({
-      conversionOption: ConversionOption.BY_LINK,
-      language: LANGUAGES[0],
-      image: "",
-      text: "",
-      progress: 0,
-      isLoading: false,
-      error: ErrorType.NO_ERROR,
-    });
-  });
-
   it("should initialize image conversion", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -167,9 +167,9 @@ describe("ConversionReducer", (): void => {
 
     const nextState = conversionReducer(initialState, convertImageInit());
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: true,
@@ -179,9 +179,9 @@ describe("ConversionReducer", (): void => {
 
   it("should succeed image conversion", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -193,9 +193,9 @@ describe("ConversionReducer", (): void => {
       convertImageSuccess("converted text")
     );
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "converted text",
       progress: 0,
       isLoading: false,
@@ -205,9 +205,9 @@ describe("ConversionReducer", (): void => {
 
   it("should fail image conversion", (): void => {
     const initialState = {
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,
@@ -216,9 +216,9 @@ describe("ConversionReducer", (): void => {
 
     const nextState = conversionReducer(initialState, convertImageError());
     expect(nextState).toEqual({
-      conversionOption: ConversionOption.FILE_UPLOAD,
       language: LANGUAGES[0],
-      image: "",
+      imageFile: "",
+      imageUrl: "",
       text: "",
       progress: 0,
       isLoading: false,

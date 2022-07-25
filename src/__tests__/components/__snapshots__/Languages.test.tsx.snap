@@ -13,9 +13,9 @@ exports[`Languages should display languages list 1`] = `
           class="selected-language"
         >
           English
-          <div
-            class="caret-down"
-          />
+          <svg>
+            caret-down.svg
+          </svg>
         </div>
         <ul
           data-testid="languages-list"
@@ -442,9 +442,9 @@ exports[`Languages should render 1`] = `
           class="selected-language"
         >
           English
-          <div
-            class="caret-down"
-          />
+          <svg>
+            caret-down.svg
+          </svg>
         </div>
       </div>
     </div>

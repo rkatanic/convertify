@@ -18,7 +18,7 @@ describe("OCRFileUpload", (): void => {
 
   it("should upload image", async (): Promise<void> => {
     const mockSetImage = jest.fn();
-    const { baseElement, getByTestId } = render(
+    const { getByTestId } = render(
       <OCRFileUpload setImage={mockSetImage} handleError={jest.fn} />
     );
 

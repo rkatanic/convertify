@@ -4,7 +4,7 @@ exports[`Button should render 1`] = `
 <body>
   <div>
     <button
-      class="btn"
+      class="btn "
       type="button"
     >
       text

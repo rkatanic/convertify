@@ -18,14 +18,6 @@ describe("ImageToTextConverter", (): void => {
     expect(baseElement).toMatchSnapshot();
   });
 
-  it("should render by link conversion", (): void => {
-    const { baseElement, getByText } = render(<ImageToTextConverter />);
-
-    fireEvent.click(getByText("By Link"));
-
-    expect(baseElement).toMatchSnapshot();
-  });
-
   it("should change language", (): void => {
     const { getByText } = render(<ImageToTextConverter />);
 

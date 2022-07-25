@@ -1,32 +1,29 @@
 import { useReducer } from "react";
 import ProgressBar from "./ProgressBar";
 import OCRFileUpload from "./OCRFileUpload";
-import OCRByLink from "./OCRByLink";
 import TextWrapper from "./TextWrapper";
 import Button from "./Button";
 import Languages from "./Languages";
 import Error from "./Error";
-import Navigation from "./Navigation";
 import { convertImageToText } from "../util/OCRConverterUtils";
 import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
-import { ConversionOption } from "../types/ConversionOption";
 import { ActionType } from "../types/Action";
 import {
-  changeConvertOption,
   setError,
-  setImage,
+  setImageFile,
+  setImageUrl,
   setLanguage,
 } from "../actions/conversionActions";
 
 import "./ImageToTextConveter.scss";
 
 const initialState = {
-  conversionOption: ConversionOption.FILE_UPLOAD,
   language: DEFAULT_LANGUAGE,
-  image: "",
+  imageFile: "",
+  imageUrl: "",
   text: "",
   progress: 0,
   isLoading: false,
@@ -35,12 +32,12 @@ const initialState = {
 
 const ImageToTextConverter = (): JSX.Element => {
   const [
-    { conversionOption, language, image, text, progress, isLoading, error },
+    { language, imageFile, imageUrl, text, progress, isLoading, error },
     dispatch,
   ] = useReducer(conversionReducer, initialState);
 
   const handleImageSet = (value: string): void => {
-    dispatch(setImage(value));
+    dispatch(setImageFile(value));
   };
 
   const handleLanguageSet = (language: Language): void => {
@@ -51,17 +48,12 @@ const ImageToTextConverter = (): JSX.Element => {
     dispatch(setError(error));
   };
 
-  const handleConvertOptionChange = (value: ConversionOption): void => {
-    dispatch(changeConvertOption(value));
+  const handleImageUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    dispatch(setImageUrl(e.target.value));
   };
 
   return (
     <div className="main-content">
-      <Navigation
-        isLoading={isLoading}
-        conversionOption={conversionOption}
-        changeConversionOption={handleConvertOptionChange}
-      />
       {error !== ErrorType.NO_ERROR && (
         <Error
           error={error}
@@ -73,21 +65,32 @@ const ImageToTextConverter = (): JSX.Element => {
           }
         />
       )}
-      <Languages setLanguage={handleLanguageSet} selectedLanguage={language} />
-      {conversionOption === ConversionOption.FILE_UPLOAD ? (
-        <OCRFileUpload handleError={handleErrorSet} setImage={handleImageSet} />
-      ) : (
-        <OCRByLink setImage={handleImageSet} image={image} />
-      )}
 
+      <OCRFileUpload handleError={handleErrorSet} setImage={handleImageSet} />
+      <div className="separator">OR </div>
+      <div className="input-and-languages">
+        <input
+          data-testid="image-url-input"
+          type="text"
+          placeholder="Enter image URL"
+          className="image-url-input"
+          value={imageUrl}
+          onChange={handleImageUrlChange}
+        />
+        <Languages
+          setLanguage={handleLanguageSet}
+          selectedLanguage={language}
+        />
+      </div>
       <Button
-        {...{ disabled: !image || isLoading }}
+        {...{ disabled: isLoading }}
         text="Convert"
         fullWidth
-        onClick={() => convertImageToText(dispatch, image, language)}
+        onClick={() =>
+          convertImageToText(dispatch, imageUrl || imageFile, language)
+        }
       />
       {isLoading && <ProgressBar progress={progress} />}
-
       {text && <TextWrapper text={text} />}
     </div>
   );

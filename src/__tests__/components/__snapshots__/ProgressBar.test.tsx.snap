@@ -17,13 +17,12 @@ exports[`ProgressBar should render 1`] = `
       >
         <div
           class="progress-bar-line"
-          style="width: 52%;"
         />
       </div>
       <p
         class="progress-bar-txt"
       >
-        Converting in progress...
+        Converting in progress
       </p>
     </div>
   </div>

@@ -7,20 +7,6 @@ exports[`ImageToTextConverter should render 1`] = `
       class="main-content"
     >
       <div
-        class="convert-options"
-      >
-        <button
-          class="convert-option active"
-        >
-          File Upload
-        </button>
-        <button
-          class="convert-option "
-        >
-          By Link
-        </button>
-      </div>
-      <div
         class="ocr-file-upload"
       >
         <input
@@ -55,8 +41,20 @@ exports[`ImageToTextConverter should render 1`] = `
         </div>
       </div>
       <div
-        class="convert-actions"
+        class="separator"
       >
+        OR 
+      </div>
+      <div
+        class="input-and-languages"
+      >
+        <input
+          class="image-url-input"
+          data-testid="image-url-input"
+          placeholder="Enter image URL"
+          type="text"
+          value=""
+        />
         <div
           class="languages"
         >
@@ -67,20 +65,19 @@ exports[`ImageToTextConverter should render 1`] = `
               class="selected-language"
             >
               English
-              <div
-                class="caret-down"
-              />
+              <svg>
+                caret-down.svg
+              </svg>
             </div>
           </div>
         </div>
-        <button
-          class="btn"
-          disabled=""
-          type="button"
-        >
-          Convert
-        </button>
       </div>
+      <button
+        class="btn btn-full-width"
+        type="button"
+      >
+        Convert
+      </button>
       
     </div>
   </div>
@@ -108,12 +105,28 @@ exports[`ImageToTextConverter should render by link conversion 1`] = `
         </button>
       </div>
       <div
+        class="languages"
+      >
+        <div
+          class="languages-select"
+        >
+          <div
+            class="selected-language"
+          >
+            English
+            <svg>
+              caret-down.svg
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div
         class="ocr-by-link"
       >
         <input
           class="ocr-by-link-input"
           data-testid="ocr-image-link"
-          placeholder="Enter image URL ..."
+          placeholder="Enter image URL"
           type="text"
           value=""
         />
@@ -143,33 +156,13 @@ exports[`ImageToTextConverter should render by link conversion 1`] = `
           </div>
         </div>
       </div>
-      <div
-        class="convert-actions"
+      <button
+        class="btn btn-full-width"
+        disabled=""
+        type="button"
       >
-        <div
-          class="languages"
-        >
-          <div
-            class="languages-select"
-          >
-            <div
-              class="selected-language"
-            >
-              English
-              <div
-                class="caret-down"
-              />
-            </div>
-          </div>
-        </div>
-        <button
-          class="btn"
-          disabled=""
-          type="button"
-        >
-          Convert
-        </button>
-      </div>
+        Convert
+      </button>
       
     </div>
   </div>

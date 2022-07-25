@@ -7,6 +7,11 @@ exports[`TestWrapper should render 1`] = `
       class="text-wrapper"
     >
       <div
+        class="text-wrapper-heading"
+      >
+        Output
+      </div>
+      <div
         class="text-wrapper-output"
       />
       <div

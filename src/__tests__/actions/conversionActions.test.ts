@@ -1,23 +1,31 @@
 import {
-  changeConvertOption,
   convertImageError,
   convertImageInit,
   convertImageSuccess,
   setError,
-  setImage,
+  setImageFile,
+  setImageUrl,
   setLanguage,
   setProgress,
 } from "../../actions/conversionActions";
 import { ActionType } from "../../types/Action";
-import { ConversionOption } from "../../types/ConversionOption";
 import { ErrorType } from "../../types/ErrorType";
 
 describe("conversionActions", (): void => {
-  it("setImage", (): void => {
-    const action = setImage("imageUrl");
+  it("setImageFile", (): void => {
+    const action = setImageFile("imageFile");
 
     expect(action).toEqual({
-      type: ActionType.SET_IMAGE,
+      type: ActionType.SET_IMAGE_FILE,
+      payload: "imageFile",
+    });
+  });
+
+  it("setImageUrl", (): void => {
+    const action = setImageUrl("imageUrl");
+
+    expect(action).toEqual({
+      type: ActionType.SET_IMAGE_URL,
       payload: "imageUrl",
     });
   });
@@ -37,15 +45,6 @@ describe("conversionActions", (): void => {
     expect(action).toEqual({
       type: ActionType.SET_ERROR,
       payload: ErrorType.CONVERSION_FAILED,
-    });
-  });
-
-  it("changeConvertOption", (): void => {
-    const action = changeConvertOption(ConversionOption.BY_LINK);
-
-    expect(action).toEqual({
-      type: ActionType.CHANGE_CONVERSION_OPTION,
-      payload: ConversionOption.BY_LINK,
     });
   });
 
