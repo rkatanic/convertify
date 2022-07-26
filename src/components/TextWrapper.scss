@@ -30,6 +30,7 @@
     resize: none;
     font-family: var(--font);
     font-size: 0.875rem;
+    overflow-wrap: break-word;
 
     &:focus {
       outline: none;
