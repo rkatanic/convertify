@@ -1,27 +1,27 @@
 {
   "files": {
-    "main.css": "/ocr-converter/static/css/main.4d6c32b2.chunk.css",
-    "main.js": "/ocr-converter/static/js/main.ccf918b4.chunk.js",
-    "main.js.map": "/ocr-converter/static/js/main.ccf918b4.chunk.js.map",
+    "main.css": "/ocr-converter/static/css/main.c623987d.chunk.css",
+    "main.js": "/ocr-converter/static/js/main.cee670c8.chunk.js",
+    "main.js.map": "/ocr-converter/static/js/main.cee670c8.chunk.js.map",
     "runtime-main.js": "/ocr-converter/static/js/runtime-main.ca044ea6.js",
     "runtime-main.js.map": "/ocr-converter/static/js/runtime-main.ca044ea6.js.map",
-    "static/js/2.e136108f.chunk.js": "/ocr-converter/static/js/2.e136108f.chunk.js",
-    "static/js/2.e136108f.chunk.js.map": "/ocr-converter/static/js/2.e136108f.chunk.js.map",
+    "static/js/2.4037e015.chunk.js": "/ocr-converter/static/js/2.4037e015.chunk.js",
+    "static/js/2.4037e015.chunk.js.map": "/ocr-converter/static/js/2.4037e015.chunk.js.map",
     "index.html": "/ocr-converter/index.html",
-    "static/css/main.4d6c32b2.chunk.css.map": "/ocr-converter/static/css/main.4d6c32b2.chunk.css.map",
-    "static/js/2.e136108f.chunk.js.LICENSE.txt": "/ocr-converter/static/js/2.e136108f.chunk.js.LICENSE.txt",
+    "static/css/main.c623987d.chunk.css.map": "/ocr-converter/static/css/main.c623987d.chunk.css.map",
+    "static/js/2.4037e015.chunk.js.LICENSE.txt": "/ocr-converter/static/js/2.4037e015.chunk.js.LICENSE.txt",
+    "static/media/caret-down.6ee483d0.svg": "/ocr-converter/static/media/caret-down.6ee483d0.svg",
     "static/media/close.8c1f16aa.svg": "/ocr-converter/static/media/close.8c1f16aa.svg",
     "static/media/copy.9703f175.svg": "/ocr-converter/static/media/copy.9703f175.svg",
     "static/media/download-file.2924144f.svg": "/ocr-converter/static/media/download-file.2924144f.svg",
     "static/media/file-upload-success.cee26685.svg": "/ocr-converter/static/media/file-upload-success.cee26685.svg",
     "static/media/file-upload.05200908.svg": "/ocr-converter/static/media/file-upload.05200908.svg",
-    "static/media/image-preview.93d63ab9.svg": "/ocr-converter/static/media/image-preview.93d63ab9.svg",
     "static/media/warning-triangle.b756e1b1.svg": "/ocr-converter/static/media/warning-triangle.b756e1b1.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.ca044ea6.js",
-    "static/js/2.e136108f.chunk.js",
-    "static/css/main.4d6c32b2.chunk.css",
-    "static/js/main.ccf918b4.chunk.js"
+    "static/js/2.4037e015.chunk.js",
+    "static/css/main.c623987d.chunk.css",
+    "static/js/main.cee670c8.chunk.js"
   ]
 }
