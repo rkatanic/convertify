@@ -68,6 +68,7 @@ const ImageToTextConverter = (): JSX.Element => {
       <OCRFileUpload
         handleError={handleErrorSet}
         setImage={handleImageFileUpload}
+        disabled={isLoading}
       />
       <div className="separator">OR </div>
       <div className="input-and-languages">

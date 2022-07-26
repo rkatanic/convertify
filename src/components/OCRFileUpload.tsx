@@ -8,11 +8,16 @@ import "./OCRFileUpload.scss";
 interface Props {
   setImage: (value: string) => void;
   handleError: (error: ErrorType) => void;
+  disabled: boolean;
 }
 
 const SUPPORTED_FILE_FORMATS = [".jpg", "jpeg", ".png", ".bmp", ".pbm"];
 
-const OCRFileUpload = ({ setImage, handleError }: Props): JSX.Element => {
+const OCRFileUpload = ({
+  setImage,
+  handleError,
+  disabled,
+}: Props): JSX.Element => {
   const [file, setFile] = useState({ name: "", size: "" });
 
   const handleFileUpload = (e: any): void => {
@@ -44,6 +49,7 @@ const OCRFileUpload = ({ setImage, handleError }: Props): JSX.Element => {
   return (
     <div className="ocr-file-upload">
       <input
+        disabled={disabled}
         className="ocr-file-upload-input"
         type="file"
         onChange={handleFileUpload}

@@ -10,7 +10,7 @@ describe("OCRFileUpload", (): void => {
 
   it("should render", (): void => {
     const { baseElement } = render(
-      <OCRFileUpload setImage={jest.fn} handleError={jest.fn} />
+      <OCRFileUpload disabled={true} setImage={jest.fn} handleError={jest.fn} />
     );
 
     expect(baseElement).toMatchSnapshot();
@@ -19,7 +19,11 @@ describe("OCRFileUpload", (): void => {
   it("should upload image", async (): Promise<void> => {
     const mockSetImage = jest.fn();
     const { getByTestId } = render(
-      <OCRFileUpload setImage={mockSetImage} handleError={jest.fn} />
+      <OCRFileUpload
+        disabled={false}
+        setImage={mockSetImage}
+        handleError={jest.fn}
+      />
     );
 
     const fileInput = getByTestId("ocr-file-upload-input");
@@ -35,7 +39,11 @@ describe("OCRFileUpload", (): void => {
   it("should handle error when file is unsupported format", async (): Promise<void> => {
     const mockHandleError = jest.fn();
     const { getByTestId } = render(
-      <OCRFileUpload setImage={jest.fn} handleError={mockHandleError} />
+      <OCRFileUpload
+        disabled={false}
+        setImage={jest.fn}
+        handleError={mockHandleError}
+      />
     );
 
     const fileInput = getByTestId("ocr-file-upload-input");
@@ -53,7 +61,11 @@ describe("OCRFileUpload", (): void => {
   it("should handle error when maximum file size is exceeded", async (): Promise<void> => {
     const mockHandleError = jest.fn();
     const { getByTestId } = render(
-      <OCRFileUpload setImage={jest.fn} handleError={mockHandleError} />
+      <OCRFileUpload
+        disabled={false}
+        setImage={jest.fn}
+        handleError={mockHandleError}
+      />
     );
 
     const FileInput = getByTestId("ocr-file-upload-input");

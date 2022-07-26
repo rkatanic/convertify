@@ -10,6 +10,8 @@
   border: 2px dashed var(--color-gray-600);
   background-color: var(--color-gray-200);
 
+
+
   &-container {
     display: flex;
     flex-direction: column;
@@ -45,5 +47,9 @@
     position: absolute;
     height: 100%;
     width: 100%;
+
+    &:disabled {
+      cursor: not-allowed
+    }
   }
 }

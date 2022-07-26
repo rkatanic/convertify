@@ -43,7 +43,6 @@ export const conversionReducer = (state: State, action: Action): State => {
         ...state,
         error: ErrorType.CONVERSION_FAILED,
         isLoading: false,
-        imageFile: "",
       };
     default:
       return state;
