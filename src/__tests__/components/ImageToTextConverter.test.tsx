@@ -1,5 +1,6 @@
 import { fireEvent, render, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import Tesseract from "tesseract.js";
 import ImageToTextConverter from "../../components/ImageToTextConverter";
 import { convertImageToText } from "../../util/OCRConverterUtils";
 
@@ -18,6 +19,29 @@ describe("ImageToTextConverter", (): void => {
     expect(baseElement).toMatchSnapshot();
   });
 
+  it("should change image url", (): void => {
+    const { getByTestId, getByDisplayValue } = render(<ImageToTextConverter />);
+
+    fireEvent.change(getByTestId("image-url-input"), {
+      target: { value: "some-image-url" },
+    });
+
+    expect(getByDisplayValue("some-image-url")).toBeInTheDocument();
+  });
+
+  it("should upload file", async (): Promise<void> => {
+    global.URL.createObjectURL = jest.fn();
+    const { getByTestId, getByText } = render(<ImageToTextConverter />);
+
+    const fileInput = getByTestId("ocr-file-upload-input");
+    const mockFile = new File(["hello"], "hello.png", { type: "image/png" });
+
+    await waitFor((): void => {
+      userEvent.upload(fileInput, mockFile);
+      expect(getByText("hello.png")).toBeInTheDocument();
+    });
+  });
+
   it("should change language", (): void => {
     const { getByText } = render(<ImageToTextConverter />);
 
@@ -27,9 +51,35 @@ describe("ImageToTextConverter", (): void => {
     expect(getByText("Serbian")).toBeInTheDocument();
   });
 
-  it("should close error banner", async (): Promise<void> => {
-    (convertImageToText as jest.Mock).mockRejectedValue(() => {});
+  it("should convert image to text", async (): Promise<void> => {
+    const mockResult = {
+      data: {
+        text: "converted value",
+      },
+    } as Tesseract.RecognizeResult;
+    (Tesseract.recognize as jest.Mock).mockResolvedValue(mockResult);
+    global.URL.createObjectURL = jest.fn();
+    const { getByTestId, getByText, queryByTestId } = render(
+      <ImageToTextConverter />
+    );
 
+    const fileInput = getByTestId("ocr-file-upload-input");
+    const mockFile = new File(["hello"], "hello.png", { type: "image/png" });
+
+    await waitFor((): void => {
+      userEvent.upload(fileInput, mockFile);
+      expect(getByText("hello.png")).toBeInTheDocument();
+    });
+
+    fireEvent.click(getByText("Convert"));
+
+    await waitFor((): void => {
+      expect(convertImageToText).toHaveBeenCalled();
+      expect(queryByTestId("error-banner")).not.toBeInTheDocument();
+    });
+  });
+
+  it("should close error banner", async (): Promise<void> => {
     const { getByText, getByTestId, queryByTestId } = render(
       <ImageToTextConverter />
     );
@@ -40,12 +90,17 @@ describe("ImageToTextConverter", (): void => {
     await waitFor(() => {
       userEvent.upload(fileInput, mockFile);
     });
+
     fireEvent.click(getByText("Convert"));
 
-    expect(getByTestId("error-banner")).toBeInTheDocument();
+    await waitFor((): void => {
+      expect(getByTestId("error-banner")).toBeInTheDocument();
+    });
 
     fireEvent.click(getByText("close.svg"));
 
-    expect(queryByTestId("error-banner")).not.toBeInTheDocument();
+    await waitFor((): void => {
+      expect(queryByTestId("error-banner")).not.toBeInTheDocument();
+    });
   });
 });

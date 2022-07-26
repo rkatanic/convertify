@@ -10,7 +10,6 @@ import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
-import { ActionType } from "../types/Action";
 import {
   setError,
   setImageFile,
@@ -36,7 +35,7 @@ const ImageToTextConverter = (): JSX.Element => {
     dispatch,
   ] = useReducer(conversionReducer, initialState);
 
-  const handleImageSet = (value: string): void => {
+  const handleImageFileUpload = (value: string): void => {
     dispatch(setImageFile(value));
   };
 
@@ -48,25 +47,28 @@ const ImageToTextConverter = (): JSX.Element => {
     dispatch(setError(error));
   };
 
+  const handleErrorBannerClose = (): void => {
+    dispatch(setError(ErrorType.NO_ERROR));
+  };
+
   const handleImageUrlChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(setImageUrl(e.target.value));
+  };
+
+  const handleImageToTextConversion = (): void => {
+    convertImageToText(dispatch, imageUrl || imageFile, language);
   };
 
   return (
     <div className="main-content">
       {error !== ErrorType.NO_ERROR && (
-        <Error
-          error={error}
-          onClose={() =>
-            dispatch({
-              type: ActionType.SET_ERROR,
-              payload: ErrorType.NO_ERROR,
-            })
-          }
-        />
+        <Error error={error} onClose={handleErrorBannerClose} />
       )}
 
-      <OCRFileUpload handleError={handleErrorSet} setImage={handleImageSet} />
+      <OCRFileUpload
+        handleError={handleErrorSet}
+        setImage={handleImageFileUpload}
+      />
       <div className="separator">OR </div>
       <div className="input-and-languages">
         <input
@@ -86,9 +88,7 @@ const ImageToTextConverter = (): JSX.Element => {
         {...{ disabled: isLoading }}
         text="Convert"
         fullWidth
-        onClick={() =>
-          convertImageToText(dispatch, imageUrl || imageFile, language)
-        }
+        onClick={handleImageToTextConversion}
       />
       {isLoading && <ProgressBar progress={progress} />}
       {text && <TextWrapper text={text} />}
