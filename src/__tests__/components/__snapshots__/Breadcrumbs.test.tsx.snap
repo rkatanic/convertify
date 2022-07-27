@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Breadcrumbs should render 1`] = `
+<body>
+  <div>
+    <div
+      class="breadcrumbs"
+    >
+      <a
+        aria-current="page"
+        class="breadcrumb breadcrumb-active"
+        href="/"
+      >
+        Home
+      </a>
+      <span
+        class="breadcrumb-divider"
+      >
+        &gt;
+      </span>
+      <a
+        class="breadcrumb "
+        href="/test-route"
+      >
+        test route
+      </a>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`Breadcrumbs should render with second route active 1`] = `
+<body>
+  <div>
+    <div
+      class="breadcrumbs"
+    >
+      <a
+        class="breadcrumb "
+        href="/"
+      >
+        Home
+      </a>
+      <span
+        class="breadcrumb-divider"
+      >
+        &gt;
+      </span>
+      <a
+        aria-current="page"
+        class="breadcrumb breadcrumb-active"
+        href="/test-route"
+      >
+        test route
+      </a>
+    </div>
+  </div>
+</body>
+`;

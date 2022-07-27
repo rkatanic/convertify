@@ -7,6 +7,28 @@ exports[`ImageToTextConverter should render 1`] = `
       class="main-content"
     >
       <div
+        class="breadcrumbs"
+      >
+        <a
+          aria-current="page"
+          class="breadcrumb breadcrumb-active"
+          href="/"
+        >
+          Home
+        </a>
+        <span
+          class="breadcrumb-divider"
+        >
+          &gt;
+        </span>
+        <a
+          class="breadcrumb "
+          href="/test-route"
+        >
+          test route
+        </a>
+      </div>
+      <div
         class="ocr-file-upload"
       >
         <input

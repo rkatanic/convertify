@@ -1,6 +1,7 @@
 import { ChangeEvent, useState } from "react";
-import { convertFromCyrilicToLatin } from "../util/CyrilicToLatinConveterUtils";
+import { convertCyrilicToLatin } from "../util/CyrilicToLatinConveterUtils";
 import TextWrapper from "./TextWrapper";
+import Breadcrumbs from "./Breadcrumbs";
 
 import "./CyrilicToLatinConverter.scss";
 
@@ -12,11 +13,16 @@ const CyrilicToLatinConverter = (): JSX.Element => {
   };
   return (
     <div className="cyrilic-to-latin-converter">
+      <Breadcrumbs />
       <div>
-        <label className="cyrilic-to-latin-converter-textarea-label">
+        <label
+          htmlFor="cyrilic-to-latin-converter-textarea"
+          className="cyrilic-to-latin-converter-textarea-label"
+        >
           Input
         </label>
         <textarea
+          id="cyrilic-to-latin-converter-textarea"
           className="cyrilic-to-latin-converter-textarea"
           value={text}
           onChange={handleTextChange}
@@ -24,7 +30,7 @@ const CyrilicToLatinConverter = (): JSX.Element => {
           placeholder="Enter cyrilic text here"
         />
       </div>
-      <TextWrapper text={convertFromCyrilicToLatin(text)} />
+      <TextWrapper text={convertCyrilicToLatin(text)} />
     </div>
   );
 };

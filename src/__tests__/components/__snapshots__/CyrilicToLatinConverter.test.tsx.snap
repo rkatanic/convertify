@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CyrilicToLatinConverter should render 1`] = `
+<body>
+  <div>
+    <div
+      class="cyrilic-to-latin-converter"
+    >
+      <div
+        class="breadcrumbs"
+      >
+        <a
+          aria-current="page"
+          class="breadcrumb breadcrumb-active"
+          href="/"
+        >
+          Home
+        </a>
+        <span
+          class="breadcrumb-divider"
+        >
+          &gt;
+        </span>
+        <a
+          class="breadcrumb "
+          href="/test-route"
+        >
+          test route
+        </a>
+      </div>
+      <div>
+        <label
+          class="cyrilic-to-latin-converter-textarea-label"
+          for="cyrilic-to-latin-converter-textarea"
+        >
+          Input
+        </label>
+        <textarea
+          class="cyrilic-to-latin-converter-textarea"
+          id="cyrilic-to-latin-converter-textarea"
+          placeholder="Enter cyrilic text here"
+          rows="10"
+        />
+      </div>
+      <div
+        class="text-wrapper"
+      >
+        <div
+          class="text-wrapper-heading"
+        >
+          Output
+        </div>
+        <textarea
+          class="text-wrapper-output"
+          disabled=""
+          placeholder="Output text will appear here"
+          rows="10"
+        />
+        <div
+          class="text-wrapper-actions"
+        >
+          <div
+            class="icon-button-container"
+          >
+            <span
+              class="icon-button-tooltip"
+            >
+              Copy text
+            </span>
+            <button
+              class="icon-button"
+              disabled=""
+              type="button"
+            >
+              <svg>
+                copy.svg
+              </svg>
+            </button>
+          </div>
+          <div
+            class="icon-button-container"
+          >
+            <span
+              class="icon-button-tooltip"
+            >
+              Download
+            </span>
+            <button
+              class="icon-button"
+              disabled=""
+              type="button"
+            >
+              <svg>
+                download-file.svg
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+`;

@@ -7,7 +7,7 @@ const LATIN_LETTERS =
     " "
   );
 
-export const convertFromCyrilicToLatin = (string: string): any => {
+export const convertCyrilicToLatin = (string: string): string => {
   return string
     .split("")
     .map((char: string): string => {
@@ -21,7 +21,7 @@ export const convertFromCyrilicToLatin = (string: string): any => {
     .join("");
 };
 
-export const convertFromLatinToCyrilic = (string: string): any => {
+export const convertLatinToCyrilic = (string: string): string => {
   return string
     .split("")
     .map((char: string): string => {

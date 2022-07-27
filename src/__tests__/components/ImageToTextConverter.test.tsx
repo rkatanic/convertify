@@ -3,6 +3,7 @@ import userEvent from "@testing-library/user-event";
 import Tesseract from "tesseract.js";
 import ImageToTextConverter from "../../components/ImageToTextConverter";
 import { convertImageToText } from "../../util/OCRConverterUtils";
+import { MemoryRouter, useLocation } from "react-router-dom";
 
 jest.mock("tesseract.js", () => ({
   recognize: jest.fn(),
@@ -12,15 +13,34 @@ jest.mock("../../util/OCRConverterUtils", () => ({
   convertImageToText: jest.fn(),
 }));
 
+jest.mock("react-router-dom", (): any => {
+  const actualImplementation = jest.requireActual("react-router-dom");
+  return {
+    ...actualImplementation,
+    useLocation: jest.fn(),
+  };
+});
+
 describe("ImageToTextConverter", (): void => {
+  beforeEach((): void => {
+    (useLocation as jest.Mock).mockImplementation(() => {
+      return { pathname: "/test-route" };
+    });
+  });
+  const TestComponent = (
+    <MemoryRouter>
+      <ImageToTextConverter />
+    </MemoryRouter>
+  );
+
   it("should render", (): void => {
-    const { baseElement } = render(<ImageToTextConverter />);
+    const { baseElement } = render(TestComponent);
 
     expect(baseElement).toMatchSnapshot();
   });
 
   it("should change image url", (): void => {
-    const { getByTestId, getByDisplayValue } = render(<ImageToTextConverter />);
+    const { getByTestId, getByDisplayValue } = render(TestComponent);
 
     fireEvent.change(getByTestId("image-url-input"), {
       target: { value: "some-image-url" },
@@ -31,7 +51,7 @@ describe("ImageToTextConverter", (): void => {
 
   it("should upload file", async (): Promise<void> => {
     global.URL.createObjectURL = jest.fn();
-    const { getByTestId, getByText } = render(<ImageToTextConverter />);
+    const { getByTestId, getByText } = render(TestComponent);
 
     const fileInput = getByTestId("ocr-file-upload-input");
     const mockFile = new File(["hello"], "hello.png", { type: "image/png" });
@@ -43,7 +63,7 @@ describe("ImageToTextConverter", (): void => {
   });
 
   it("should change language", (): void => {
-    const { getByText } = render(<ImageToTextConverter />);
+    const { getByText } = render(TestComponent);
 
     fireEvent.click(getByText("English"));
     fireEvent.click(getByText("Serbian"));
@@ -59,9 +79,7 @@ describe("ImageToTextConverter", (): void => {
     } as Tesseract.RecognizeResult;
     (Tesseract.recognize as jest.Mock).mockResolvedValue(mockResult);
     global.URL.createObjectURL = jest.fn();
-    const { getByTestId, getByText, queryByTestId } = render(
-      <ImageToTextConverter />
-    );
+    const { getByTestId, getByText, queryByTestId } = render(TestComponent);
 
     const fileInput = getByTestId("ocr-file-upload-input");
     const mockFile = new File(["hello"], "hello.png", { type: "image/png" });
@@ -80,9 +98,7 @@ describe("ImageToTextConverter", (): void => {
   });
 
   it("should close error banner", async (): Promise<void> => {
-    const { getByText, getByTestId, queryByTestId } = render(
-      <ImageToTextConverter />
-    );
+    const { getByText, getByTestId, queryByTestId } = render(TestComponent);
 
     const fileInput = getByTestId("ocr-file-upload-input");
     const mockFile = new File(["hello"], "hello.txt", { type: "text" });

@@ -11,8 +11,11 @@ exports[`TestWrapper should render 1`] = `
       >
         Output
       </div>
-      <div
+      <textarea
         class="text-wrapper-output"
+        disabled=""
+        placeholder="Output text will appear here"
+        rows="10"
       />
       <div
         class="text-wrapper-actions"

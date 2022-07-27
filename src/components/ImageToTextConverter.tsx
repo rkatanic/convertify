@@ -7,6 +7,7 @@ import Languages from "./Languages";
 import Error from "./Error";
 import { convertImageToText } from "../util/OCRConverterUtils";
 import { DEFAULT_LANGUAGE } from "../constants/languages";
+import Breadcrumbs from "./Breadcrumbs";
 import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
@@ -61,6 +62,7 @@ const ImageToTextConverter = (): JSX.Element => {
 
   return (
     <div className="main-content">
+      <Breadcrumbs />
       {error !== ErrorType.NO_ERROR && (
         <Error error={error} onClose={handleErrorBannerClose} />
       )}
