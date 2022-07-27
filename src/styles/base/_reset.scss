@@ -17,12 +17,8 @@ body {
     width: 10px;
 }
 
-::-webkit-scrollbar-track {
-    background: var(--color-gray-200);
-}
-
 ::-webkit-scrollbar-thumb {
-    background: var(--color-gray-500);
+    background: var(--color-gray-600);
     border-radius: 1rem;
 }
 
@@ -31,7 +27,7 @@ b {
 }
 
 hr {
-    border-color: var(--color-gray-600);
+    border-color: var(--color-gray-00);
     border-top: 0;
     margin: 0;
     padding: 0;

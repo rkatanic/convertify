@@ -1,0 +1,38 @@
+.home {
+    &-title {
+        margin: 0;
+    }
+
+    &-description {
+        margin: 0 0 1.5rem;
+        color: var(--color-white-three);
+    }
+}
+
+.converters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.converter-card {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 24rem;
+    height: 16rem;
+    width: 100%;
+    border: 2px solid var(--color-gray-700);
+    text-decoration: none;
+    border-radius: 2px;
+
+    h3 {
+        white-space: nowrap;
+        color: var(--color-white-one);
+        margin: 0;
+    }
+
+    p {
+        margin: 1rem 0 0;
+        color: var(--color-gray-900);
+    }
+}

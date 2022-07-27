@@ -9,7 +9,7 @@
   cursor: pointer;
 
   .selected-language {
-    border-bottom: 2px solid var(--color-gray-600);
+    border-bottom: 2px solid var(--color-gray-700);
     width: 14rem;
     padding: 0 0 0.5rem;
     border-radius: 2px;
@@ -19,12 +19,8 @@
     color: var(--color-white);
     font-size: 0.875rem;
 
-    .caret-down {
-      width: 12px;
-      height: 6px;
-      clip-path: polygon(50% 100%, 0 0, 100% 0);
-      background-color: var(--color-gray-300);
-      position: relative;
+    .icon-caret-down>path {
+      stroke: var(--color-gray-700);
     }
   }
 
@@ -32,8 +28,8 @@
     top: 3rem;
     position: absolute;
     list-style: none;
-    border: 2px solid var(--color-gray-600);
-    background-color: var(--color-gray-300);
+    border: 2px solid var(--color-gray-700);
+    background-color: var(--color-gray-200);
     border-radius: 2px;
     overflow-y: auto;
     margin: 0;

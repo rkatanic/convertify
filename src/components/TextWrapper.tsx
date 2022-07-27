@@ -13,7 +13,13 @@ const TextWrapper = ({ text = "" }: Props) => {
   return (
     <div className="text-wrapper">
       <div className="text-wrapper-heading">Output</div>
-      <div className="text-wrapper-output">{text}</div>
+      <textarea
+        disabled
+        value={text}
+        className="text-wrapper-output"
+        placeholder="Output text will appear here"
+        rows={10}
+      />
       <div className="text-wrapper-actions">
         <IconButton
           label="Copy text"
