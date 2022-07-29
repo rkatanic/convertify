@@ -1,6 +1,6 @@
 {
-  "homepage": "https://rkatanic.github.io/ocr-converter",
-  "name": "ocr-converter",
+  "homepage": "https://rkatanic.github.io/convertify",
+  "name": "convertify",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
