@@ -10,7 +10,7 @@
   font-size: 1rem;
   cursor: pointer;
   background-color: transparent;
-  border: 2px solid var(--color-gray-700);
+  border: 1px solid var(--color-gray-700);
   transition: 0.25s;
 
   &:hover {
@@ -22,7 +22,7 @@
   }
 
   svg {
-    fill: var(--color-gray-800);
+    fill: var(--color-white-two);
     width: 16px;
     height: 16px;
   }

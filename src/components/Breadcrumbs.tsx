@@ -22,7 +22,7 @@ const Breadcrumbs = (): JSX.Element => {
           `breadcrumb ${isActive ? "breadcrumb-active" : ""}`
         }
       >
-        {pathname.replace("/", "").replaceAll("-", " ")}
+        {pathname.replaceAll("/", "").replaceAll("-", " ")}
       </NavLink>
     </div>
   );

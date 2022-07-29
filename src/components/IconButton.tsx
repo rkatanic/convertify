@@ -2,7 +2,7 @@ import "./IconButton.scss";
 
 interface Props {
   icon: JSX.Element;
-  onClick: () => void;
+  onClick?: () => void;
   props?: any;
   label?: string;
 }

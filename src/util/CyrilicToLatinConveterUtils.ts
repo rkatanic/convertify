@@ -20,17 +20,3 @@ export const convertCyrilicToLatin = (string: string): string => {
     })
     .join("");
 };
-
-export const convertLatinToCyrilic = (string: string): string => {
-  return string
-    .split("")
-    .map((char: string): string => {
-      const characterIndex = LATIN_LETTERS.indexOf(char);
-      if (!~characterIndex) {
-        return char;
-      }
-
-      return CYRILIC_LETTERS[characterIndex];
-    })
-    .join("");
-};
