@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/convertify/static/css/main.807a5cf9.chunk.css",
-    "main.js": "/convertify/static/js/main.f34255fe.chunk.js",
-    "main.js.map": "/convertify/static/js/main.f34255fe.chunk.js.map",
+    "main.css": "/convertify/static/css/main.04dde02a.chunk.css",
+    "main.js": "/convertify/static/js/main.b7d9962b.chunk.js",
+    "main.js.map": "/convertify/static/js/main.b7d9962b.chunk.js.map",
     "runtime-main.js": "/convertify/static/js/runtime-main.be604636.js",
     "runtime-main.js.map": "/convertify/static/js/runtime-main.be604636.js.map",
     "static/js/2.2bdd04e7.chunk.js": "/convertify/static/js/2.2bdd04e7.chunk.js",
     "static/js/2.2bdd04e7.chunk.js.map": "/convertify/static/js/2.2bdd04e7.chunk.js.map",
     "index.html": "/convertify/index.html",
-    "static/css/main.807a5cf9.chunk.css.map": "/convertify/static/css/main.807a5cf9.chunk.css.map",
+    "static/css/main.04dde02a.chunk.css.map": "/convertify/static/css/main.04dde02a.chunk.css.map",
     "static/js/2.2bdd04e7.chunk.js.LICENSE.txt": "/convertify/static/js/2.2bdd04e7.chunk.js.LICENSE.txt",
     "static/media/abstract-line-one.b72a75a2.svg": "/convertify/static/media/abstract-line-one.b72a75a2.svg",
     "static/media/abstract-line-two.216556b9.svg": "/convertify/static/media/abstract-line-two.216556b9.svg",
@@ -24,7 +24,7 @@
   "entrypoints": [
     "static/js/runtime-main.be604636.js",
     "static/js/2.2bdd04e7.chunk.js",
-    "static/css/main.807a5cf9.chunk.css",
-    "static/js/main.f34255fe.chunk.js"
+    "static/css/main.04dde02a.chunk.css",
+    "static/js/main.b7d9962b.chunk.js"
   ]
 }
