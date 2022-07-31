@@ -96,6 +96,7 @@ exports[`ImageToTextConverter should render 1`] = `
       </div>
       <button
         class="btn btn-full-width"
+        disabled=""
         type="button"
       >
         Convert

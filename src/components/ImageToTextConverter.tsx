@@ -88,7 +88,7 @@ const ImageToTextConverter = (): JSX.Element => {
         />
       </div>
       <Button
-        {...{ disabled: isLoading }}
+        {...{ disabled: isLoading || !(imageFile || imageUrl) }}
         text="Convert"
         fullWidth
         onClick={handleImageToTextConversion}

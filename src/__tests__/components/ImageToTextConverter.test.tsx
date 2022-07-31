@@ -71,7 +71,7 @@ describe("ImageToTextConverter", (): void => {
     expect(getByText("Serbian")).toBeInTheDocument();
   });
 
-  it("should convert image to text", async (): Promise<void> => {
+  it("should convert image url to text", async (): Promise<void> => {
     const mockResult = {
       data: {
         text: "converted value",
@@ -79,19 +79,16 @@ describe("ImageToTextConverter", (): void => {
     } as Tesseract.RecognizeResult;
     (Tesseract.recognize as jest.Mock).mockResolvedValue(mockResult);
     global.URL.createObjectURL = jest.fn();
+
     const { getByTestId, getByText, queryByTestId } = render(TestComponent);
 
-    const fileInput = getByTestId("ocr-file-upload-input");
-    const mockFile = new File(["hello"], "hello.png", { type: "image/png" });
+    const fileInput = getByTestId("image-url-input");
+
+    fireEvent.change(fileInput, { target: { value: "some image url" } });
 
     await waitFor((): void => {
-      userEvent.upload(fileInput, mockFile);
-      expect(getByText("hello.png")).toBeInTheDocument();
-    });
+      fireEvent.click(getByText("Convert"));
 
-    fireEvent.click(getByText("Convert"));
-
-    await waitFor((): void => {
       expect(convertImageToText).toHaveBeenCalled();
       expect(queryByTestId("error-banner")).not.toBeInTheDocument();
     });
