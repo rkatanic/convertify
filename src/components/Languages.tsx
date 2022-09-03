@@ -3,8 +3,6 @@ import { Language } from "../types/Language";
 import { LANGUAGES } from "../constants/languages";
 import { ReactComponent as CaretDownIcon } from "../icons/caret-down.svg";
 
-import "./Languages.scss";
-
 interface Props {
   setLanguage: (language: Language) => void;
   selectedLanguage: Language;
@@ -34,29 +32,20 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
   }, []);
 
   return (
-    <div className="languages">
-      <div className="languages-select" ref={ref}>
-        <div className="selected-language" onClick={handleDropdownToggle}>
-          {selectedLanguage.value}
-          <CaretDownIcon />
-        </div>
-        {showDropdown && (
-          <ul data-testid="languages-list">
-            {LANGUAGES.map((language: Language, i) => (
-              <li
-                className={`option ${
-                  selectedLanguage.key === language.key ? "option-active" : ""
-                }`}
-                onClick={() => handleLanguageSelect(language)}
-                key={i}
-                value={language.key}
-              >
-                {language.value}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
+    <div className="text-sm">
+      <label htmlFor="languages" className="text-xs text-gray-400 mb-2 block">
+        Language
+      </label>
+      <select
+        id="languages"
+        className="border border-gray-200 rounded py-2 px-4 w-full"
+      >
+        {LANGUAGES.map((language) => (
+          <option key={language.key} value={language.key}>
+            {language.value}
+          </option>
+        ))}
+      </select>
     </div>
   );
 };

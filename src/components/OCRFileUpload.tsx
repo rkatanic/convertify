@@ -2,8 +2,7 @@ import { useState } from "react";
 import { ErrorType } from "../types/ErrorType";
 import { ReactComponent as FileUploadIcon } from "../icons/file-upload.svg";
 import { ReactComponent as FileUploadSuccessIcon } from "../icons/file-upload-success.svg";
-
-import "./OCRFileUpload.scss";
+import { RiImageAddLine } from "react-icons/ri";
 
 interface Props {
   setImage: (value: string) => void;
@@ -47,36 +46,42 @@ const OCRFileUpload = ({
   };
 
   return (
-    <div className="ocr-file-upload">
+    <div className="cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded p-6">
       <input
+        id="file-upload"
         disabled={disabled}
-        className="ocr-file-upload-input"
+        className="sr-only"
         type="file"
         onChange={handleFileUpload}
         data-testid="ocr-file-upload-input"
       />
-      <div className="ocr-file-upload-container">
+      <label
+        htmlFor="file-upload"
+        className="cursor-pointer flex flex-col items-center gap-2 text-center"
+      >
         {file.name !== "" && file.size !== "" ? (
-          <FileUploadSuccessIcon />
+          <FileUploadSuccessIcon className="w-8 h-8" />
         ) : (
-          <FileUploadIcon />
+          <RiImageAddLine size="2.5rem" className="fill-gray-200" />
         )}
-        <div className="ocr-file-upload-container-txt">
-          <h3 className="ocr-file-upload-container-txt-title">
-            {file.name === "" ? "Select file to upload" : file.name}
-          </h3>
-          <p className="ocr-file-upload-container-txt-desc">
-            {file.size ? (
-              file.size
+        <div className="text-sm">
+          <h3 className="">
+            {file.name === "" ? (
+              <div className="mb-1">
+                <span className="text-indigo-500 font-medium">
+                  Upload a file
+                </span>{" "}
+                <span className="text-gray-500">or drag and drop</span>
+              </div>
             ) : (
-              <>
-                Supported formats are: <br /> jpg, jpeg, png, bmp, pbm. <br />
-                Max file upload size is 5 MB.
-              </>
+              file.name
             )}
+          </h3>
+          <p className="text-gray-400">
+            {file.size ? file.size : <>JPG, JPEG, PNG, BMP, PBM up to 5MB</>}
           </p>
         </div>
-      </div>
+      </label>
     </div>
   );
 };
