@@ -32,13 +32,13 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
   }, []);
 
   return (
-    <div className="text-sm">
-      <label htmlFor="languages" className="text-xs text-gray-400 mb-2 block">
+    <div>
+      <label htmlFor="languages" className="text-xs text-gray-400 mb-1 block">
         Language
       </label>
       <select
         id="languages"
-        className="border border-gray-200 rounded py-2 px-4 w-full"
+        className="text-md border-b focus:border-indigo-500 outline-0 border-gray-200 pb-2.5 w-full"
       >
         {LANGUAGES.map((language) => (
           <option key={language.key} value={language.key}>

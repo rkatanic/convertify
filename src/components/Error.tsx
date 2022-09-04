@@ -1,8 +1,7 @@
 import { ReactComponent as WarningTriangleIcon } from "../icons/warning-triangle.svg";
 import { ReactComponent as CloseIcon } from "../icons/close.svg";
 import { ErrorType } from "../types/ErrorType";
-
-import "./Error.scss";
+import { FiX } from "react-icons/fi";
 
 interface Props {
   onClose: () => void;
@@ -24,12 +23,22 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
   };
 
   return (
-    <div data-testid="error-banner" className="error">
-      <div className="error-message">
-        <WarningTriangleIcon />
+    <div
+      data-testid="error-banner"
+      className="mb-4 shadow-md bg-red-50 border-l-2 border-red-500 p-4"
+    >
+      <div className="flex items-center justify-between gap-4">
+        <div className="font-medium text-red-700">Error</div>
+        <FiX
+          data-testid="error-icon-close"
+          onClick={onClose}
+          size="1.25rem"
+          className="stroke-red-800 cursor-pointer"
+        />
+      </div>
+      <div className="text-red-700 font-thin text-sm">
         <span>{showErrorMessage()}</span>
       </div>
-      <CloseIcon data-testid="error-icon-close" onClick={onClose} />
     </div>
   );
 };
