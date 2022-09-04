@@ -7,7 +7,7 @@ interface State {
   imageUrl: string;
   text: string;
   progress: number;
-  isLoading: boolean;
+  isConverting: boolean;
   error: ErrorType;
 }
 
@@ -26,7 +26,7 @@ export const conversionReducer = (state: State, action: Action): State => {
     case ActionType.CONVERT_IMAGE_INIT:
       return {
         ...state,
-        isLoading: true,
+        isConverting: true,
         progress: 0,
         error: ErrorType.NO_ERROR,
       };
@@ -34,14 +34,25 @@ export const conversionReducer = (state: State, action: Action): State => {
       return {
         ...state,
         text: action.payload,
-        isLoading: false,
+        isConverting: false,
         error: ErrorType.NO_ERROR,
       };
     case ActionType.CONVERT_IMAGE_ERROR:
       return {
         ...state,
         error: ErrorType.CONVERSION_FAILED,
-        isLoading: false,
+        isConverting: false,
+      };
+
+    case ActionType.NEW_CONVERSION:
+      return {
+        ...state,
+        imageFile: "",
+        imageUrl: "",
+        text: "",
+        progress: 0,
+        isConverting: false,
+        error: ErrorType.NO_ERROR,
       };
     default:
       return state;

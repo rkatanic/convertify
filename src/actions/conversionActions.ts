@@ -38,3 +38,7 @@ export const convertImageSuccess = (value: string) => ({
 export const convertImageError = () => ({
   type: ActionType.CONVERT_IMAGE_ERROR,
 });
+
+export const newConversion = () => ({
+  type: ActionType.NEW_CONVERSION,
+});

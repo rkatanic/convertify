@@ -6,7 +6,6 @@ import {
   setProgress,
 } from "../actions/conversionActions";
 import { Action } from "../types/Action";
-import { Language } from "../types/Language";
 
 export const downloadTextFile = (text: string) => {
   const element = document.createElement("a");

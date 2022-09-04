@@ -1,40 +1,58 @@
-import { ReactComponent as CopyIcon } from "../icons/copy.svg";
-import { ReactComponent as DownloadFileIcon } from "../icons/download-file.svg";
 import { copyText, downloadTextFile } from "../util/OCRConverterUtils";
 import IconButton from "./IconButton";
-
-import "./TextWrapper.scss";
+import { RiFileCopyFill, RiFileDownloadFill } from "react-icons/ri";
 
 interface Props {
   text?: string;
+  initNewConversion: () => void;
 }
 
-const TextWrapper = ({ text = "" }: Props) => {
-  return (
-    <div className="text-wrapper">
-      <div className="text-wrapper-heading">Output</div>
-      <textarea
-        disabled
-        value={text}
-        className="text-wrapper-output"
-        placeholder="Output text will appear here"
-        rows={10}
-      />
-      <div className="text-wrapper-actions">
-        <IconButton
-          label="Copy text"
-          icon={<CopyIcon />}
-          onClick={() => copyText(text)}
-          {...(!text && { disabled: true })}
-        />
-        <IconButton
-          label="Download"
-          icon={<DownloadFileIcon />}
-          onClick={() => downloadTextFile(text)}
-          {...(!text && { disabled: true })}
-        />
-      </div>
+const TextWrapper = ({ text = "", initNewConversion }: Props) => (
+  <div className="absolute top-0 left-0 bg-white w-full p-8">
+    <div className="flex items-end justify-between mb-4 text-lg text-gray-400">
+      Output
+      <button
+        onClick={initNewConversion}
+        type="button"
+        className="py-2 px-4 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded"
+      >
+        New conversion
+      </button>
     </div>
-  );
-};
+
+    <textarea
+      disabled
+      value={text}
+      className="w-full border-b bg-gray-50 p-2 resize-none"
+      placeholder="Output text"
+      rows={11}
+    />
+    <div className="mt-1 flex justify-end gap-4">
+      <IconButton
+        label="Copy text"
+        icon={
+          <RiFileCopyFill
+            data-testid="copy-icon"
+            className="fill-gray-400 hover:fill-indigo-500"
+            size="1.25rem"
+          />
+        }
+        onClick={() => copyText(text)}
+        {...(!text && { disabled: true })}
+      />
+      <IconButton
+        label="Download"
+        icon={
+          <RiFileDownloadFill
+            data-testid="download-icon"
+            className="fill-gray-400 hover:fill-indigo-500"
+            size="1.25rem"
+          />
+        }
+        onClick={() => downloadTextFile(text)}
+        {...(!text && { disabled: true })}
+      />
+    </div>
+  </div>
+);
 export default TextWrapper;

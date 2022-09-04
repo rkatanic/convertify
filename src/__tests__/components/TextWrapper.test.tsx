@@ -1,4 +1,4 @@
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render } from "@testing-library/react";
 import TextWrapper from "../../components/TextWrapper";
 import { copyText, downloadTextFile } from "../../util/OCRConverterUtils";
 
@@ -9,24 +9,41 @@ jest.mock("../../util/OCRConverterUtils", () => ({
 
 describe("TestWrapper", (): void => {
   it("should render", (): void => {
-    const { baseElement } = render(<TextWrapper />);
+    const { baseElement } = render(
+      <TextWrapper initNewConversion={jest.fn()} />
+    );
 
     expect(baseElement).toMatchSnapshot();
   });
 
   it("should copy text to clipboard", (): void => {
-    const { getByText } = render(<TextWrapper text="text" />);
+    const { getByTestId } = render(
+      <TextWrapper initNewConversion={jest.fn()} text="text" />
+    );
 
-    fireEvent.click(getByText("copy.svg"));
+    fireEvent.click(getByTestId("copy-icon"));
 
     expect(copyText).toHaveBeenNthCalledWith(1, "text");
   });
 
   it("should download text to .txt file", async (): Promise<void> => {
-    const { getByText } = render(<TextWrapper text="text" />);
+    const { getByTestId } = render(
+      <TextWrapper initNewConversion={jest.fn()} text="text" />
+    );
 
-    fireEvent.click(getByText("download-file.svg"));
+    fireEvent.click(getByTestId("download-icon"));
 
     expect(downloadTextFile).toHaveBeenNthCalledWith(1, "text");
+  });
+
+  it("should initialize new conversion", (): void => {
+    const mockInitNewConversion = jest.fn();
+    const { getByText } = render(
+      <TextWrapper initNewConversion={mockInitNewConversion} text="text" />
+    );
+
+    fireEvent.click(getByText("New conversion"));
+
+    expect(mockInitNewConversion).toHaveBeenCalledTimes(1);
   });
 });

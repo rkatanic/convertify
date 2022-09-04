@@ -5,9 +5,18 @@ interface Props {
   onClick: () => void;
   props?: any;
   fullWidth?: boolean;
+  isConverting: boolean;
+  conversionProgress: number;
 }
 
-const Button = ({ text, onClick, fullWidth, ...props }: Props): JSX.Element => {
+const Button = ({
+  text,
+  onClick,
+  fullWidth,
+  isConverting,
+  conversionProgress,
+  ...props
+}: Props): JSX.Element => {
   return (
     <button
       {...props}
@@ -17,8 +26,20 @@ const Button = ({ text, onClick, fullWidth, ...props }: Props): JSX.Element => {
       type="button"
       onClick={onClick}
     >
-      <FiRefreshCw className="absolute top-3.5 stroke-indigo-300" />
-      {text}
+      <div className="absolute flex w-16">
+        <FiRefreshCw
+          className={`absolute top-1 stroke-indigo-300 ${
+            isConverting ? "animate-spin " : ""
+          }`}
+        />
+        {isConverting && (
+          <div className="mt-0.5 ml-6 text-sm">
+            {" "}
+            {Math.round(conversionProgress * 100)}%
+          </div>
+        )}
+      </div>
+      {isConverting ? "Converting" : text}
     </button>
   );
 };

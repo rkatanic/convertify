@@ -4,22 +4,49 @@ exports[`Error should initially be without error message 1`] = `
 <body>
   <div>
     <div
-      class="error"
+      class="mb-4 shadow-md bg-red-50 border-l-2 border-red-500 p-4"
       data-testid="error-banner"
     >
       <div
-        class="error-message"
+        class="flex items-center justify-between gap-4"
       >
-        <svg>
-          warning-triangle.svg
+        <div
+          class="font-medium text-red-700"
+        >
+          Error
+        </div>
+        <svg
+          class="stroke-red-800 cursor-pointer"
+          data-testid="error-icon-close"
+          fill="none"
+          height="1.25rem"
+          stroke="currentColor"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          width="1.25rem"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <line
+            x1="18"
+            x2="6"
+            y1="6"
+            y2="18"
+          />
+          <line
+            x1="6"
+            x2="18"
+            y1="6"
+            y2="18"
+          />
         </svg>
+      </div>
+      <div
+        class="text-red-700 font-thin text-sm"
+      >
         <span />
       </div>
-      <svg
-        data-testid="error-icon-close"
-      >
-        close.svg
-      </svg>
     </div>
   </div>
 </body>

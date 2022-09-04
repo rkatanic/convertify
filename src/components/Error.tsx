@@ -1,5 +1,3 @@
-import { ReactComponent as WarningTriangleIcon } from "../icons/warning-triangle.svg";
-import { ReactComponent as CloseIcon } from "../icons/close.svg";
 import { ErrorType } from "../types/ErrorType";
 import { FiX } from "react-icons/fi";
 

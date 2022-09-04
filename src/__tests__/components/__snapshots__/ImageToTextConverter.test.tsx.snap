@@ -27,7 +27,7 @@ exports[`ImageToTextConverter should render 1`] = `
         class="z-10 w-full max-w-md"
       >
         <div
-          class="flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8"
+          class="relative flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8"
         >
           <div>
             <label
@@ -459,28 +459,32 @@ exports[`ImageToTextConverter should render 1`] = `
             disabled=""
             type="button"
           >
-            <svg
-              class="absolute top-3.5 stroke-indigo-300"
-              fill="none"
-              height="1em"
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              viewBox="0 0 24 24"
-              width="1em"
-              xmlns="http://www.w3.org/2000/svg"
+            <div
+              class="absolute flex w-16"
             >
-              <polyline
-                points="23 4 23 10 17 10"
-              />
-              <polyline
-                points="1 20 1 14 7 14"
-              />
-              <path
-                d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
-              />
-            </svg>
+              <svg
+                class="absolute top-1 stroke-indigo-300 "
+                fill="none"
+                height="1em"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+                width="1em"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <polyline
+                  points="23 4 23 10 17 10"
+                />
+                <polyline
+                  points="1 20 1 14 7 14"
+                />
+                <path
+                  d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+                />
+              </svg>
+            </div>
             Convert
           </button>
           

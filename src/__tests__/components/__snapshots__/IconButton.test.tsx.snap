@@ -4,10 +4,9 @@ exports[`Icon Button should render 1`] = `
 <body>
   <div>
     <div
-      class="icon-button-container"
+      class="relative"
     >
       <button
-        class="icon-button"
         type="button"
       >
         icon
