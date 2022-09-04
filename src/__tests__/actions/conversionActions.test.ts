@@ -31,11 +31,11 @@ describe("conversionActions", (): void => {
   });
 
   it("setLanguage", (): void => {
-    const action = setLanguage({ key: "eng", value: "English" });
+    const action = setLanguage("eng");
 
     expect(action).toEqual({
       type: ActionType.SET_LANGUAGE,
-      payload: { key: "eng", value: "English" },
+      payload: "eng",
     });
   });
 

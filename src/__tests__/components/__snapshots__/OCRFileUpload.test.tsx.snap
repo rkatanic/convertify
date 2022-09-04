@@ -4,39 +4,62 @@ exports[`OCRFileUpload should render 1`] = `
 <body>
   <div>
     <div
-      class="ocr-file-upload"
+      class="cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded-sm p-6"
     >
       <input
-        class="ocr-file-upload-input"
+        class="sr-only"
         data-testid="ocr-file-upload-input"
         disabled=""
+        id="file-upload"
         type="file"
       />
-      <div
-        class="ocr-file-upload-container"
+      <label
+        class="cursor-pointer flex flex-col items-center gap-2 text-center"
+        for="file-upload"
       >
-        <svg>
-          file-upload.svg
-        </svg>
-        <div
-          class="ocr-file-upload-container-txt"
+        <svg
+          class="fill-gray-200"
+          fill="currentColor"
+          height="2.5rem"
+          stroke="currentColor"
+          stroke-width="0"
+          viewBox="0 0 24 24"
+          width="2.5rem"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <h3
-            class="ocr-file-upload-container-txt-title"
+          <g>
+            <path
+              d="M0 0h24v24H0z"
+              fill="none"
+            />
+            <path
+              d="M21 15v3h3v2h-3v3h-2v-3h-3v-2h3v-3h2zm.008-12c.548 0 .992.445.992.993V13h-2V5H4v13.999L14 9l3 3v2.829l-3-3L6.827 19H14v2H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016zM8 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+            />
+          </g>
+        </svg>
+        <div>
+          <div
+            class="mb-1"
           >
-            Select file to upload
-          </h3>
+            <span
+              class="text-indigo-500 font-medium"
+            >
+              Upload a file
+            </span>
+             
+            <span
+              class="text-gray-400 font-thin"
+            >
+              or drag and drop
+            </span>
+          </div>
           <p
-            class="ocr-file-upload-container-txt-desc"
+            class="text-gray-400 text-sm font-thin"
           >
-            Supported formats are: 
-            <br />
-             jpg, jpeg, png, bmp, pbm. 
-            <br />
-            Max file upload size is 5 MB.
+            JPG, JPEG, PNG, BMP, PBM up to 5MB
           </p>
         </div>
-      </div>
+      </label>
     </div>
   </div>
 </body>

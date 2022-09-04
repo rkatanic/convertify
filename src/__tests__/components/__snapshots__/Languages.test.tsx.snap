@@ -1,452 +1,356 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Languages should display languages list 1`] = `
-<body>
-  <div>
-    <div
-      class="languages"
-    >
-      <div
-        class="languages-select"
-      >
-        <div
-          class="selected-language"
-        >
-          English
-          <svg>
-            caret-down.svg
-          </svg>
-        </div>
-        <ul
-          data-testid="languages-list"
-        >
-          <li
-            class="option "
-            value="afr"
-          >
-            Afrikaans
-          </li>
-          <li
-            class="option "
-            value="amh"
-          >
-            Amharic
-          </li>
-          <li
-            class="option "
-            value="ara"
-          >
-            Arabic
-          </li>
-          <li
-            class="option "
-            value="asm"
-          >
-            Assamese
-          </li>
-          <li
-            class="option "
-            value="aze"
-          >
-            Azerbaijani
-          </li>
-          <li
-            class="option "
-            value="aze_cyrl"
-          >
-            Azerbaijani - Cyrillic
-          </li>
-          <li
-            class="option "
-            value="bel"
-          >
-            Belarusian
-          </li>
-          <li
-            class="option "
-            value="ben"
-          >
-            Bengali
-          </li>
-          <li
-            class="option "
-            value="bod"
-          >
-            Tibetan
-          </li>
-          <li
-            class="option "
-            value="bos"
-          >
-            Bosnian
-          </li>
-          <li
-            class="option "
-            value="bul"
-          >
-            Bulgarian
-          </li>
-          <li
-            class="option "
-            value="cat"
-          >
-            Catalan; Valencian
-          </li>
-          <li
-            class="option "
-            value="ceb"
-          >
-            Cebuano
-          </li>
-          <li
-            class="option "
-            value="ces"
-          >
-            Czech
-          </li>
-          <li
-            class="option "
-            value="chi_sim"
-          >
-            Chinese - Simplified
-          </li>
-          <li
-            class="option "
-            value="chi_tra"
-          >
-            Chinese - Traditional
-          </li>
-          <li
-            class="option "
-            value="chr"
-          >
-            Cherokee
-          </li>
-          <li
-            class="option "
-            value="cym"
-          >
-            Welsh
-          </li>
-          <li
-            class="option "
-            value="dan"
-          >
-            Danish
-          </li>
-          <li
-            class="option "
-            value="deu"
-          >
-            German
-          </li>
-          <li
-            class="option "
-            value="dzo"
-          >
-            Dzongkha
-          </li>
-          <li
-            class="option "
-            value="ell"
-          >
-            Greek, Modern (1453-)
-          </li>
-          <li
-            class="option option-active"
-            value="eng"
-          >
-            English
-          </li>
-          <li
-            class="option "
-            value="epo"
-          >
-            Esperanto
-          </li>
-          <li
-            class="option "
-            value="est"
-          >
-            Estonian
-          </li>
-          <li
-            class="option "
-            value="fin"
-          >
-            Finnish
-          </li>
-          <li
-            class="option "
-            value="fra"
-          >
-            French
-          </li>
-          <li
-            class="option "
-            value="gle"
-          >
-            Irish
-          </li>
-          <li
-            class="option "
-            value="hat"
-          >
-            Haitian; Haitian Creole
-          </li>
-          <li
-            class="option "
-            value="heb"
-          >
-            Hebrew
-          </li>
-          <li
-            class="option "
-            value="hin"
-          >
-            Hindi
-          </li>
-          <li
-            class="option "
-            value="hun"
-          >
-            Hungarian
-          </li>
-          <li
-            class="option "
-            value="ind"
-          >
-            Indonesian
-          </li>
-          <li
-            class="option "
-            value="isl"
-          >
-            Italian
-          </li>
-          <li
-            class="option "
-            value="jpn"
-          >
-            Japanese
-          </li>
-          <li
-            class="option "
-            value="kat"
-          >
-            Georgian
-          </li>
-          <li
-            class="option "
-            value="kor"
-          >
-            Korean
-          </li>
-          <li
-            class="option "
-            value="kur"
-          >
-            Kurdish
-          </li>
-          <li
-            class="option "
-            value="lao"
-          >
-            Lao
-          </li>
-          <li
-            class="option "
-            value="lat"
-          >
-            Latvian
-          </li>
-          <li
-            class="option "
-            value="lit"
-          >
-            Lithuanian
-          </li>
-          <li
-            class="option "
-            value="mal"
-          >
-            Malayalam
-          </li>
-          <li
-            class="option "
-            value="mkd"
-          >
-            Macedonian
-          </li>
-          <li
-            class="option "
-            value="mlt"
-          >
-            Maltese
-          </li>
-          <li
-            class="option "
-            value="mya"
-          >
-            Burmese
-          </li>
-          <li
-            class="option "
-            value="nep"
-          >
-            Nepali
-          </li>
-          <li
-            class="option "
-            value="nor"
-          >
-            Norwegian
-          </li>
-          <li
-            class="option "
-            value="pol"
-          >
-            Polish
-          </li>
-          <li
-            class="option "
-            value="por"
-          >
-            Portuguese
-          </li>
-          <li
-            class="option "
-            value="ron"
-          >
-            Romanian; Moldavian
-          </li>
-          <li
-            class="option "
-            value="rus"
-          >
-            Russian
-          </li>
-          <li
-            class="option "
-            value="san"
-          >
-            Sanskrit
-          </li>
-          <li
-            class="option "
-            value="slk"
-          >
-            Slovak
-          </li>
-          <li
-            class="option "
-            value="slv"
-          >
-            Slovenian
-          </li>
-          <li
-            class="option "
-            value="spa"
-          >
-            Spanish; Castilian
-          </li>
-          <li
-            class="option "
-            value="srp"
-          >
-            Serbian
-          </li>
-          <li
-            class="option "
-            value="srp_latn"
-          >
-            Serbian - Latin
-          </li>
-          <li
-            class="option "
-            value="swa"
-          >
-            Swahili
-          </li>
-          <li
-            class="option "
-            value="swe"
-          >
-            Swedish
-          </li>
-          <li
-            class="option "
-            value="syr"
-          >
-            Syriac
-          </li>
-          <li
-            class="option "
-            value="tur"
-          >
-            Turkish
-          </li>
-          <li
-            class="option "
-            value="tha"
-          >
-            Thai
-          </li>
-          <li
-            class="option "
-            value="ukr"
-          >
-            Ukrainian
-          </li>
-          <li
-            class="option "
-            value="uzb"
-          >
-            Uzbek
-          </li>
-          <li
-            class="option "
-            value="uzb_cyrl"
-          >
-            Uzbek - Cyrillic
-          </li>
-          <li
-            class="option "
-            value="vie"
-          >
-            Vietnamese
-          </li>
-          <li
-            class="option "
-            value="yid"
-          >
-            Yiddish
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</body>
-`;
-
 exports[`Languages should render 1`] = `
 <body>
   <div>
-    <div
-      class="languages"
-    >
-      <div
-        class="languages-select"
+    <div>
+      <label
+        class="text-xs text-gray-400 mb-1 block"
+        for="languages"
       >
-        <div
-          class="selected-language"
+        Language
+      </label>
+      <select
+        class="text-md border-b focus:border-indigo-500 outline-0 border-gray-200 pb-2.5 w-full"
+        data-testid="languages"
+        id="languages"
+      >
+        <option
+          value="afr"
+        >
+          Afrikaans
+        </option>
+        <option
+          value="amh"
+        >
+          Amharic
+        </option>
+        <option
+          value="ara"
+        >
+          Arabic
+        </option>
+        <option
+          value="asm"
+        >
+          Assamese
+        </option>
+        <option
+          value="aze"
+        >
+          Azerbaijani
+        </option>
+        <option
+          value="aze_cyrl"
+        >
+          Azerbaijani - Cyrillic
+        </option>
+        <option
+          value="bel"
+        >
+          Belarusian
+        </option>
+        <option
+          value="ben"
+        >
+          Bengali
+        </option>
+        <option
+          value="bod"
+        >
+          Tibetan
+        </option>
+        <option
+          value="bos"
+        >
+          Bosnian
+        </option>
+        <option
+          value="bul"
+        >
+          Bulgarian
+        </option>
+        <option
+          value="cat"
+        >
+          Catalan; Valencian
+        </option>
+        <option
+          value="ceb"
+        >
+          Cebuano
+        </option>
+        <option
+          value="ces"
+        >
+          Czech
+        </option>
+        <option
+          value="chi_sim"
+        >
+          Chinese - Simplified
+        </option>
+        <option
+          value="chi_tra"
+        >
+          Chinese - Traditional
+        </option>
+        <option
+          value="chr"
+        >
+          Cherokee
+        </option>
+        <option
+          value="cym"
+        >
+          Welsh
+        </option>
+        <option
+          value="dan"
+        >
+          Danish
+        </option>
+        <option
+          value="deu"
+        >
+          German
+        </option>
+        <option
+          value="dzo"
+        >
+          Dzongkha
+        </option>
+        <option
+          value="ell"
+        >
+          Greek, Modern (1453-)
+        </option>
+        <option
+          value="eng"
         >
           English
-          <svg>
-            caret-down.svg
-          </svg>
-        </div>
-      </div>
+        </option>
+        <option
+          value="epo"
+        >
+          Esperanto
+        </option>
+        <option
+          value="est"
+        >
+          Estonian
+        </option>
+        <option
+          value="fin"
+        >
+          Finnish
+        </option>
+        <option
+          value="fra"
+        >
+          French
+        </option>
+        <option
+          value="gle"
+        >
+          Irish
+        </option>
+        <option
+          value="hat"
+        >
+          Haitian; Haitian Creole
+        </option>
+        <option
+          value="heb"
+        >
+          Hebrew
+        </option>
+        <option
+          value="hin"
+        >
+          Hindi
+        </option>
+        <option
+          value="hun"
+        >
+          Hungarian
+        </option>
+        <option
+          value="ind"
+        >
+          Indonesian
+        </option>
+        <option
+          value="isl"
+        >
+          Italian
+        </option>
+        <option
+          value="jpn"
+        >
+          Japanese
+        </option>
+        <option
+          value="kat"
+        >
+          Georgian
+        </option>
+        <option
+          value="kor"
+        >
+          Korean
+        </option>
+        <option
+          value="kur"
+        >
+          Kurdish
+        </option>
+        <option
+          value="lao"
+        >
+          Lao
+        </option>
+        <option
+          value="lat"
+        >
+          Latvian
+        </option>
+        <option
+          value="lit"
+        >
+          Lithuanian
+        </option>
+        <option
+          value="mal"
+        >
+          Malayalam
+        </option>
+        <option
+          value="mkd"
+        >
+          Macedonian
+        </option>
+        <option
+          value="mlt"
+        >
+          Maltese
+        </option>
+        <option
+          value="mya"
+        >
+          Burmese
+        </option>
+        <option
+          value="nep"
+        >
+          Nepali
+        </option>
+        <option
+          value="nor"
+        >
+          Norwegian
+        </option>
+        <option
+          value="pol"
+        >
+          Polish
+        </option>
+        <option
+          value="por"
+        >
+          Portuguese
+        </option>
+        <option
+          value="ron"
+        >
+          Romanian; Moldavian
+        </option>
+        <option
+          value="rus"
+        >
+          Russian
+        </option>
+        <option
+          value="san"
+        >
+          Sanskrit
+        </option>
+        <option
+          value="slk"
+        >
+          Slovak
+        </option>
+        <option
+          value="slv"
+        >
+          Slovenian
+        </option>
+        <option
+          value="spa"
+        >
+          Spanish; Castilian
+        </option>
+        <option
+          value="srp"
+        >
+          Serbian
+        </option>
+        <option
+          value="srp_latn"
+        >
+          Serbian - Latin
+        </option>
+        <option
+          value="swa"
+        >
+          Swahili
+        </option>
+        <option
+          value="swe"
+        >
+          Swedish
+        </option>
+        <option
+          value="syr"
+        >
+          Syriac
+        </option>
+        <option
+          value="tur"
+        >
+          Turkish
+        </option>
+        <option
+          value="tha"
+        >
+          Thai
+        </option>
+        <option
+          value="ukr"
+        >
+          Ukrainian
+        </option>
+        <option
+          value="uzb"
+        >
+          Uzbek
+        </option>
+        <option
+          value="uzb_cyrl"
+        >
+          Uzbek - Cyrillic
+        </option>
+        <option
+          value="vie"
+        >
+          Vietnamese
+        </option>
+        <option
+          value="yid"
+        >
+          Yiddish
+        </option>
+      </select>
     </div>
   </div>
 </body>

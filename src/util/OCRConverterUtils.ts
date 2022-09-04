@@ -25,12 +25,12 @@ export const copyText = (text: string): void => {
 export const convertImageToText = async (
   dispatch: React.Dispatch<Action>,
   image: string,
-  language: Language
+  language: string
 ): Promise<void> => {
   dispatch(convertImageInit());
   let result: RecognizeResult;
   try {
-    result = await Tesseract.recognize(image, language.key, {
+    result = await Tesseract.recognize(image, language, {
       logger: (m) => {
         m.status === "recognizing text" && dispatch(setProgress(m.progress));
       },

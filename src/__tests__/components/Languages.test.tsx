@@ -4,62 +4,20 @@ import Languages from "../../components/Languages";
 describe("Languages", (): void => {
   it("should render", (): void => {
     const { baseElement } = render(
-      <Languages
-        selectedLanguage={{ key: "eng", value: "English" }}
-        setLanguage={jest.fn}
-      />
+      <Languages selectedLanguage="eng" setLanguage={jest.fn} />
     );
 
     expect(baseElement).toMatchSnapshot();
   });
 
-  it("should display languages list", (): void => {
-    const { getByText, baseElement } = render(
-      <Languages
-        selectedLanguage={{ key: "eng", value: "English" }}
-        setLanguage={jest.fn()}
-      />
-    );
-
-    fireEvent.click(getByText("English"));
-
-    expect(baseElement).toMatchSnapshot();
-  });
-
-  it("should call setLanguage and close dropdown", (): void => {
+  it("should call set language", (): void => {
     const mockSetLanguage = jest.fn();
-    const { getByText, queryByTestId } = render(
-      <Languages
-        selectedLanguage={{ key: "eng", value: "English" }}
-        setLanguage={mockSetLanguage}
-      />
+    const { getByTestId } = render(
+      <Languages selectedLanguage="eng" setLanguage={mockSetLanguage} />
     );
 
-    fireEvent.click(getByText("English"));
-    fireEvent.click(getByText("Serbian"));
+    fireEvent.change(getByTestId("languages"), { target: { value: "srp" } });
 
-    expect(queryByTestId("languages-list")).not.toBeInTheDocument();
-    expect(mockSetLanguage).toHaveBeenNthCalledWith(1, {
-      key: "srp",
-      value: "Serbian",
-    });
-  });
-
-  it("should close languages dropdown when clicked outside", (): void => {
-    const mockSetLanguage = jest.fn();
-    const { getByText, queryByTestId } = render(
-      <Languages
-        selectedLanguage={{ key: "eng", value: "English" }}
-        setLanguage={mockSetLanguage}
-      />
-    );
-
-    fireEvent.click(getByText("English"));
-    expect(queryByTestId("languages-list")).toBeInTheDocument();
-
-    fireEvent.mouseDown(document);
-
-    expect(queryByTestId("languages-list")).not.toBeInTheDocument();
-    expect(mockSetLanguage).not.toHaveBeenCalled();
+    expect(mockSetLanguage).toHaveBeenNthCalledWith(1, "srp");
   });
 });

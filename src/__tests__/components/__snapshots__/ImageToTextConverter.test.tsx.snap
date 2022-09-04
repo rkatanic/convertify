@@ -4,104 +4,488 @@ exports[`ImageToTextConverter should render 1`] = `
 <body>
   <div>
     <div
-      class="main-content"
+      class="flex gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full"
     >
       <div
-        class="breadcrumbs"
+        class="m-auto max-w-md"
       >
-        <a
-          aria-current="page"
-          class="breadcrumb breadcrumb-active"
-          href="/"
+        <div
+          class="h-14 w-14 border-8 bg-indigo-500 rounded-full mb-4"
+        />
+        <h1
+          class="font-bold text-3xl my-2 text-gray-700"
         >
-          Home
-        </a>
-        <span
-          class="breadcrumb-divider"
+          Image to text converter
+        </h1>
+        <p
+          class="text-xl font-thin text-gray-400"
         >
-          &gt;
-        </span>
-        <a
-          class="breadcrumb "
-          href="/test-route"
-        >
-          test route
-        </a>
+          Extract text from images. Supports 50+ languages.
+        </p>
       </div>
       <div
-        class="ocr-file-upload"
+        class="z-10 w-full max-w-md"
       >
-        <input
-          class="ocr-file-upload-input"
-          data-testid="ocr-file-upload-input"
-          type="file"
-        />
         <div
-          class="ocr-file-upload-container"
+          class="flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8"
         >
-          <svg>
-            file-upload.svg
-          </svg>
-          <div
-            class="ocr-file-upload-container-txt"
-          >
-            <h3
-              class="ocr-file-upload-container-txt-title"
+          <div>
+            <label
+              class="text-xs text-gray-400 mb-1 block"
+              for="languages"
             >
-              Select file to upload
-            </h3>
-            <p
-              class="ocr-file-upload-container-txt-desc"
+              Language
+            </label>
+            <select
+              class="text-md border-b focus:border-indigo-500 outline-0 border-gray-200 pb-2.5 w-full"
+              data-testid="languages"
+              id="languages"
             >
-              Supported formats are: 
-              <br />
-               jpg, jpeg, png, bmp, pbm. 
-              <br />
-              Max file upload size is 5 MB.
-            </p>
+              <option
+                value="afr"
+              >
+                Afrikaans
+              </option>
+              <option
+                value="amh"
+              >
+                Amharic
+              </option>
+              <option
+                value="ara"
+              >
+                Arabic
+              </option>
+              <option
+                value="asm"
+              >
+                Assamese
+              </option>
+              <option
+                value="aze"
+              >
+                Azerbaijani
+              </option>
+              <option
+                value="aze_cyrl"
+              >
+                Azerbaijani - Cyrillic
+              </option>
+              <option
+                value="bel"
+              >
+                Belarusian
+              </option>
+              <option
+                value="ben"
+              >
+                Bengali
+              </option>
+              <option
+                value="bod"
+              >
+                Tibetan
+              </option>
+              <option
+                value="bos"
+              >
+                Bosnian
+              </option>
+              <option
+                value="bul"
+              >
+                Bulgarian
+              </option>
+              <option
+                value="cat"
+              >
+                Catalan; Valencian
+              </option>
+              <option
+                value="ceb"
+              >
+                Cebuano
+              </option>
+              <option
+                value="ces"
+              >
+                Czech
+              </option>
+              <option
+                value="chi_sim"
+              >
+                Chinese - Simplified
+              </option>
+              <option
+                value="chi_tra"
+              >
+                Chinese - Traditional
+              </option>
+              <option
+                value="chr"
+              >
+                Cherokee
+              </option>
+              <option
+                value="cym"
+              >
+                Welsh
+              </option>
+              <option
+                value="dan"
+              >
+                Danish
+              </option>
+              <option
+                value="deu"
+              >
+                German
+              </option>
+              <option
+                value="dzo"
+              >
+                Dzongkha
+              </option>
+              <option
+                value="ell"
+              >
+                Greek, Modern (1453-)
+              </option>
+              <option
+                value="eng"
+              >
+                English
+              </option>
+              <option
+                value="epo"
+              >
+                Esperanto
+              </option>
+              <option
+                value="est"
+              >
+                Estonian
+              </option>
+              <option
+                value="fin"
+              >
+                Finnish
+              </option>
+              <option
+                value="fra"
+              >
+                French
+              </option>
+              <option
+                value="gle"
+              >
+                Irish
+              </option>
+              <option
+                value="hat"
+              >
+                Haitian; Haitian Creole
+              </option>
+              <option
+                value="heb"
+              >
+                Hebrew
+              </option>
+              <option
+                value="hin"
+              >
+                Hindi
+              </option>
+              <option
+                value="hun"
+              >
+                Hungarian
+              </option>
+              <option
+                value="ind"
+              >
+                Indonesian
+              </option>
+              <option
+                value="isl"
+              >
+                Italian
+              </option>
+              <option
+                value="jpn"
+              >
+                Japanese
+              </option>
+              <option
+                value="kat"
+              >
+                Georgian
+              </option>
+              <option
+                value="kor"
+              >
+                Korean
+              </option>
+              <option
+                value="kur"
+              >
+                Kurdish
+              </option>
+              <option
+                value="lao"
+              >
+                Lao
+              </option>
+              <option
+                value="lat"
+              >
+                Latvian
+              </option>
+              <option
+                value="lit"
+              >
+                Lithuanian
+              </option>
+              <option
+                value="mal"
+              >
+                Malayalam
+              </option>
+              <option
+                value="mkd"
+              >
+                Macedonian
+              </option>
+              <option
+                value="mlt"
+              >
+                Maltese
+              </option>
+              <option
+                value="mya"
+              >
+                Burmese
+              </option>
+              <option
+                value="nep"
+              >
+                Nepali
+              </option>
+              <option
+                value="nor"
+              >
+                Norwegian
+              </option>
+              <option
+                value="pol"
+              >
+                Polish
+              </option>
+              <option
+                value="por"
+              >
+                Portuguese
+              </option>
+              <option
+                value="ron"
+              >
+                Romanian; Moldavian
+              </option>
+              <option
+                value="rus"
+              >
+                Russian
+              </option>
+              <option
+                value="san"
+              >
+                Sanskrit
+              </option>
+              <option
+                value="slk"
+              >
+                Slovak
+              </option>
+              <option
+                value="slv"
+              >
+                Slovenian
+              </option>
+              <option
+                value="spa"
+              >
+                Spanish; Castilian
+              </option>
+              <option
+                value="srp"
+              >
+                Serbian
+              </option>
+              <option
+                value="srp_latn"
+              >
+                Serbian - Latin
+              </option>
+              <option
+                value="swa"
+              >
+                Swahili
+              </option>
+              <option
+                value="swe"
+              >
+                Swedish
+              </option>
+              <option
+                value="syr"
+              >
+                Syriac
+              </option>
+              <option
+                value="tur"
+              >
+                Turkish
+              </option>
+              <option
+                value="tha"
+              >
+                Thai
+              </option>
+              <option
+                value="ukr"
+              >
+                Ukrainian
+              </option>
+              <option
+                value="uzb"
+              >
+                Uzbek
+              </option>
+              <option
+                value="uzb_cyrl"
+              >
+                Uzbek - Cyrillic
+              </option>
+              <option
+                value="vie"
+              >
+                Vietnamese
+              </option>
+              <option
+                value="yid"
+              >
+                Yiddish
+              </option>
+            </select>
           </div>
-        </div>
-      </div>
-      <div
-        class="separator"
-      >
-        OR 
-      </div>
-      <div
-        class="input-and-languages"
-      >
-        <input
-          class="image-url-input"
-          data-testid="image-url-input"
-          placeholder="Enter image URL"
-          type="text"
-          value=""
-        />
-        <div
-          class="languages"
-        >
           <div
-            class="languages-select"
+            class="cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded-sm p-6"
           >
-            <div
-              class="selected-language"
+            <input
+              class="sr-only"
+              data-testid="ocr-file-upload-input"
+              id="file-upload"
+              type="file"
+            />
+            <label
+              class="cursor-pointer flex flex-col items-center gap-2 text-center"
+              for="file-upload"
             >
-              English
-              <svg>
-                caret-down.svg
+              <svg
+                class="fill-gray-200"
+                fill="currentColor"
+                height="2.5rem"
+                stroke="currentColor"
+                stroke-width="0"
+                viewBox="0 0 24 24"
+                width="2.5rem"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g>
+                  <path
+                    d="M0 0h24v24H0z"
+                    fill="none"
+                  />
+                  <path
+                    d="M21 15v3h3v2h-3v3h-2v-3h-3v-2h3v-3h2zm.008-12c.548 0 .992.445.992.993V13h-2V5H4v13.999L14 9l3 3v2.829l-3-3L6.827 19H14v2H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016zM8 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
+                  />
+                </g>
               </svg>
-            </div>
+              <div>
+                <div
+                  class="mb-1"
+                >
+                  <span
+                    class="text-indigo-500 font-medium"
+                  >
+                    Upload a file
+                  </span>
+                   
+                  <span
+                    class="text-gray-400 font-thin"
+                  >
+                    or drag and drop
+                  </span>
+                </div>
+                <p
+                  class="text-gray-400 text-sm font-thin"
+                >
+                  JPG, JPEG, PNG, BMP, PBM up to 5MB
+                </p>
+              </div>
+            </label>
           </div>
+          <div
+            class="w-full text-center -mb-4"
+          >
+            <hr
+              class="w-full -mb-[0.875rem]"
+            />
+            <span
+              class=" bg-white px-2 text-xs text-gray-300"
+            >
+              Or use image url
+            </span>
+          </div>
+          <input
+            class="focus:border-indigo-500 outline-0 text-md placeholder:text-gray-400 w-full border-b border-gray-200 pb-2.5"
+            data-testid="image-url-input"
+            placeholder="Enter image URL"
+            type="text"
+            value=""
+          />
+          <button
+            class="disabled:cursor-not-allowed cursor-pointer hover:bg-indigo-600 relative text-md text-white font-medium bg-indigo-500 rounded py-2.5 px-4 w-full"
+            disabled=""
+            type="button"
+          >
+            <svg
+              class="absolute top-3.5 stroke-indigo-300"
+              fill="none"
+              height="1em"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="1em"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="23 4 23 10 17 10"
+              />
+              <polyline
+                points="1 20 1 14 7 14"
+              />
+              <path
+                d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"
+              />
+            </svg>
+            Convert
+          </button>
+          
         </div>
       </div>
-      <button
-        class="btn btn-full-width"
-        disabled=""
-        type="button"
-      >
-        Convert
-      </button>
-      
     </div>
   </div>
 </body>

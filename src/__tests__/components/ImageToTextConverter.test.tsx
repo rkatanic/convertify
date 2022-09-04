@@ -62,15 +62,6 @@ describe("ImageToTextConverter", (): void => {
     });
   });
 
-  it("should change language", (): void => {
-    const { getByText } = render(TestComponent);
-
-    fireEvent.click(getByText("English"));
-    fireEvent.click(getByText("Serbian"));
-
-    expect(getByText("Serbian")).toBeInTheDocument();
-  });
-
   it("should convert image url to text", async (): Promise<void> => {
     const mockResult = {
       data: {
@@ -110,7 +101,7 @@ describe("ImageToTextConverter", (): void => {
       expect(getByTestId("error-banner")).toBeInTheDocument();
     });
 
-    fireEvent.click(getByText("close.svg"));
+    fireEvent.click(getByTestId("error-icon-close"));
 
     await waitFor((): void => {
       expect(queryByTestId("error-banner")).not.toBeInTheDocument();

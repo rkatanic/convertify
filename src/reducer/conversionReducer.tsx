@@ -1,9 +1,8 @@
 import { Action, ActionType } from "../types/Action";
 import { ErrorType } from "../types/ErrorType";
-import { Language } from "../types/Language";
 
 interface State {
-  language: Language;
+  language: string;
   imageFile: string;
   imageUrl: string;
   text: string;

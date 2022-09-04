@@ -1,7 +1,5 @@
 import { useState } from "react";
 import { ErrorType } from "../types/ErrorType";
-import { ReactComponent as FileUploadIcon } from "../icons/file-upload.svg";
-import { ReactComponent as FileUploadSuccessIcon } from "../icons/file-upload-success.svg";
 import { RiImageAddLine } from "react-icons/ri";
 
 interface Props {
@@ -59,26 +57,16 @@ const OCRFileUpload = ({
         htmlFor="file-upload"
         className="cursor-pointer flex flex-col items-center gap-2 text-center"
       >
-        {file.name !== "" && file.size !== "" ? (
-          <FileUploadSuccessIcon className="w-8 h-8" />
-        ) : (
-          <RiImageAddLine size="2.5rem" className="fill-gray-200" />
-        )}
+        <RiImageAddLine size="2.5rem" className="fill-gray-200" />
         <div>
-          <h3>
-            {file.name === "" ? (
-              <div className="mb-1">
-                <span className="text-indigo-500 font-medium">
-                  Upload a file
-                </span>{" "}
-                <span className="text-gray-400 font-thin">
-                  or drag and drop
-                </span>
-              </div>
-            ) : (
-              file.name
-            )}
-          </h3>
+          {file.name === "" ? (
+            <div className="mb-1">
+              <span className="text-indigo-500 font-medium">Upload a file</span>{" "}
+              <span className="text-gray-400 font-thin">or drag and drop</span>
+            </div>
+          ) : (
+            file.name
+          )}
           <p className="text-gray-400 text-sm font-thin">
             {file.size ? file.size : <>JPG, JPEG, PNG, BMP, PBM up to 5MB</>}
           </p>

@@ -7,7 +7,6 @@ import Languages from "./Languages";
 import Error from "./Error";
 import { convertImageToText } from "../util/OCRConverterUtils";
 import { DEFAULT_LANGUAGE } from "../constants/languages";
-import { Language } from "../types/Language";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
 import {
@@ -20,7 +19,7 @@ import {
 import "./ImageToTextConveter.scss";
 
 const initialState = {
-  language: DEFAULT_LANGUAGE,
+  language: DEFAULT_LANGUAGE.key,
   imageFile: "",
   imageUrl: "",
   text: "",
@@ -39,7 +38,7 @@ const ImageToTextConverter = (): JSX.Element => {
     dispatch(setImageFile(value));
   };
 
-  const handleLanguageSet = (language: Language): void => {
+  const handleLanguageSet = (language: string): void => {
     dispatch(setLanguage(language));
   };
 
@@ -66,15 +65,15 @@ const ImageToTextConverter = (): JSX.Element => {
         <h1 className="font-bold text-3xl my-2 text-gray-700">
           Image to text converter
         </h1>
-        <p className="text-xl font-light text-gray-400">
+        <p className="text-xl font-thin text-gray-400">
           Extract text from images. Supports 50+ languages.
         </p>
       </div>
-      <div className="z-10">
+      <div className="z-10 w-full max-w-md">
         {error !== ErrorType.NO_ERROR && (
           <Error error={error} onClose={handleErrorBannerClose} />
         )}
-        <div className="flex flex-col gap-6 w-full max-w-md m-auto bg-white shadow-md p-8">
+        <div className="flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8">
           <Languages
             setLanguage={handleLanguageSet}
             selectedLanguage={language}

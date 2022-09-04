@@ -1,6 +1,5 @@
 import { ActionType } from "../types/Action";
 import { ErrorType } from "../types/ErrorType";
-import { Language } from "../types/Language";
 
 export const setImageFile = (value: string) => ({
   type: ActionType.SET_IMAGE_FILE,
@@ -12,7 +11,7 @@ export const setImageUrl = (value: string) => ({
   payload: value,
 });
 
-export const setLanguage = (language: Language) => ({
+export const setLanguage = (language: string) => ({
   type: ActionType.SET_LANGUAGE,
   payload: language,
 });
