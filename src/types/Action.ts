@@ -7,7 +7,7 @@ export enum ActionType {
   CONVERT_IMAGE_INIT,
   CONVERT_IMAGE_SUCCESS,
   CONVERT_IMAGE_ERROR,
-  NEW_CONVERSION,
+  INIT_NEW_CONVERSION,
 }
 
 export interface Action {

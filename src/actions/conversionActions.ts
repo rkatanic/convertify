@@ -39,6 +39,6 @@ export const convertImageError = () => ({
   type: ActionType.CONVERT_IMAGE_ERROR,
 });
 
-export const newConversion = () => ({
-  type: ActionType.NEW_CONVERSION,
+export const initNewConversion = () => ({
+  type: ActionType.INIT_NEW_CONVERSION,
 });

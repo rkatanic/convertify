@@ -44,7 +44,7 @@ export const conversionReducer = (state: State, action: Action): State => {
         isConverting: false,
       };
 
-    case ActionType.NEW_CONVERSION:
+    case ActionType.INIT_NEW_CONVERSION:
       return {
         ...state,
         imageFile: "",

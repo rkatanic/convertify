@@ -4,10 +4,10 @@ exports[`ImageToTextConverter should render 1`] = `
 <body>
   <div>
     <div
-      class="flex gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full"
+      class="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full"
     >
       <div
-        class="m-auto max-w-md"
+        class="z-10 flex flex-col items-center text-center lg:text-start lg:items-start m-auto max-w-md"
       >
         <div
           class="h-14 w-14 border-8 bg-indigo-500 rounded-full mb-4"

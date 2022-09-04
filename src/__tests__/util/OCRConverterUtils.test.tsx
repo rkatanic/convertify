@@ -52,10 +52,7 @@ describe("OCRConverterUtils", () => {
 
       const mockDispatch = jest.fn();
       const mockImage = "image";
-      const mockLanguage = {
-        key: "eng",
-        value: "English",
-      };
+      const mockLanguage = "eng";
 
       convertImageToText(mockDispatch, mockImage, mockLanguage);
 
@@ -75,10 +72,7 @@ describe("OCRConverterUtils", () => {
 
       const mockDispatch = jest.fn();
       const mockImage = "image";
-      const mockLanguage = {
-        key: "eng",
-        value: "English",
-      };
+      const mockLanguage = "eng";
 
       convertImageToText(mockDispatch, mockImage, mockLanguage);
 
@@ -98,10 +92,7 @@ describe("OCRConverterUtils", () => {
 
       const mockDispatch = jest.fn();
       const mockImage = "image";
-      const mockLanguage = {
-        key: "eng",
-        value: "English",
-      };
+      const mockLanguage = "eng";
 
       convertImageToText(mockDispatch, mockImage, mockLanguage);
 

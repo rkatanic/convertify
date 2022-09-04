@@ -9,7 +9,7 @@ import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
 import {
-  newConversion,
+  initNewConversion,
   setError,
   setImageFile,
   setImageUrl,
@@ -57,12 +57,12 @@ const ImageToTextConverter = (): JSX.Element => {
   };
 
   const handleNewConversion = (): void => {
-    dispatch(newConversion());
+    dispatch(initNewConversion());
   };
 
   return (
-    <div className="flex gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full">
-      <div className="m-auto max-w-md">
+    <div className="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full">
+      <div className="z-10 flex flex-col items-center text-center lg:text-start lg:items-start m-auto max-w-md">
         <div className="h-14 w-14 border-8 bg-indigo-500 rounded-full mb-4"></div>
         <h1 className="font-bold text-3xl my-2 text-gray-700">
           Image to text converter

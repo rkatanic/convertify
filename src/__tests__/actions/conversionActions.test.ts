@@ -2,6 +2,7 @@ import {
   convertImageError,
   convertImageInit,
   convertImageSuccess,
+  initNewConversion,
   setError,
   setImageFile,
   setImageUrl,
@@ -79,6 +80,14 @@ describe("conversionActions", (): void => {
 
     expect(action).toEqual({
       type: ActionType.CONVERT_IMAGE_ERROR,
+    });
+  });
+
+  it("convertImageError", (): void => {
+    const action = initNewConversion();
+
+    expect(action).toEqual({
+      type: ActionType.INIT_NEW_CONVERSION,
     });
   });
 });
