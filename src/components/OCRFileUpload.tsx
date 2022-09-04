@@ -18,10 +18,10 @@ const OCRFileUpload = ({
   const [file, setFile] = useState({ name: "", size: "" });
 
   const handleFileUpload = (e: any): void => {
-    const { name, size } = e.target.files[0];
+    const file = e?.target?.files[0];
 
     const isUnsupportedFileFormat = !SUPPORTED_FILE_FORMATS.some(
-      (fileFormat) => fileFormat === name.slice(-4)
+      (fileFormat) => fileFormat === file?.name.slice(-4)
     );
 
     if (isUnsupportedFileFormat) {
@@ -29,7 +29,7 @@ const OCRFileUpload = ({
       return;
     }
 
-    const isLargerThanFiveMegabytes = size / 1000 > 5120;
+    const isLargerThanFiveMegabytes = file?.size / 1000 > 5120;
 
     if (isLargerThanFiveMegabytes) {
       handleError(ErrorType.MAX_FILE_SIZE_EXCEEDED);
@@ -37,8 +37,8 @@ const OCRFileUpload = ({
     }
 
     setFile({
-      name,
-      size: `${(size / 1000).toFixed(2)} KB`,
+      name: file?.name,
+      size: `${(file?.size / 1000).toFixed(2)} KB`,
     });
     setImage(URL.createObjectURL(e.target?.files![0]));
   };
