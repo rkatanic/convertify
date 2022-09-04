@@ -1,30 +1,13 @@
 {
   "files": {
-    "main.css": "/convertify/static/css/main.04dde02a.chunk.css",
-    "main.js": "/convertify/static/js/main.b7d9962b.chunk.js",
-    "main.js.map": "/convertify/static/js/main.b7d9962b.chunk.js.map",
-    "runtime-main.js": "/convertify/static/js/runtime-main.be604636.js",
-    "runtime-main.js.map": "/convertify/static/js/runtime-main.be604636.js.map",
-    "static/js/2.2bdd04e7.chunk.js": "/convertify/static/js/2.2bdd04e7.chunk.js",
-    "static/js/2.2bdd04e7.chunk.js.map": "/convertify/static/js/2.2bdd04e7.chunk.js.map",
+    "main.css": "/convertify/static/css/main.3ba65719.css",
+    "main.js": "/convertify/static/js/main.a09ddd5f.js",
     "index.html": "/convertify/index.html",
-    "static/css/main.04dde02a.chunk.css.map": "/convertify/static/css/main.04dde02a.chunk.css.map",
-    "static/js/2.2bdd04e7.chunk.js.LICENSE.txt": "/convertify/static/js/2.2bdd04e7.chunk.js.LICENSE.txt",
-    "static/media/abstract-line-one.b72a75a2.svg": "/convertify/static/media/abstract-line-one.b72a75a2.svg",
-    "static/media/abstract-line-two.216556b9.svg": "/convertify/static/media/abstract-line-two.216556b9.svg",
-    "static/media/arrow-right.9e336b5c.svg": "/convertify/static/media/arrow-right.9e336b5c.svg",
-    "static/media/caret-down.e8b6f3b9.svg": "/convertify/static/media/caret-down.e8b6f3b9.svg",
-    "static/media/close.8c1f16aa.svg": "/convertify/static/media/close.8c1f16aa.svg",
-    "static/media/copy.9703f175.svg": "/convertify/static/media/copy.9703f175.svg",
-    "static/media/download-file.2924144f.svg": "/convertify/static/media/download-file.2924144f.svg",
-    "static/media/file-upload-success.cee26685.svg": "/convertify/static/media/file-upload-success.cee26685.svg",
-    "static/media/file-upload.05200908.svg": "/convertify/static/media/file-upload.05200908.svg",
-    "static/media/warning-triangle.b756e1b1.svg": "/convertify/static/media/warning-triangle.b756e1b1.svg"
+    "main.3ba65719.css.map": "/convertify/static/css/main.3ba65719.css.map",
+    "main.a09ddd5f.js.map": "/convertify/static/js/main.a09ddd5f.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.be604636.js",
-    "static/js/2.2bdd04e7.chunk.js",
-    "static/css/main.04dde02a.chunk.css",
-    "static/js/main.b7d9962b.chunk.js"
+    "static/css/main.3ba65719.css",
+    "static/js/main.a09ddd5f.js"
   ]
 }
