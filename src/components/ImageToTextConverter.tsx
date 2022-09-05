@@ -64,10 +64,10 @@ const ImageToTextConverter = (): JSX.Element => {
     <div className="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full">
       <div className="z-10 flex flex-col items-center text-center lg:text-start lg:items-start m-auto max-w-md">
         <div className="h-14 w-14 border-8 bg-indigo-500 rounded-full mb-4"></div>
-        <h1 className="font-bold text-3xl my-2 text-gray-700">
+        <h1 className="font-bold text-3xl my-2 text-gray-800">
           Image to text converter
         </h1>
-        <p className="text-xl font-thin text-gray-400">
+        <p className="text-xl font-thin text-gray-500">
           Extract text from images. Supports 50+ languages.
         </p>
       </div>
@@ -75,41 +75,44 @@ const ImageToTextConverter = (): JSX.Element => {
         {error !== ErrorType.NO_ERROR && (
           <Error error={error} onClose={handleErrorBannerClose} />
         )}
-        <div className="relative flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8">
-          <Languages
-            setLanguage={handleLanguageSet}
-            selectedLanguage={language}
-          />
-          <OCRFileUpload
-            handleError={handleErrorSet}
-            setImage={handleImageFileUpload}
-            disabled={isConverting}
-          />
-          <div className="w-full text-center -mb-4">
-            <hr className="w-full -mb-[0.875rem]" />
-            <span className=" bg-white px-2 text-xs text-gray-300">
-              Or use image url
-            </span>
-          </div>
-          <input
-            data-testid="image-url-input"
-            type="text"
-            placeholder="Enter image URL"
-            className="focus:border-indigo-500 outline-0 text-md placeholder:text-gray-400 w-full border-b border-gray-200 pb-2.5"
-            value={imageUrl}
-            onChange={handleImageUrlChange}
-          />
-
-          <Button
-            {...{ disabled: isConverting || !(imageFile || imageUrl) }}
-            text="Convert"
-            fullWidth
-            onClick={handleImageToTextConversion}
-            isConverting={isConverting}
-            conversionProgress={progress}
-          />
-          {text && (
+        <div className="flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8">
+          {text ? (
             <TextWrapper text={text} initNewConversion={handleNewConversion} />
+          ) : (
+            <>
+              <Languages
+                setLanguage={handleLanguageSet}
+                selectedLanguage={language}
+              />
+              <OCRFileUpload
+                handleError={handleErrorSet}
+                setImage={handleImageFileUpload}
+                disabled={isConverting}
+              />
+              <div className="w-full text-center -mb-4">
+                <hr className="w-full -mb-[0.875rem]" />
+                <span className="font-thin bg-white px-2 text-xs text-gray-400">
+                  Or use image url
+                </span>
+              </div>
+              <input
+                data-testid="image-url-input"
+                type="text"
+                placeholder="Enter image URL"
+                className="focus:border-indigo-500 outline-0 text-md font-thin placeholder:text-gray-500 w-full border-b-2 pb-2.5"
+                value={imageUrl}
+                onChange={handleImageUrlChange}
+              />
+
+              <Button
+                {...{ disabled: isConverting || !(imageFile || imageUrl) }}
+                text="Convert"
+                fullWidth
+                onClick={handleImageToTextConversion}
+                isConverting={isConverting}
+                conversionProgress={progress}
+              />
+            </>
           )}
         </div>
       </div>

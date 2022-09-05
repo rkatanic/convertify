@@ -5,13 +5,13 @@ exports[`Languages should render 1`] = `
   <div>
     <div>
       <label
-        class="text-xs text-gray-400 mb-1 block"
+        class="text-xs text-gray-500 mb-1 block"
         for="languages"
       >
         Language
       </label>
       <select
-        class="text-md border-b focus:border-indigo-500 outline-0 border-gray-200 pb-2.5 w-full"
+        class="text-md font-thin border-b-2 focus:border-indigo-500 outline-0 pb-2.5 w-full"
         data-testid="languages"
         id="languages"
       >

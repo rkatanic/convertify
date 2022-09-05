@@ -13,13 +13,13 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
 
   return (
     <div>
-      <label htmlFor="languages" className="text-xs text-gray-400 mb-1 block">
+      <label htmlFor="languages" className="text-xs text-gray-500 mb-1 block">
         Language
       </label>
       <select
         data-testid="languages"
         id="languages"
-        className="text-md border-b focus:border-indigo-500 outline-0 border-gray-200 pb-2.5 w-full"
+        className="text-md font-thin border-b-2 focus:border-indigo-500 outline-0 pb-2.5 w-full"
         onChange={handleLanguageSelect}
         value={selectedLanguage}
       >

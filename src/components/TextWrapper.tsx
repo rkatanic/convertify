@@ -8,8 +8,8 @@ interface Props {
 }
 
 const TextWrapper = ({ text = "", initNewConversion }: Props) => (
-  <div className="absolute top-0 left-0 bg-white w-full p-8">
-    <div className="flex items-end justify-between mb-4 text-lg text-gray-400">
+  <div className="top-0 left-0 bg-white w-full">
+    <div className="flex items-end justify-between mb-4 text-lg font-thin text-gray-500">
       Output
       <button
         onClick={initNewConversion}
@@ -23,7 +23,7 @@ const TextWrapper = ({ text = "", initNewConversion }: Props) => (
     <textarea
       disabled
       value={text}
-      className="w-full border-b bg-gray-50 p-2 resize-none"
+      className="w-full border-b-2 bg-gray-50 p-2 resize-none"
       placeholder="Output text"
       rows={11}
     />

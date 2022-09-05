@@ -4,7 +4,7 @@ exports[`OCRFileUpload should render 1`] = `
 <body>
   <div>
     <div
-      class="cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded-sm p-6"
+      class="h-36 cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded-sm p-6"
     >
       <input
         class="sr-only"
@@ -18,7 +18,7 @@ exports[`OCRFileUpload should render 1`] = `
         for="file-upload"
       >
         <svg
-          class="fill-gray-200"
+          class="fill-gray-300"
           fill="currentColor"
           height="2.5rem"
           stroke="currentColor"
@@ -48,13 +48,13 @@ exports[`OCRFileUpload should render 1`] = `
             </span>
              
             <span
-              class="text-gray-400 font-thin"
+              class="text-gray-500 font-thin"
             >
               or drag and drop
             </span>
           </div>
           <p
-            class="text-gray-400 text-sm font-thin"
+            class="text-gray-500 text-sm font-thin"
           >
             JPG, JPEG, PNG, BMP, PBM up to 5MB
           </p>
