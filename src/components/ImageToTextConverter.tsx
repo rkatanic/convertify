@@ -15,6 +15,9 @@ import {
   setImageUrl,
   setLanguage,
 } from "../actions/conversionActions";
+import { VscColorMode } from "react-icons/vsc";
+import { ReactComponent as GradientTopRight } from "../assets/gradient-top-right.svg";
+import { ReactComponent as GradientBottomLeft } from "../assets/gradient-bottom-left.svg";
 
 const initialState = {
   language: DEFAULT_LANGUAGE.key,
@@ -60,14 +63,28 @@ const ImageToTextConverter = (): JSX.Element => {
     dispatch(initNewConversion());
   };
 
+  const handleDarkModeToggle = () => {
+    if (document.body.classList.contains("dark")) {
+      document.body.classList.remove("dark");
+    } else {
+      document.body.classList.add("dark");
+    }
+  };
+
   return (
-    <div className="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl before:fixed before:w-2/3 before:h-[66vw] before:bottom-1/4 before:left-1/2 before:border before:rounded-full after:fixed after:w-3/4 after:h-[75vw] after:bottom-[27%] after:left-[40%] after:border after:rounded-full">
+    <div className="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl">
+      <GradientTopRight />
+      <GradientBottomLeft />
+      <VscColorMode
+        onClick={handleDarkModeToggle}
+        className="z-10 fixed top-6 right-6 fill-gray-700 cursor-pointer dark:fill-gray-400"
+      />
       <div className="z-10 flex flex-col items-center text-center lg:text-start lg:items-start m-auto max-w-md">
-        <div className="h-14 w-14 border-8 bg-indigo-500 rounded-full mb-4"></div>
-        <h1 className="font-bold text-3xl my-2 text-gray-800">
+        <div className="h-14 w-14 border-8 bg-blue-500 rounded-full mb-4 dark:border-gray-800"></div>
+        <h1 className="font-bold text-3xl my-2 text-gray-800 dark:text-gray-50">
           Image to text converter
         </h1>
-        <p className="text-xl font-thin text-gray-500">
+        <p className="text-xl font-thin text-gray-500 dark:text-gray-400">
           Extract text from images. Supports 50+ languages.
         </p>
       </div>
@@ -75,7 +92,7 @@ const ImageToTextConverter = (): JSX.Element => {
         {error !== ErrorType.NO_ERROR && (
           <Error error={error} onClose={handleErrorBannerClose} />
         )}
-        <div className="flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8">
+        <div className="rounded-md flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8">
           {text ? (
             <TextWrapper text={text} initNewConversion={handleNewConversion} />
           ) : (
@@ -99,7 +116,7 @@ const ImageToTextConverter = (): JSX.Element => {
                 data-testid="image-url-input"
                 type="text"
                 placeholder="Enter image URL"
-                className="focus:border-indigo-500 outline-0 text-md font-thin placeholder:text-gray-500 w-full border-b-2 pb-2.5"
+                className="focus:border-blue-500 outline-0 text-md font-thin placeholder:text-gray-500 w-full border-b-2 pb-2.5"
                 value={imageUrl}
                 onChange={handleImageUrlChange}
               />

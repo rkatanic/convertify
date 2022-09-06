@@ -19,7 +19,7 @@ const Button = ({
 }: Props): JSX.Element => (
   <button
     {...props}
-    className={`disabled:cursor-not-allowed cursor-pointer hover:bg-indigo-600 relative text-md text-white font-medium bg-indigo-500 rounded py-2.5 px-4 ${
+    className={`disabled:cursor-not-allowed cursor-pointer hover:bg-blue-600 relative text-md text-white font-medium bg-blue-500 rounded-full py-2.5 px-4 ${
       fullWidth ? "w-full" : ""
     }`}
     type="button"
@@ -27,7 +27,7 @@ const Button = ({
   >
     <div className="absolute flex w-16">
       <FiRefreshCw
-        className={`absolute top-1 stroke-indigo-300 ${
+        className={`absolute top-1 stroke-blue-300 ${
           isConverting ? "animate-spin " : ""
         }`}
       />

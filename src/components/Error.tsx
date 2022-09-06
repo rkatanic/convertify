@@ -23,18 +23,18 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
   return (
     <div
       data-testid="error-banner"
-      className="mb-4 shadow-md bg-red-50 border-l-[3px] border-red-500 p-4"
+      className="mb-4 shadow-md bg-red-100 border-l-[3px] border-red-500 p-4 dark:bg-red-900/40"
     >
       <div className="flex items-center justify-between gap-4">
-        <div className="font-medium text-red-700">Error</div>
+        <div className="font-medium text-red-700 dark:text-red-200">Error</div>
         <FiX
           data-testid="error-icon-close"
           onClick={onClose}
           size="1.25rem"
-          className="stroke-red-800 cursor-pointer"
+          className="stroke-red-800 cursor-pointer dark:stroke-red-200"
         />
       </div>
-      <div className="text-red-700 font-thin text-sm">
+      <div className="text-red-700 font-thin text-sm dark:text-red-200">
         <span>{showErrorMessage()}</span>
       </div>
     </div>

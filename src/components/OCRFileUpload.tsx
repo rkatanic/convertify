@@ -63,7 +63,7 @@ const OCRFileUpload = ({
         <div>
           {file.name === "" ? (
             <div className="mb-1">
-              <span className="text-indigo-500 font-medium">Upload a file</span>{" "}
+              <span className="text-blue-500 font-medium">Upload a file</span>{" "}
               <span className="text-gray-500 font-thin">or drag and drop</span>
             </div>
           ) : (

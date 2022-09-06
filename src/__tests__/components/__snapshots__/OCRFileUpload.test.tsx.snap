@@ -42,7 +42,7 @@ exports[`OCRFileUpload should render 1`] = `
             class="mb-1"
           >
             <span
-              class="text-indigo-500 font-medium"
+              class="text-blue-500 font-medium"
             >
               Upload a file
             </span>

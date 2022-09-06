@@ -14,7 +14,7 @@ const TextWrapper = ({ text = "", initNewConversion }: Props) => (
       <button
         onClick={initNewConversion}
         type="button"
-        className="py-2 px-4 bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium rounded"
+        className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-full"
       >
         New conversion
       </button>
@@ -33,7 +33,7 @@ const TextWrapper = ({ text = "", initNewConversion }: Props) => (
         icon={
           <RiFileCopyFill
             data-testid="copy-icon"
-            className="fill-gray-400 hover:fill-indigo-500"
+            className="fill-gray-400 hover:fill-blue-500"
             size="1.25rem"
           />
         }
@@ -45,7 +45,7 @@ const TextWrapper = ({ text = "", initNewConversion }: Props) => (
         icon={
           <RiFileDownloadFill
             data-testid="download-icon"
-            className="fill-gray-400 hover:fill-indigo-500"
+            className="fill-gray-400 hover:fill-blue-500"
             size="1.25rem"
           />
         }
