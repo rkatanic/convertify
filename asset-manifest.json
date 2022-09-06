@@ -1,13 +1,15 @@
 {
   "files": {
-    "main.css": "/convertify/static/css/main.ef11e1a0.css",
-    "main.js": "/convertify/static/js/main.e1e7c6b3.js",
+    "main.css": "/convertify/static/css/main.b95cfc68.css",
+    "main.js": "/convertify/static/js/main.53244c76.js",
+    "static/media/gradient-top-right.svg": "/convertify/static/media/gradient-top-right.3b9e43fac14fda2b6ed674265ebd0ba7.svg",
+    "static/media/gradient-bottom-left.svg": "/convertify/static/media/gradient-bottom-left.c9a01b235a8acec3302a66dc280997d9.svg",
     "index.html": "/convertify/index.html",
-    "main.ef11e1a0.css.map": "/convertify/static/css/main.ef11e1a0.css.map",
-    "main.e1e7c6b3.js.map": "/convertify/static/js/main.e1e7c6b3.js.map"
+    "main.b95cfc68.css.map": "/convertify/static/css/main.b95cfc68.css.map",
+    "main.53244c76.js.map": "/convertify/static/js/main.53244c76.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef11e1a0.css",
-    "static/js/main.e1e7c6b3.js"
+    "static/css/main.b95cfc68.css",
+    "static/js/main.53244c76.js"
   ]
 }
