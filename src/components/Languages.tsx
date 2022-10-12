@@ -12,14 +12,17 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
   };
 
   return (
-    <div>
-      <label htmlFor="languages" className="text-xs text-gray-500 mb-1 block">
-        Language
+    <div className="flex justify-between flex-wrap gap-4 items-baseline">
+      <label
+        htmlFor="languages"
+        className="text-white flex-1 whitespace-nowrap"
+      >
+        Character specific language
       </label>
       <select
         data-testid="languages"
         id="languages"
-        className="text-md font-thin border-b-2 focus:border-blue-500 outline-0 pb-2.5 w-full"
+        className="text-md rounded focus:border-blue-500 outline-0 p-2 text-white bg-neutral-800 flex-1"
         onChange={handleLanguageSelect}
         value={selectedLanguage}
       >

@@ -46,7 +46,7 @@ const OCRFileUpload = ({
   };
 
   return (
-    <div className="h-36 cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded-sm p-6">
+    <div className="cursor-pointer flex border-dashed p-6 h-20">
       <input
         id="file-upload"
         disabled={disabled}
@@ -57,22 +57,27 @@ const OCRFileUpload = ({
       />
       <label
         htmlFor="file-upload"
-        className="cursor-pointer flex flex-col items-center gap-2 text-center"
+        className="cursor-pointer flex justify-between w-full items-center gap-6"
       >
-        <RiImageAddLine size="2.5rem" className="fill-gray-300" />
         <div>
           {file.name === "" ? (
-            <div className="mb-1">
-              <span className="text-blue-500 font-medium">Upload a file</span>{" "}
-              <span className="text-gray-500 font-thin">or drag and drop</span>
+            <div className="">
+              <span className="text-white text-lg font-medium">
+                Upload an image
+              </span>{" "}
+              <p className="text-neutral-500 text-sm">
+                {file.size ? (
+                  file.size
+                ) : (
+                  <>JPG, JPEG, PNG, BMP, PBM up to 5MB</>
+                )}
+              </p>
             </div>
           ) : (
             file.name
           )}
-          <p className="text-gray-500 text-sm font-thin">
-            {file.size ? file.size : <>JPG, JPEG, PNG, BMP, PBM up to 5MB</>}
-          </p>
         </div>
+        <RiImageAddLine size="2.5rem" className="fill-neutral-600" />
       </label>
     </div>
   );

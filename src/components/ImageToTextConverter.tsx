@@ -15,9 +15,6 @@ import {
   setImageUrl,
   setLanguage,
 } from "../actions/conversionActions";
-import { VscColorMode } from "react-icons/vsc";
-import { ReactComponent as GradientTopRight } from "../assets/gradient-top-right.svg";
-import { ReactComponent as GradientBottomLeft } from "../assets/gradient-bottom-left.svg";
 
 const initialState = {
   language: DEFAULT_LANGUAGE.key,
@@ -63,67 +60,47 @@ const ImageToTextConverter = (): JSX.Element => {
     dispatch(initNewConversion());
   };
 
-  const handleDarkModeToggle = () => {
-    if (document.body.classList.contains("dark")) {
-      document.body.classList.remove("dark");
-    } else {
-      document.body.classList.add("dark");
-    }
-  };
-
   return (
-    <div className="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl">
-      <GradientTopRight />
-      <GradientBottomLeft />
-      <VscColorMode
-        onClick={handleDarkModeToggle}
-        className="z-10 fixed top-6 right-6 fill-gray-700 cursor-pointer dark:fill-gray-400"
-      />
-      <div className="z-10 flex flex-col items-center text-center lg:text-start lg:items-start m-auto max-w-md">
-        <div className="h-14 w-14 border-8 bg-blue-500 rounded-full mb-4 dark:border-gray-800"></div>
-        <h1 className="font-bold text-3xl my-2 text-gray-800 dark:text-gray-50">
-          Image to text converter
-        </h1>
-        <p className="text-xl font-thin text-gray-500 dark:text-gray-400">
-          Extract text from images. Supports 50+ languages.
-        </p>
-      </div>
-      <div className="z-10 w-full max-w-md">
+    <div className="flex items-center flex-col py-4 px-2 gap-4 m-auto w-full max-w-lg">
+      <h1 className="font-medium text-3xl py-6 my-4 text-white w-full border-b border-neutral-800">
+        Image to text converter
+      </h1>
+      <div className="z-10 w-full">
         {error !== ErrorType.NO_ERROR && (
           <Error error={error} onClose={handleErrorBannerClose} />
         )}
-        <div className="rounded-md flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8">
+        <Languages
+          setLanguage={handleLanguageSet}
+          selectedLanguage={language}
+        />
+        <div className="rounded-md w-full my-6 border border-neutral-800">
           {text ? (
             <TextWrapper text={text} initNewConversion={handleNewConversion} />
           ) : (
             <>
-              <Languages
-                setLanguage={handleLanguageSet}
-                selectedLanguage={language}
+              <input
+                data-testid="image-url-input"
+                type="text"
+                placeholder="Enter image URL"
+                className="h-20 p-6 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
+                value={imageUrl}
+                onChange={handleImageUrlChange}
               />
+              <div className="w-full text-center h-0">
+                <hr className="w-full -mb-[0.75rem] border-neutral-800" />
+                <span className="bg-neutral-900 px-2 text-md text-neutral-500">
+                  or
+                </span>
+              </div>
               <OCRFileUpload
                 handleError={handleErrorSet}
                 setImage={handleImageFileUpload}
                 disabled={isConverting}
               />
-              <div className="w-full text-center -mb-4">
-                <hr className="w-full -mb-[0.875rem]" />
-                <span className="font-thin bg-white px-2 text-xs text-gray-400">
-                  Or use image url
-                </span>
-              </div>
-              <input
-                data-testid="image-url-input"
-                type="text"
-                placeholder="Enter image URL"
-                className="focus:border-blue-500 outline-0 text-md font-thin placeholder:text-gray-500 w-full border-b-2 pb-2.5"
-                value={imageUrl}
-                onChange={handleImageUrlChange}
-              />
 
               <Button
                 {...{ disabled: isConverting || !(imageFile || imageUrl) }}
-                text="Convert"
+                text="Extract text"
                 fullWidth
                 onClick={handleImageToTextConversion}
                 isConverting={isConverting}
