@@ -4,7 +4,7 @@ exports[`ImageToTextConverter should render 1`] = `
 <body>
   <div>
     <div
-      class="m-auto w-full max-w-lg p-4 pb-14"
+      class="m-auto w-full max-w-xl p-4 pb-14"
     >
       <h1
         class="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800"

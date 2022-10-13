@@ -56,7 +56,7 @@ const ImageToTextConverter = (): JSX.Element => {
   };
 
   return (
-    <div className="m-auto w-full max-w-lg p-4 pb-14">
+    <div className="m-auto w-full max-w-xl p-4 pb-14">
       <h1 className="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800">
         Image to text converter
       </h1>
