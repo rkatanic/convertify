@@ -35,15 +35,4 @@ describe("TestWrapper", (): void => {
 
     expect(downloadTextFile).toHaveBeenNthCalledWith(1, "text");
   });
-
-  it("should initialize new conversion", (): void => {
-    const mockInitNewConversion = jest.fn();
-    const { getByText } = render(
-      <TextWrapper initNewConversion={mockInitNewConversion} text="text" />
-    );
-
-    fireEvent.click(getByText("New conversion"));
-
-    expect(mockInitNewConversion).toHaveBeenCalledTimes(1);
-  });
 });

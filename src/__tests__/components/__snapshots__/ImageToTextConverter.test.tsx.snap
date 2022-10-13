@@ -4,402 +4,391 @@ exports[`ImageToTextConverter should render 1`] = `
 <body>
   <div>
     <div
-      class="flex items-center flex-col lg:flex-row px-2 py-4 gap-4 m-auto w-full max-w-4xl"
+      class="m-auto w-full max-w-lg p-4 pb-14"
     >
-      <svg>
-        gradient-top-right.svg
-      </svg>
-      <svg>
-        gradient-bottom-left.svg
-      </svg>
-      <svg
-        class="z-10 fixed top-6 right-6 fill-gray-700 cursor-pointer dark:fill-gray-400"
-        fill="currentColor"
-        height="1em"
-        stroke="currentColor"
-        stroke-width="0"
-        viewBox="0 0 16 16"
-        width="1em"
-        xmlns="http://www.w3.org/2000/svg"
+      <h1
+        class="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800"
       >
-        <path
-          d="M8 1a7 7 0 1 0 0 14A7 7 0 0 0 8 1zm0 13V2a6 6 0 1 1 0 12z"
-        />
-      </svg>
+        Image to text converter
+      </h1>
       <div
-        class="z-10 flex flex-col items-center text-center lg:text-start lg:items-start m-auto max-w-md"
+        class="z-10 w-full"
       >
         <div
-          class="h-14 w-14 border-8 bg-blue-500 rounded-full mb-4 dark:border-gray-800"
-        />
-        <h1
-          class="font-bold text-3xl my-2 text-gray-800 dark:text-gray-50"
+          class="flex justify-between flex-wrap gap-4 items-baseline"
         >
-          Image to text converter
-        </h1>
-        <p
-          class="text-xl font-thin text-gray-500 dark:text-gray-400"
-        >
-          Extract text from images. Supports 50+ languages.
-        </p>
-      </div>
-      <div
-        class="z-10 w-full max-w-md"
-      >
+          <label
+            class="text-white flex-1 whitespace-nowrap"
+            for="languages"
+          >
+            Character specific language
+          </label>
+          <select
+            class="focus:ring-sky-700 border-0 text-md rounded focus:border-blue-500 outline-0 p-2 px-3 text-white bg-neutral-800 flex-1"
+            data-testid="languages"
+            id="languages"
+          >
+            <option
+              value="afr"
+            >
+              Afrikaans
+            </option>
+            <option
+              value="amh"
+            >
+              Amharic
+            </option>
+            <option
+              value="ara"
+            >
+              Arabic
+            </option>
+            <option
+              value="asm"
+            >
+              Assamese
+            </option>
+            <option
+              value="aze"
+            >
+              Azerbaijani
+            </option>
+            <option
+              value="aze_cyrl"
+            >
+              Azerbaijani - Cyrillic
+            </option>
+            <option
+              value="bel"
+            >
+              Belarusian
+            </option>
+            <option
+              value="ben"
+            >
+              Bengali
+            </option>
+            <option
+              value="bod"
+            >
+              Tibetan
+            </option>
+            <option
+              value="bos"
+            >
+              Bosnian
+            </option>
+            <option
+              value="bul"
+            >
+              Bulgarian
+            </option>
+            <option
+              value="cat"
+            >
+              Catalan; Valencian
+            </option>
+            <option
+              value="ceb"
+            >
+              Cebuano
+            </option>
+            <option
+              value="ces"
+            >
+              Czech
+            </option>
+            <option
+              value="chi_sim"
+            >
+              Chinese - Simplified
+            </option>
+            <option
+              value="chi_tra"
+            >
+              Chinese - Traditional
+            </option>
+            <option
+              value="chr"
+            >
+              Cherokee
+            </option>
+            <option
+              value="cym"
+            >
+              Welsh
+            </option>
+            <option
+              value="dan"
+            >
+              Danish
+            </option>
+            <option
+              value="deu"
+            >
+              German
+            </option>
+            <option
+              value="dzo"
+            >
+              Dzongkha
+            </option>
+            <option
+              value="ell"
+            >
+              Greek, Modern (1453-)
+            </option>
+            <option
+              value="eng"
+            >
+              English
+            </option>
+            <option
+              value="epo"
+            >
+              Esperanto
+            </option>
+            <option
+              value="est"
+            >
+              Estonian
+            </option>
+            <option
+              value="fin"
+            >
+              Finnish
+            </option>
+            <option
+              value="fra"
+            >
+              French
+            </option>
+            <option
+              value="gle"
+            >
+              Irish
+            </option>
+            <option
+              value="hat"
+            >
+              Haitian; Haitian Creole
+            </option>
+            <option
+              value="heb"
+            >
+              Hebrew
+            </option>
+            <option
+              value="hin"
+            >
+              Hindi
+            </option>
+            <option
+              value="hun"
+            >
+              Hungarian
+            </option>
+            <option
+              value="ind"
+            >
+              Indonesian
+            </option>
+            <option
+              value="isl"
+            >
+              Italian
+            </option>
+            <option
+              value="jpn"
+            >
+              Japanese
+            </option>
+            <option
+              value="kat"
+            >
+              Georgian
+            </option>
+            <option
+              value="kor"
+            >
+              Korean
+            </option>
+            <option
+              value="kur"
+            >
+              Kurdish
+            </option>
+            <option
+              value="lao"
+            >
+              Lao
+            </option>
+            <option
+              value="lat"
+            >
+              Latvian
+            </option>
+            <option
+              value="lit"
+            >
+              Lithuanian
+            </option>
+            <option
+              value="mal"
+            >
+              Malayalam
+            </option>
+            <option
+              value="mkd"
+            >
+              Macedonian
+            </option>
+            <option
+              value="mlt"
+            >
+              Maltese
+            </option>
+            <option
+              value="mya"
+            >
+              Burmese
+            </option>
+            <option
+              value="nep"
+            >
+              Nepali
+            </option>
+            <option
+              value="nor"
+            >
+              Norwegian
+            </option>
+            <option
+              value="pol"
+            >
+              Polish
+            </option>
+            <option
+              value="por"
+            >
+              Portuguese
+            </option>
+            <option
+              value="ron"
+            >
+              Romanian; Moldavian
+            </option>
+            <option
+              value="rus"
+            >
+              Russian
+            </option>
+            <option
+              value="san"
+            >
+              Sanskrit
+            </option>
+            <option
+              value="slk"
+            >
+              Slovak
+            </option>
+            <option
+              value="slv"
+            >
+              Slovenian
+            </option>
+            <option
+              value="spa"
+            >
+              Spanish; Castilian
+            </option>
+            <option
+              value="srp"
+            >
+              Serbian
+            </option>
+            <option
+              value="srp_latn"
+            >
+              Serbian - Latin
+            </option>
+            <option
+              value="swa"
+            >
+              Swahili
+            </option>
+            <option
+              value="swe"
+            >
+              Swedish
+            </option>
+            <option
+              value="syr"
+            >
+              Syriac
+            </option>
+            <option
+              value="tur"
+            >
+              Turkish
+            </option>
+            <option
+              value="tha"
+            >
+              Thai
+            </option>
+            <option
+              value="ukr"
+            >
+              Ukrainian
+            </option>
+            <option
+              value="uzb"
+            >
+              Uzbek
+            </option>
+            <option
+              value="uzb_cyrl"
+            >
+              Uzbek - Cyrillic
+            </option>
+            <option
+              value="vie"
+            >
+              Vietnamese
+            </option>
+            <option
+              value="yid"
+            >
+              Yiddish
+            </option>
+          </select>
+        </div>
         <div
-          class="rounded-md flex flex-col gap-6 w-full m-auto bg-white shadow-md p-8"
+          class="rounded-md w-full mt-5 border border-neutral-800"
         >
-          <div>
-            <label
-              class="text-xs text-gray-500 mb-1 block"
-              for="languages"
+          <input
+            class="focus:ring-sky-700 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
+            data-testid="image-url-input"
+            placeholder="Enter image URL"
+            type="text"
+            value=""
+          />
+          <div
+            class="w-full text-center h-0"
+          >
+            <hr
+              class="w-full -mb-[0.825rem] border-neutral-800"
+            />
+            <span
+              class="bg-neutral-900 px-2 text-md text-neutral-500"
             >
-              Language
-            </label>
-            <select
-              class="text-md font-thin border-b-2 focus:border-blue-500 outline-0 pb-2.5 w-full"
-              data-testid="languages"
-              id="languages"
-            >
-              <option
-                value="afr"
-              >
-                Afrikaans
-              </option>
-              <option
-                value="amh"
-              >
-                Amharic
-              </option>
-              <option
-                value="ara"
-              >
-                Arabic
-              </option>
-              <option
-                value="asm"
-              >
-                Assamese
-              </option>
-              <option
-                value="aze"
-              >
-                Azerbaijani
-              </option>
-              <option
-                value="aze_cyrl"
-              >
-                Azerbaijani - Cyrillic
-              </option>
-              <option
-                value="bel"
-              >
-                Belarusian
-              </option>
-              <option
-                value="ben"
-              >
-                Bengali
-              </option>
-              <option
-                value="bod"
-              >
-                Tibetan
-              </option>
-              <option
-                value="bos"
-              >
-                Bosnian
-              </option>
-              <option
-                value="bul"
-              >
-                Bulgarian
-              </option>
-              <option
-                value="cat"
-              >
-                Catalan; Valencian
-              </option>
-              <option
-                value="ceb"
-              >
-                Cebuano
-              </option>
-              <option
-                value="ces"
-              >
-                Czech
-              </option>
-              <option
-                value="chi_sim"
-              >
-                Chinese - Simplified
-              </option>
-              <option
-                value="chi_tra"
-              >
-                Chinese - Traditional
-              </option>
-              <option
-                value="chr"
-              >
-                Cherokee
-              </option>
-              <option
-                value="cym"
-              >
-                Welsh
-              </option>
-              <option
-                value="dan"
-              >
-                Danish
-              </option>
-              <option
-                value="deu"
-              >
-                German
-              </option>
-              <option
-                value="dzo"
-              >
-                Dzongkha
-              </option>
-              <option
-                value="ell"
-              >
-                Greek, Modern (1453-)
-              </option>
-              <option
-                value="eng"
-              >
-                English
-              </option>
-              <option
-                value="epo"
-              >
-                Esperanto
-              </option>
-              <option
-                value="est"
-              >
-                Estonian
-              </option>
-              <option
-                value="fin"
-              >
-                Finnish
-              </option>
-              <option
-                value="fra"
-              >
-                French
-              </option>
-              <option
-                value="gle"
-              >
-                Irish
-              </option>
-              <option
-                value="hat"
-              >
-                Haitian; Haitian Creole
-              </option>
-              <option
-                value="heb"
-              >
-                Hebrew
-              </option>
-              <option
-                value="hin"
-              >
-                Hindi
-              </option>
-              <option
-                value="hun"
-              >
-                Hungarian
-              </option>
-              <option
-                value="ind"
-              >
-                Indonesian
-              </option>
-              <option
-                value="isl"
-              >
-                Italian
-              </option>
-              <option
-                value="jpn"
-              >
-                Japanese
-              </option>
-              <option
-                value="kat"
-              >
-                Georgian
-              </option>
-              <option
-                value="kor"
-              >
-                Korean
-              </option>
-              <option
-                value="kur"
-              >
-                Kurdish
-              </option>
-              <option
-                value="lao"
-              >
-                Lao
-              </option>
-              <option
-                value="lat"
-              >
-                Latvian
-              </option>
-              <option
-                value="lit"
-              >
-                Lithuanian
-              </option>
-              <option
-                value="mal"
-              >
-                Malayalam
-              </option>
-              <option
-                value="mkd"
-              >
-                Macedonian
-              </option>
-              <option
-                value="mlt"
-              >
-                Maltese
-              </option>
-              <option
-                value="mya"
-              >
-                Burmese
-              </option>
-              <option
-                value="nep"
-              >
-                Nepali
-              </option>
-              <option
-                value="nor"
-              >
-                Norwegian
-              </option>
-              <option
-                value="pol"
-              >
-                Polish
-              </option>
-              <option
-                value="por"
-              >
-                Portuguese
-              </option>
-              <option
-                value="ron"
-              >
-                Romanian; Moldavian
-              </option>
-              <option
-                value="rus"
-              >
-                Russian
-              </option>
-              <option
-                value="san"
-              >
-                Sanskrit
-              </option>
-              <option
-                value="slk"
-              >
-                Slovak
-              </option>
-              <option
-                value="slv"
-              >
-                Slovenian
-              </option>
-              <option
-                value="spa"
-              >
-                Spanish; Castilian
-              </option>
-              <option
-                value="srp"
-              >
-                Serbian
-              </option>
-              <option
-                value="srp_latn"
-              >
-                Serbian - Latin
-              </option>
-              <option
-                value="swa"
-              >
-                Swahili
-              </option>
-              <option
-                value="swe"
-              >
-                Swedish
-              </option>
-              <option
-                value="syr"
-              >
-                Syriac
-              </option>
-              <option
-                value="tur"
-              >
-                Turkish
-              </option>
-              <option
-                value="tha"
-              >
-                Thai
-              </option>
-              <option
-                value="ukr"
-              >
-                Ukrainian
-              </option>
-              <option
-                value="uzb"
-              >
-                Uzbek
-              </option>
-              <option
-                value="uzb_cyrl"
-              >
-                Uzbek - Cyrillic
-              </option>
-              <option
-                value="vie"
-              >
-                Vietnamese
-              </option>
-              <option
-                value="yid"
-              >
-                Yiddish
-              </option>
-            </select>
+              or
+            </span>
           </div>
           <div
-            class="h-36 cursor-pointer hover:bg-gray-50 border-dashed border-2 rounded-sm p-6"
+            class="cursor-pointer flex p-5 h-20"
           >
             <input
               class="sr-only"
@@ -408,74 +397,58 @@ exports[`ImageToTextConverter should render 1`] = `
               type="file"
             />
             <label
-              class="cursor-pointer flex flex-col items-center gap-2 text-center"
+              class="cursor-pointer flex justify-between w-full items-center gap-6"
               for="file-upload"
             >
-              <svg
-                class="fill-gray-300"
-                fill="currentColor"
-                height="2.5rem"
-                stroke="currentColor"
-                stroke-width="0"
-                viewBox="0 0 24 24"
-                width="2.5rem"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g>
-                  <path
-                    d="M0 0h24v24H0z"
-                    fill="none"
-                  />
-                  <path
-                    d="M21 15v3h3v2h-3v3h-2v-3h-3v-2h3v-3h2zm.008-12c.548 0 .992.445.992.993V13h-2V5H4v13.999L14 9l3 3v2.829l-3-3L6.827 19H14v2H2.992A.993.993 0 0 1 2 20.007V3.993A1 1 0 0 1 2.992 3h18.016zM8 7a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
-                  />
-                </g>
-              </svg>
               <div>
                 <div
-                  class="mb-1"
+                  class="text-white"
                 >
-                  <span
-                    class="text-blue-500 font-medium"
+                  <div
+                    class="text-white text-lg font-medium"
                   >
-                    Upload a file
-                  </span>
-                   
-                  <span
-                    class="text-gray-500 font-thin"
+                    Upload an image
+                  </div>
+                  <div
+                    class="text-neutral-500 text-sm"
                   >
-                    or drag and drop
-                  </span>
+                     JPG, JPEG, PNG, BMP, PBM up to 5MB
+                  </div>
                 </div>
-                <p
-                  class="text-gray-500 text-sm font-thin"
+              </div>
+              <div
+                class="bg-neutral-700 p-2 rounded hover:bg-emerald-800"
+              >
+                <svg
+                  class="stroke-white"
+                  fill="none"
+                  height="1.5rem"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  viewBox="0 0 24 24"
+                  width="1.5rem"
+                  xmlns="http://www.w3.org/2000/svg"
                 >
-                  JPG, JPEG, PNG, BMP, PBM up to 5MB
-                </p>
+                  <line
+                    x1="12"
+                    x2="12"
+                    y1="5"
+                    y2="19"
+                  />
+                  <line
+                    x1="5"
+                    x2="19"
+                    y1="12"
+                    y2="12"
+                  />
+                </svg>
               </div>
             </label>
           </div>
-          <div
-            class="w-full text-center -mb-4"
-          >
-            <hr
-              class="w-full -mb-[0.875rem]"
-            />
-            <span
-              class="font-thin bg-white px-2 text-xs text-gray-400"
-            >
-              Or use image url
-            </span>
-          </div>
-          <input
-            class="focus:border-blue-500 outline-0 text-md font-thin placeholder:text-gray-500 w-full border-b-2 pb-2.5"
-            data-testid="image-url-input"
-            placeholder="Enter image URL"
-            type="text"
-            value=""
-          />
           <button
-            class="disabled:cursor-not-allowed cursor-pointer hover:bg-blue-600 relative text-md text-white font-medium bg-blue-500 rounded-full py-2.5 px-4 w-full"
+            class="disabled:cursor-not-allowed cursor-pointer hover:bg-emerald-900 relative text-xl text-white bg-emerald-800 rounded-b p-5 w-full"
             disabled=""
             type="button"
           >
@@ -483,7 +456,7 @@ exports[`ImageToTextConverter should render 1`] = `
               class="absolute flex w-16"
             >
               <svg
-                class="absolute top-1 stroke-blue-300 "
+                class="absolute top-1 stroke-emerald-600 "
                 fill="none"
                 height="1em"
                 stroke="currentColor"
@@ -505,9 +478,10 @@ exports[`ImageToTextConverter should render 1`] = `
                 />
               </svg>
             </div>
-            Convert
+            Extract Text
           </button>
         </div>
+        
       </div>
     </div>
   </div>

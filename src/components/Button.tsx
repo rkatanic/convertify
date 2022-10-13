@@ -28,11 +28,11 @@ const Button = ({
     <div className="absolute flex w-16">
       <FiRefreshCw
         className={`absolute top-1 stroke-emerald-600 ${
-          isConverting ? "animate-spin " : ""
+          isConverting ? "animate-spin durat" : ""
         }`}
       />
       {isConverting && (
-        <div className="mt-0.5 ml-6 text-sm">
+        <div className="mt-1 ml-8 text-sm text-emerald-50">
           {" "}
           {Math.round(conversionProgress * 100)}%
         </div>

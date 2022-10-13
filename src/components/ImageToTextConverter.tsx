@@ -61,8 +61,8 @@ const ImageToTextConverter = (): JSX.Element => {
   };
 
   return (
-    <div className="flex items-center flex-col py-4 px-2 gap-4 m-auto w-full max-w-lg">
-      <h1 className="font-medium text-3xl py-6 my-4 text-white w-full border-b border-neutral-800">
+    <div className="m-auto w-full max-w-lg p-4 pb-14">
+      <h1 className="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800">
         Image to text converter
       </h1>
       <div className="z-10 w-full">
@@ -73,42 +73,40 @@ const ImageToTextConverter = (): JSX.Element => {
           setLanguage={handleLanguageSet}
           selectedLanguage={language}
         />
-        <div className="rounded-md w-full my-6 border border-neutral-800">
-          {text ? (
-            <TextWrapper text={text} initNewConversion={handleNewConversion} />
-          ) : (
-            <>
-              <input
-                data-testid="image-url-input"
-                type="text"
-                placeholder="Enter image URL"
-                className="h-20 p-6 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
-                value={imageUrl}
-                onChange={handleImageUrlChange}
-              />
-              <div className="w-full text-center h-0">
-                <hr className="w-full -mb-[0.75rem] border-neutral-800" />
-                <span className="bg-neutral-900 px-2 text-md text-neutral-500">
-                  or
-                </span>
-              </div>
-              <OCRFileUpload
-                handleError={handleErrorSet}
-                setImage={handleImageFileUpload}
-                disabled={isConverting}
-              />
+        <div className="rounded-md w-full mt-5 border border-neutral-800">
+          <input
+            data-testid="image-url-input"
+            type="text"
+            placeholder="Enter image URL"
+            p-
+            className="focus:ring-sky-700 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
+            value={imageUrl}
+            onChange={handleImageUrlChange}
+          />
+          <div className="w-full text-center h-0">
+            <hr className="w-full -mb-[0.825rem] border-neutral-800" />
+            <span className="bg-neutral-900 px-2 text-md text-neutral-500">
+              or
+            </span>
+          </div>
+          <OCRFileUpload
+            handleError={handleErrorSet}
+            setImage={handleImageFileUpload}
+            disabled={isConverting}
+          />
 
-              <Button
-                {...{ disabled: isConverting || !(imageFile || imageUrl) }}
-                text="Extract text"
-                fullWidth
-                onClick={handleImageToTextConversion}
-                isConverting={isConverting}
-                conversionProgress={progress}
-              />
-            </>
-          )}
+          <Button
+            {...{ disabled: isConverting || !(imageFile || imageUrl) }}
+            text="Extract Text"
+            fullWidth
+            onClick={handleImageToTextConversion}
+            isConverting={isConverting}
+            conversionProgress={progress}
+          />
         </div>
+        {text && (
+          <TextWrapper text={text} initNewConversion={handleNewConversion} />
+        )}
       </div>
     </div>
   );

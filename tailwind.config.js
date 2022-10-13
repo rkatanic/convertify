@@ -9,4 +9,5 @@ module.exports = {
         "radial-gradient(ellipse at center, var(--tw-gradient-stops))",
     },
   },
+  plugins: [require("@tailwindcss/forms")],
 };

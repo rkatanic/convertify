@@ -4,19 +4,19 @@ exports[`Error should initially be without error message 1`] = `
 <body>
   <div>
     <div
-      class="mb-4 shadow-md bg-red-100 border-l-[3px] border-red-500 p-4 dark:bg-red-900/40"
+      class="mb-6 border-l-[3px] border-red-500 p-4 bg-red-900/20"
       data-testid="error-banner"
     >
       <div
         class="flex items-center justify-between gap-4"
       >
         <div
-          class="font-medium text-red-700 dark:text-red-200"
+          class="font-medium text-red-400"
         >
           Error
         </div>
         <svg
-          class="stroke-red-800 cursor-pointer dark:stroke-red-200"
+          class="cursor-pointer stroke-white"
           data-testid="error-icon-close"
           fill="none"
           height="1.25rem"
@@ -43,9 +43,11 @@ exports[`Error should initially be without error message 1`] = `
         </svg>
       </div>
       <div
-        class="text-red-700 font-thin text-sm dark:text-red-200"
+        class="text-white"
       >
-        <span />
+        <span>
+          Image conversion failed. Please try again.
+        </span>
       </div>
     </div>
   </div>

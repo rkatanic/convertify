@@ -1,6 +1,7 @@
 import { copyText, downloadTextFile } from "../util/OCRConverterUtils";
 import IconButton from "./IconButton";
 import { RiFileCopyFill, RiFileDownloadFill } from "react-icons/ri";
+import { FiCheck } from "react-icons/fi";
 
 interface Props {
   text?: string;
@@ -8,33 +9,31 @@ interface Props {
 }
 
 const TextWrapper = ({ text = "", initNewConversion }: Props) => (
-  <div className="top-0 left-0 bg-white w-full">
-    <div className="flex items-end justify-between mb-4 text-lg font-thin text-gray-500">
-      Output
-      <button
-        onClick={initNewConversion}
-        type="button"
-        className="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-full"
-      >
-        New conversion
-      </button>
+  <div className="top-0 left-0 w-full">
+    <div className="border-l border-neutral-800 ml-8 py-5 flex items-baseline justify-between font-thin text-white">
+      <div className="ml-5 relative text-neutral-500 font-medium">
+        Output result
+        <div className="flex items-center justify-center w-5 h-5 border bg-neutral-900 border-emerald-800 rounded-full absolute -left-[1.925rem] top-[0.125rem]">
+          <FiCheck size="0.75rem" className="stroke-emerald-400" />
+        </div>
+      </div>
     </div>
 
     <textarea
       disabled
       value={text}
-      className="w-full border-b-2 bg-gray-50 p-2 resize-none"
+      className="text-white w-full bg-transparent p-5 resize-none border-neutral-800 rounded"
       placeholder="Output text"
       rows={11}
     />
-    <div className="mt-1 flex justify-end gap-4">
+    <div className="flex justify-end gap-5 mt-3">
       <IconButton
         label="Copy text"
         icon={
           <RiFileCopyFill
             data-testid="copy-icon"
-            className="fill-gray-400 hover:fill-blue-500"
-            size="1.25rem"
+            className="fill-white"
+            size="1rem"
           />
         }
         onClick={() => copyText(text)}
@@ -45,8 +44,8 @@ const TextWrapper = ({ text = "", initNewConversion }: Props) => (
         icon={
           <RiFileDownloadFill
             data-testid="download-icon"
-            className="fill-gray-400 hover:fill-blue-500"
-            size="1.25rem"
+            className="fill-white"
+            size="1rem"
           />
         }
         onClick={() => downloadTextFile(text)}

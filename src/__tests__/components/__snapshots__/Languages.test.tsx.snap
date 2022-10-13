@@ -3,15 +3,17 @@
 exports[`Languages should render 1`] = `
 <body>
   <div>
-    <div>
+    <div
+      class="flex justify-between flex-wrap gap-4 items-baseline"
+    >
       <label
-        class="text-xs text-gray-500 mb-1 block"
+        class="text-white flex-1 whitespace-nowrap"
         for="languages"
       >
-        Language
+        Character specific language
       </label>
       <select
-        class="text-md font-thin border-b-2 focus:border-blue-500 outline-0 pb-2.5 w-full"
+        class="focus:ring-sky-700 border-0 text-md rounded focus:border-blue-500 outline-0 p-2 px-3 text-white bg-neutral-800 flex-1"
         data-testid="languages"
         id="languages"
       >

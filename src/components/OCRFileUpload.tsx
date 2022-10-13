@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { ErrorType } from "../types/ErrorType";
-import { RiImageAddLine } from "react-icons/ri";
+import { FiPlus } from "react-icons/fi";
 
 interface Props {
   setImage: (value: string) => void;
@@ -46,7 +46,7 @@ const OCRFileUpload = ({
   };
 
   return (
-    <div className="cursor-pointer flex border-dashed p-6 h-20">
+    <div className="cursor-pointer flex p-5 h-20">
       <input
         id="file-upload"
         disabled={disabled}
@@ -60,24 +60,18 @@ const OCRFileUpload = ({
         className="cursor-pointer flex justify-between w-full items-center gap-6"
       >
         <div>
-          {file.name === "" ? (
-            <div className="">
-              <span className="text-white text-lg font-medium">
-                Upload an image
-              </span>{" "}
-              <p className="text-neutral-500 text-sm">
-                {file.size ? (
-                  file.size
-                ) : (
-                  <>JPG, JPEG, PNG, BMP, PBM up to 5MB</>
-                )}
-              </p>
+          <div className="text-white">
+            <div className="text-white text-lg font-medium">
+              {file.name ? file.name : "Upload an image"}
             </div>
-          ) : (
-            file.name
-          )}
+            <div className="text-neutral-500 text-sm">
+              {file.size ? file.size : " JPG, JPEG, PNG, BMP, PBM up to 5MB"}
+            </div>
+          </div>
         </div>
-        <RiImageAddLine size="2.5rem" className="fill-neutral-600" />
+        <div className="bg-neutral-700 p-2 rounded hover:bg-emerald-800">
+          <FiPlus size="1.5rem" className="stroke-white" />
+        </div>
       </label>
     </div>
   );
