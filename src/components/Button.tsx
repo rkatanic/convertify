@@ -28,7 +28,7 @@ const Button = ({
     <div className="absolute flex w-16">
       <FiRefreshCw
         className={`absolute top-1 stroke-emerald-600 ${
-          isConverting ? "animate-spin durat" : ""
+          isConverting ? "animate-spin" : ""
         }`}
       />
       {isConverting && (

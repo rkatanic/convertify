@@ -5,10 +5,9 @@ import { FiCheck } from "react-icons/fi";
 
 interface Props {
   text?: string;
-  initNewConversion: () => void;
 }
 
-const TextWrapper = ({ text = "", initNewConversion }: Props) => (
+const TextWrapper = ({ text = ""  }: Props) => (
   <div className="top-0 left-0 w-full">
     <div className="border-l border-neutral-800 ml-8 py-5 flex items-baseline justify-between font-thin text-white">
       <div className="ml-5 relative text-neutral-500 font-medium">
