@@ -7,6 +7,7 @@ exports[`Icon Button should render 1`] = `
       class="relative"
     >
       <button
+        class="bg-neutral-700 hover:bg-emerald-800 p-3 rounded"
         type="button"
       >
         icon

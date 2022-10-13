@@ -9,17 +9,13 @@ jest.mock("../../util/OCRConverterUtils", () => ({
 
 describe("TestWrapper", (): void => {
   it("should render", (): void => {
-    const { baseElement } = render(
-      <TextWrapper initNewConversion={jest.fn()} />
-    );
+    const { baseElement } = render(<TextWrapper />);
 
     expect(baseElement).toMatchSnapshot();
   });
 
   it("should copy text to clipboard", (): void => {
-    const { getByTestId } = render(
-      <TextWrapper initNewConversion={jest.fn()} text="text" />
-    );
+    const { getByTestId } = render(<TextWrapper text="text" />);
 
     fireEvent.click(getByTestId("copy-icon"));
 
@@ -27,23 +23,10 @@ describe("TestWrapper", (): void => {
   });
 
   it("should download text to .txt file", async (): Promise<void> => {
-    const { getByTestId } = render(
-      <TextWrapper initNewConversion={jest.fn()} text="text" />
-    );
+    const { getByTestId } = render(<TextWrapper text="text" />);
 
     fireEvent.click(getByTestId("download-icon"));
 
     expect(downloadTextFile).toHaveBeenNthCalledWith(1, "text");
-  });
-
-  it("should initialize new conversion", (): void => {
-    const mockInitNewConversion = jest.fn();
-    const { getByText } = render(
-      <TextWrapper initNewConversion={mockInitNewConversion} text="text" />
-    );
-
-    fireEvent.click(getByText("New conversion"));
-
-    expect(mockInitNewConversion).toHaveBeenCalledTimes(1);
   });
 });

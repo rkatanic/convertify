@@ -60,7 +60,7 @@ describe("ImageToTextConverter", (): void => {
     fireEvent.change(fileInput, { target: { value: "some image url" } });
 
     await waitFor((): void => {
-      fireEvent.click(getByText("Convert"));
+      fireEvent.click(getByText("Extract Text"));
 
       expect(convertImageToText).toHaveBeenCalled();
       expect(queryByTestId("error-banner")).not.toBeInTheDocument();
@@ -79,7 +79,7 @@ describe("ImageToTextConverter", (): void => {
       userEvent.upload(fileInput, mockFile);
     });
 
-    fireEvent.click(getByText("Convert"));
+    fireEvent.click(getByText("Extract Text"));
 
     await waitFor((): void => {
       expect(getByTestId("error-banner")).toBeInTheDocument();

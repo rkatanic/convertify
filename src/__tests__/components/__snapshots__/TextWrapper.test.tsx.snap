@@ -4,44 +4,63 @@ exports[`TestWrapper should render 1`] = `
 <body>
   <div>
     <div
-      class="top-0 left-0 bg-white w-full"
+      class="top-0 left-0 w-full"
     >
       <div
-        class="flex items-end justify-between mb-4 text-lg font-thin text-gray-500"
+        class="border-l border-neutral-800 ml-8 py-5 flex items-baseline justify-between font-thin text-white"
       >
-        Output
-        <button
-          class="py-2 px-4 bg-blue-500 hover:bg-blue-600 text-white text-sm font-medium rounded-full"
-          type="button"
+        <div
+          class="ml-5 relative text-neutral-500 font-medium"
         >
-          New conversion
-        </button>
+          Output result
+          <div
+            class="flex items-center justify-center w-5 h-5 border bg-neutral-900 border-emerald-800 rounded-full absolute -left-[1.925rem] top-[0.125rem]"
+          >
+            <svg
+              class="stroke-emerald-400"
+              fill="none"
+              height="0.75rem"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              width="0.75rem"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <polyline
+                points="20 6 9 17 4 12"
+              />
+            </svg>
+          </div>
+        </div>
       </div>
       <textarea
-        class="w-full border-b-2 bg-gray-50 p-2 resize-none"
+        class="text-white w-full bg-transparent p-5 resize-none border-neutral-800 rounded"
         disabled=""
         placeholder="Output text"
         rows="11"
       />
       <div
-        class="mt-1 flex justify-end gap-4"
+        class="flex justify-end gap-5 mt-3"
       >
         <div
           class="relative"
         >
           <button
+            class="bg-neutral-700 hover:bg-emerald-800 p-3 rounded"
             disabled=""
             type="button"
           >
             <svg
-              class="fill-gray-400 hover:fill-blue-500"
+              class="fill-white"
               data-testid="copy-icon"
               fill="currentColor"
-              height="1.25rem"
+              height="1rem"
               stroke="currentColor"
               stroke-width="0"
               viewBox="0 0 24 24"
-              width="1.25rem"
+              width="1rem"
               xmlns="http://www.w3.org/2000/svg"
             >
               <g>
@@ -56,7 +75,7 @@ exports[`TestWrapper should render 1`] = `
             </svg>
           </button>
           <span
-            class="absolute hidden bg-gray-800 text-white rounded p-1.5 px-3 text-xs -left-9 bottom-8 whitespace-nowrap"
+            class="absolute hidden bg-white text-black font-medium rounded p-1.5 px-3 text-xs -left-6 bottom-12 whitespace-nowrap"
           >
             Copy text
           </span>
@@ -65,18 +84,19 @@ exports[`TestWrapper should render 1`] = `
           class="relative"
         >
           <button
+            class="bg-neutral-700 hover:bg-emerald-800 p-3 rounded"
             disabled=""
             type="button"
           >
             <svg
-              class="fill-gray-400 hover:fill-blue-500"
+              class="fill-white"
               data-testid="download-icon"
               fill="currentColor"
-              height="1.25rem"
+              height="1rem"
               stroke="currentColor"
               stroke-width="0"
               viewBox="0 0 24 24"
-              width="1.25rem"
+              width="1rem"
               xmlns="http://www.w3.org/2000/svg"
             >
               <g>
@@ -91,7 +111,7 @@ exports[`TestWrapper should render 1`] = `
             </svg>
           </button>
           <span
-            class="absolute hidden bg-gray-800 text-white rounded p-1.5 px-3 text-xs -left-9 bottom-8 whitespace-nowrap"
+            class="absolute hidden bg-white text-black font-medium rounded p-1.5 px-3 text-xs -left-6 bottom-12 whitespace-nowrap"
           >
             Download
           </span>

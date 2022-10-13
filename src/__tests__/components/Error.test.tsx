@@ -36,7 +36,7 @@ describe("Error", (): void => {
     );
 
     expect(
-      getByText("Whoops! Image conversion failed. Please try again.")
+      getByText("Image conversion failed. Please try again.")
     ).toBeInTheDocument();
   });
 
@@ -46,7 +46,7 @@ describe("Error", (): void => {
     );
 
     expect(
-      getByText("Maximum file size exceeded! Please use file up to 5 MB.")
+      getByText("Maximum file size exceeded. Please use file up to 5 MB.")
     ).toBeInTheDocument();
   });
 });
