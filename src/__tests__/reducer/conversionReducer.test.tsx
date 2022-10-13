@@ -2,7 +2,6 @@ import {
   convertImageError,
   convertImageInit,
   convertImageSuccess,
-  initNewConversion,
   setError,
   setImageFile,
   setImageUrl,
@@ -228,30 +227,6 @@ describe("ConversionReducer", (): void => {
       progress: 0,
       isConverting: false,
       error: ErrorType.CONVERSION_FAILED,
-    });
-  });
-
-  it("should init new conversion", (): void => {
-    const initialState = {
-      language: "srp",
-      imageFile: "imageFile",
-      imageUrl: "",
-      text: "",
-      progress: 0,
-      isConverting: false,
-      error: ErrorType.NO_ERROR,
-    };
-
-    const nextState = conversionReducer(initialState, initNewConversion());
-
-    expect(nextState).toEqual({
-      language: "srp",
-      imageFile: "",
-      imageUrl: "",
-      text: "",
-      progress: 0,
-      isConverting: false,
-      error: ErrorType.NO_ERROR,
     });
   });
 });

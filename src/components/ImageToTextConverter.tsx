@@ -9,7 +9,6 @@ import { DEFAULT_LANGUAGE } from "../constants/languages";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
 import {
-  initNewConversion,
   setError,
   setImageFile,
   setImageUrl,
@@ -56,10 +55,6 @@ const ImageToTextConverter = (): JSX.Element => {
     convertImageToText(dispatch, imageUrl || imageFile, language);
   };
 
-  const handleNewConversion = (): void => {
-    dispatch(initNewConversion());
-  };
-
   return (
     <div className="m-auto w-full max-w-lg p-4 pb-14">
       <h1 className="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800">
@@ -104,9 +99,7 @@ const ImageToTextConverter = (): JSX.Element => {
             conversionProgress={progress}
           />
         </div>
-        {text && (
-          <TextWrapper text={text} initNewConversion={handleNewConversion} />
-        )}
+        {text && <TextWrapper text={text} />}
       </div>
     </div>
   );
