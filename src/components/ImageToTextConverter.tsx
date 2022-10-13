@@ -88,7 +88,6 @@ const ImageToTextConverter = (): JSX.Element => {
             setImage={handleImageFileUpload}
             disabled={isConverting}
           />
-
           <Button
             {...{ disabled: isConverting || !(imageFile || imageUrl) }}
             text="Extract Text"
