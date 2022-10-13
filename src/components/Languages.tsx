@@ -1,5 +1,6 @@
 import { ChangeEvent } from "react";
-import { LANGUAGES } from "../constants/languages";
+import { LANGUAGES } from "../constants/LANGUAGES";
+import { Language } from "../types/Language";
 
 interface Props {
   setLanguage: (languageKey: string) => void;
@@ -26,7 +27,7 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
         onChange={handleLanguageSelect}
         value={selectedLanguage}
       >
-        {LANGUAGES.map((language) => (
+        {LANGUAGES.map((language: Language) => (
           <option key={language.key} value={language.key}>
             {language.value}
           </option>

@@ -5,7 +5,7 @@ import Button from "./Button";
 import Languages from "./Languages";
 import Error from "./Error";
 import { convertImageToText } from "../util/OCRConverterUtils";
-import { DEFAULT_LANGUAGE } from "../constants/languages";
+import { DEFAULT_LANGUAGE } from "../constants/LANGUAGES";
 import { ErrorType } from "../types/ErrorType";
 import { conversionReducer } from "../reducer/conversionReducer";
 import {
