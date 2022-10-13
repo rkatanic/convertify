@@ -73,7 +73,6 @@ const ImageToTextConverter = (): JSX.Element => {
             data-testid="image-url-input"
             type="text"
             placeholder="Enter image URL"
-            p-
             className="focus:ring-sky-700 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
             value={imageUrl}
             onChange={handleImageUrlChange}
