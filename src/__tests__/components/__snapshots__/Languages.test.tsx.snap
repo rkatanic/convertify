@@ -7,7 +7,7 @@ exports[`Languages should render 1`] = `
       class="flex justify-between flex-wrap gap-4 items-baseline"
     >
       <label
-        class="text-white flex-1 whitespace-nowrap"
+        class="text-white flex-[1.25] whitespace-nowrap"
         for="languages"
       >
         Character specific language
