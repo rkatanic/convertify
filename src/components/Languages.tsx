@@ -16,7 +16,7 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
     <div className="flex justify-between flex-wrap gap-4 items-baseline">
       <label
         htmlFor="languages"
-        className="text-white flex-1 whitespace-nowrap"
+        className="text-white flex-[1.25] whitespace-nowrap"
       >
         Character specific language
       </label>

@@ -56,7 +56,7 @@ const ImageToTextConverter = (): JSX.Element => {
   };
 
   return (
-    <div className="m-auto w-full max-w-xl p-4 pb-14">
+    <div className="m-auto w-full max-w-2xl p-4 pb-14">
       <h1 className="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800">
         Image to text converter
       </h1>
@@ -71,7 +71,7 @@ const ImageToTextConverter = (): JSX.Element => {
         <div className="rounded-md w-full mt-5 border border-neutral-800">
           <input
             data-testid="image-url-input"
-            type="text"
+            type="search"
             placeholder="Enter image URL"
             className="focus:ring-sky-700 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
             value={imageUrl}
@@ -90,7 +90,7 @@ const ImageToTextConverter = (): JSX.Element => {
           />
           <Button
             {...{ disabled: isConverting || !(imageFile || imageUrl) }}
-            text="Extract Text"
+            text="Convert To Text"
             fullWidth
             onClick={handleImageToTextConversion}
             isConverting={isConverting}

@@ -4,7 +4,7 @@ exports[`ImageToTextConverter should render 1`] = `
 <body>
   <div>
     <div
-      class="m-auto w-full max-w-xl p-4 pb-14"
+      class="m-auto w-full max-w-2xl p-4 pb-14"
     >
       <h1
         class="py-5 pb-8 mb-5 font-medium text-3xl text-white w-full border-b border-neutral-800"
@@ -18,7 +18,7 @@ exports[`ImageToTextConverter should render 1`] = `
           class="flex justify-between flex-wrap gap-4 items-baseline"
         >
           <label
-            class="text-white flex-1 whitespace-nowrap"
+            class="text-white flex-[1.25] whitespace-nowrap"
             for="languages"
           >
             Character specific language
@@ -372,7 +372,7 @@ exports[`ImageToTextConverter should render 1`] = `
             class="focus:ring-sky-700 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
             data-testid="image-url-input"
             placeholder="Enter image URL"
-            type="text"
+            type="search"
             value=""
           />
           <div
@@ -478,7 +478,7 @@ exports[`ImageToTextConverter should render 1`] = `
                 />
               </svg>
             </div>
-            Extract Text
+            Convert To Text
           </button>
         </div>
         

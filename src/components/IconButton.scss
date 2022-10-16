@@ -2,3 +2,8 @@ button:hover+span {
   display: block;
   font-family: Inter; 
 }
+
+
+button + span::before {
+  clip-path: polygon(50% 100%, 0 0, 100% 0);
+}
