@@ -23,7 +23,7 @@ const Languages = ({ setLanguage, selectedLanguage }: Props): JSX.Element => {
       <select
         data-testid="languages"
         id="languages"
-        className="focus:ring-sky-700 border-0 text-md rounded focus:border-blue-500 outline-0 p-2 px-3 text-white bg-neutral-800 flex-1"
+        className="focus:ring-blue-500 border-0 text-md rounded focus:border-blue-500 outline-0 p-2 px-3 text-white bg-neutral-800 flex-1"
         onChange={handleLanguageSelect}
         value={selectedLanguage}
       >

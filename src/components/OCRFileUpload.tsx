@@ -59,14 +59,12 @@ const OCRFileUpload = ({
         htmlFor="file-upload"
         className="cursor-pointer flex justify-between w-full items-center gap-6"
       >
-        <div>
-          <div className="text-white">
-            <div className="text-white text-lg font-medium">
-              {file.name ? file.name : "Upload an image"}
-            </div>
-            <div className="text-neutral-500 text-sm">
-              {file.size ? file.size : " JPG, JPEG, PNG, BMP, PBM up to 5MB"}
-            </div>
+        <div className="w-full max-w-lg truncate">
+          <div className="text-white text-lg font-medium truncate">
+            {file.name ? file.name : "Upload an image"}
+          </div>
+          <div className="text-neutral-500 text-sm mt-0.5">
+            {file.size ? file.size : " JPG, JPEG, PNG, BMP, PBM up to 5MB"}
           </div>
         </div>
         <div className="bg-neutral-700 p-2 rounded hover:bg-emerald-800">
