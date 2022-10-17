@@ -24,7 +24,7 @@ exports[`ImageToTextConverter should render 1`] = `
             Character specific language
           </label>
           <select
-            class="focus:ring-sky-700 border-0 text-md rounded focus:border-blue-500 outline-0 p-2 px-3 text-white bg-neutral-800 flex-1"
+            class="focus:ring-blue-500 border-0 text-md rounded focus:border-blue-500 outline-0 p-2 px-3 text-white bg-neutral-800 flex-1"
             data-testid="languages"
             id="languages"
           >
@@ -369,7 +369,7 @@ exports[`ImageToTextConverter should render 1`] = `
           class="rounded-md w-full mt-5 border border-neutral-800"
         >
           <input
-            class="focus:ring-sky-700 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
+            class="focus:ring-blue-500 border-0 rounded-t h-20 p-5 text-white outline-0 text-lg placeholder:text-neutral-500 w-full bg-transparent"
             data-testid="image-url-input"
             placeholder="Enter image URL"
             type="search"
@@ -400,20 +400,18 @@ exports[`ImageToTextConverter should render 1`] = `
               class="cursor-pointer flex justify-between w-full items-center gap-6"
               for="file-upload"
             >
-              <div>
+              <div
+                class="w-full max-w-lg truncate"
+              >
                 <div
-                  class="text-white"
+                  class="text-white text-lg font-medium truncate"
                 >
-                  <div
-                    class="text-white text-lg font-medium"
-                  >
-                    Upload an image
-                  </div>
-                  <div
-                    class="text-neutral-500 text-sm"
-                  >
-                     JPG, JPEG, PNG, BMP, PBM up to 5MB
-                  </div>
+                  Upload an image
+                </div>
+                <div
+                  class="text-neutral-500 text-sm mt-0.5"
+                >
+                   JPG, JPEG, PNG, BMP, PBM up to 5MB
                 </div>
               </div>
               <div
