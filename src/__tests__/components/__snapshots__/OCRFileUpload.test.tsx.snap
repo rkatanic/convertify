@@ -17,20 +17,18 @@ exports[`OCRFileUpload should render 1`] = `
         class="cursor-pointer flex justify-between w-full items-center gap-6"
         for="file-upload"
       >
-        <div>
+        <div
+          class="w-full max-w-lg truncate"
+        >
           <div
-            class="text-white"
+            class="text-white text-lg font-medium truncate"
           >
-            <div
-              class="text-white text-lg font-medium"
-            >
-              Upload an image
-            </div>
-            <div
-              class="text-neutral-500 text-sm"
-            >
-               JPG, JPEG, PNG, BMP, PBM up to 5MB
-            </div>
+            Upload an image
+          </div>
+          <div
+            class="text-neutral-500 text-sm mt-0.5"
+          >
+             JPG, JPEG, PNG, BMP, PBM up to 5MB
           </div>
         </div>
         <div

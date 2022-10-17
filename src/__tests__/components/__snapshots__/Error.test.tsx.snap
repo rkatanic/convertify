@@ -8,24 +8,53 @@ exports[`Error should initially be without error message 1`] = `
       data-testid="error-banner"
     >
       <div
-        class="flex items-center justify-between gap-4"
+        class="flex items-end justify-between gap-4"
       >
         <div
-          class="font-medium text-red-400"
+          class="flex items-center gap-2 font-medium text-red-400 text-lg"
         >
+          <svg
+            fill="none"
+            height="1em"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            viewBox="0 0 24 24"
+            width="1em"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <circle
+              cx="12"
+              cy="12"
+              r="10"
+            />
+            <line
+              x1="12"
+              x2="12"
+              y1="8"
+              y2="12"
+            />
+            <line
+              x1="12"
+              x2="12.01"
+              y1="16"
+              y2="16"
+            />
+          </svg>
           Error
         </div>
         <svg
-          class="cursor-pointer stroke-white"
+          class="cursor-pointer stroke-red-50"
           data-testid="error-icon-close"
           fill="none"
-          height="1.25rem"
+          height="1.5rem"
           stroke="currentColor"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
           viewBox="0 0 24 24"
-          width="1.25rem"
+          width="1.5rem"
           xmlns="http://www.w3.org/2000/svg"
         >
           <line
@@ -43,7 +72,7 @@ exports[`Error should initially be without error message 1`] = `
         </svg>
       </div>
       <div
-        class="text-white"
+        class="text-red-100"
       >
         <span>
           Image conversion failed. Please try again.

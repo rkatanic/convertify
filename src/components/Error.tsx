@@ -1,5 +1,5 @@
 import { ErrorType } from "../types/ErrorType";
-import { FiX } from "react-icons/fi";
+import { FiX, FiAlertCircle } from "react-icons/fi";
 
 interface Props {
   onClose: () => void;
@@ -25,16 +25,19 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
       data-testid="error-banner"
       className="mb-6 border-l-[3px] border-red-500 p-4 bg-red-900/20"
     >
-      <div className="flex items-center justify-between gap-4">
-        <div className="font-medium text-red-400">Error</div>
+      <div className="flex items-end justify-between gap-4">
+        <div className="flex items-center gap-2 font-medium text-red-400 text-lg">
+          <FiAlertCircle />
+          Error
+        </div>
         <FiX
           data-testid="error-icon-close"
           onClick={onClose}
-          size="1.25rem"
-          className="cursor-pointer stroke-white"
+          size="1.5rem"
+          className="cursor-pointer stroke-red-50"
         />
       </div>
-      <div className="text-white">
+      <div className="text-red-100">
         <span>{showErrorMessage()}</span>
       </div>
     </div>
