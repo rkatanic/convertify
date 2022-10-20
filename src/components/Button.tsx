@@ -33,7 +33,6 @@ const Button = ({
       />
       {isConverting && (
         <div className="mt-1 ml-8 text-sm text-emerald-50">
-          {" "}
           {Math.round(conversionProgress * 100)}%
         </div>
       )}

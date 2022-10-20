@@ -23,7 +23,7 @@ const Error = ({ onClose, error }: Props): JSX.Element => {
   return (
     <div
       data-testid="error-banner"
-      className="mb-6 border-l-[3px] border-red-500 p-4 bg-red-900/20"
+      className="mb-6 border-l-[3px] border-red-500 p-4 bg-red-900/25"
     >
       <div className="flex items-end justify-between gap-4">
         <div className="flex items-center gap-2 font-medium text-red-400 text-lg">

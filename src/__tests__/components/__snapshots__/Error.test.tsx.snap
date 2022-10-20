@@ -4,7 +4,7 @@ exports[`Error should initially be without error message 1`] = `
 <body>
   <div>
     <div
-      class="mb-6 border-l-[3px] border-red-500 p-4 bg-red-900/20"
+      class="mb-6 border-l-[3px] border-red-500 p-4 bg-red-900/25"
       data-testid="error-banner"
     >
       <div
