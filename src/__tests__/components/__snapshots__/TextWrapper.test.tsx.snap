@@ -13,23 +13,23 @@ exports[`TestWrapper should render 1`] = `
           class="ml-5 relative text-neutral-400 font- text-lg"
         >
           <span
-            class="ml-2"
+            class="ml-1"
           >
-            Result
+            Converted Text
           </span>
           <div
-            class="flex items-center justify-center w-7 h-7 border bg-neutral-900 border-emerald-800 rounded-full absolute -left-[2.125rem] top-[0rem]"
+            class="flex items-center justify-center w-6 h-6 border bg-neutral-900 border-emerald-800 rounded-full absolute -left-[2rem] top-[0.175rem]"
           >
             <svg
               class="rotate-90 stroke-emerald-400"
               fill="none"
-              height="0.875rem"
+              height="0.75rem"
               stroke="currentColor"
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="2"
               viewBox="0 0 24 24"
-              width="0.875rem"
+              width="0.75rem"
               xmlns="http://www.w3.org/2000/svg"
             >
               <polyline
@@ -88,7 +88,7 @@ exports[`TestWrapper should render 1`] = `
             </svg>
           </button>
           <span
-            class="absolute hidden bg-white text-black font-medium rounded p-1 px-2 text-xs left-1/2 -translate-x-1/2 bottom-14 whitespace-nowrap before:absolute before:w-3.5 before:h-1.5 before:bg-white before:-bottom-1.5 before:left-1/2 before:-translate-x-1/2"
+            class="absolute hidden bg-white text-black font-medium rounded p-1 px-2 text-xs left-1/2 -translate-x-1/2 bottom-[3.25rem] whitespace-nowrap before:absolute before:w-3.5 before:h-1.5 before:bg-white before:-bottom-1 before:left-1/2 before:-translate-x-1/2"
           >
             Copy text
           </span>
@@ -124,7 +124,7 @@ exports[`TestWrapper should render 1`] = `
             </svg>
           </button>
           <span
-            class="absolute hidden bg-white text-black font-medium rounded p-1 px-2 text-xs left-1/2 -translate-x-1/2 bottom-14 whitespace-nowrap before:absolute before:w-3.5 before:h-1.5 before:bg-white before:-bottom-1.5 before:left-1/2 before:-translate-x-1/2"
+            class="absolute hidden bg-white text-black font-medium rounded p-1 px-2 text-xs left-1/2 -translate-x-1/2 bottom-[3.25rem] whitespace-nowrap before:absolute before:w-3.5 before:h-1.5 before:bg-white before:-bottom-1 before:left-1/2 before:-translate-x-1/2"
           >
             Download
           </span>
